@@ -10,14 +10,14 @@ We don't yet know whether CogStack's methods beat plain SQL, or by how much, for
 2. **Analyze** *(now)* — which request traits predict the winner
 3. **Codify as rules** *(now)* — evidence-based router: auditable, no training data, no per-request cost
 4. **Deploy + log** *(now)* — router picks the method; decision + outcome logged
-5. **Train a model** *(later, if warranted)* — only if the log shows it's justified
+5. **Train a model** *(planned — final stage)* — trained once the deploy + log stage has produced enough evidence
 
-Every routing decision + outcome feeds back into the log (stage 4 → stages 1–2), which is what would eventually justify stage 5.
+Every routing decision + outcome feeds back into the log (stage 4 → stages 1–2), which is what builds toward stage 5.
 
 ```mermaid
 flowchart LR
     classDef now fill:#dcefe2,stroke:#2f7a4f,stroke-width:1.5px,color:#1c4a30;
-    classDef later fill:#e7e9ec,stroke:#6b7280,stroke-width:1.5px,stroke-dasharray:5 4,color:#57616c;
+    classDef planned fill:#e7e9ec,stroke:#2f7a4f,stroke-width:1.5px,color:#1c4a30;
     classDef method fill:#ffffff,stroke:#2f7a4f,stroke-width:1.3px,color:#1c4a30;
     classDef cost fill:#f6e6dc,stroke:#a3491c,stroke-width:1.5px,color:#a3491c;
 
@@ -25,10 +25,10 @@ flowchart LR
     S2["2. Analyze<br/>which request traits<br/>predict the winner"]:::now
     S3["3. Codify as rules<br/>evidence-based router —<br/>auditable, no training data,<br/>no per-request cost"]:::now
     S4["4. Deploy + log<br/>router picks the method;<br/>decision + outcome logged"]:::now
-    S5["5. Train a model<br/>later — only if the log<br/>shows it's justified"]:::later
+    S5["5. Train a model<br/>final stage — once the log<br/>has enough evidence"]:::planned
 
     S1 --> S2 --> S3 --> S4
-    S4 -. if warranted .-> S5
+    S4 -. builds toward .-> S5
 
     subgraph Methods["Methods the router chooses among"]
         direction LR
@@ -46,7 +46,7 @@ flowchart LR
 
 Stage 3 is the actual deliverable: a router built from evidence, not guesswork, that costs nothing to run because choosing among methods is free — only running Azure carries a real cost, which is why the router's job is to keep that path rare. Stage 5 is deliberately kept separate: it's a live option, not a commitment.
 
-**Legend:** green solid = what we'd build now · grey dashed = deferred, revisit if the log justifies it · orange = carries a real, metered cost
+**Legend:** green = what we'd build (now or as the planned final stage) · orange = carries a real, metered cost
 
 ## The five stages
 
@@ -62,8 +62,8 @@ Stage 3 is the actual deliverable: a router built from evidence, not guesswork, 
 4. **Deploy + log** `now`
    Wire the rule table into how requests actually get handled, and log every decision plus whether it turned out right. That log is what would eventually justify a trained model — it's the evidence, not a formality.
 
-5. **Train a model** `later, if needed`
-   Only worth doing once the log shows the rule table is running out of road — too many requests it can't confidently place, or enough volume that a model would clearly generalize better. Not a starting assumption.
+5. **Train a model** `planned — final stage`
+   The intended end state: once stage 4's log has enough evidence — requests the rule table can't confidently place, or enough volume that a model would clearly generalize better — train a model on it. Deferred until then, but not conditional on "if needed"; it's the planned last step, not an optional extra.
 
 ## Why rules before a trained model
 
@@ -72,3 +72,5 @@ With roughly 150 historical requests spread across a handful of categories, ther
 ## Why the Azure cost doesn't block this
 
 The router's own decision — which method to use — costs nothing to compute, whether it's rules or eventually a small local model. The Azure cost only applies to the rare request the router actually sends to the LLM, which is precisely what a good router is supposed to minimize, not avoid engaging with.
+
+> **Note:** we won't be training an LLM for free-text search itself — that's what Azure is for, used sparingly. The model in stage 5, if and when it's trained, targets the routing decision (which method to use), not free-text generation, so it doesn't carry Azure-scale training or inference cost.
