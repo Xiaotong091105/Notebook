@@ -14,18 +14,39 @@ We don't yet know whether CogStack's methods beat plain SQL, or by how much, for
 
 Every routing decision + outcome feeds back into the log (stage 4 → stages 1–2), which is what would eventually justify stage 5.
 
-**Methods the router chooses among (stage 3):**
+```mermaid
+flowchart LR
+    classDef now fill:#dcefe2,stroke:#2f7a4f,stroke-width:1.5px,color:#1c4a30;
+    classDef later fill:#e7e9ec,stroke:#6b7280,stroke-width:1.5px,stroke-dasharray:5 4,color:#57616c;
+    classDef method fill:#ffffff,stroke:#2f7a4f,stroke-width:1.3px,color:#1c4a30;
+    classDef cost fill:#f6e6dc,stroke:#a3491c,stroke-width:1.5px,color:#a3491c;
 
-| Method | Cost |
-|---|---|
-| SQL | no cost |
-| MedCAT | no cost |
-| Regex | no cost |
-| Azure LLM | £ — rare use |
+    S1["1. Benchmark<br/>run all 4 methods vs.<br/>curated gold answers"]:::now
+    S2["2. Analyze<br/>which request traits<br/>predict the winner"]:::now
+    S3["3. Codify as rules<br/>evidence-based router —<br/>auditable, no training data,<br/>no per-request cost"]:::now
+    S4["4. Deploy + log<br/>router picks the method;<br/>decision + outcome logged"]:::now
+    S5["5. Train a model<br/>later — only if the log<br/>shows it's justified"]:::later
+
+    S1 --> S2 --> S3 --> S4
+    S4 -. if warranted .-> S5
+
+    subgraph Methods["Methods the router chooses among"]
+        direction LR
+        M1["SQL<br/>no cost"]:::method
+        M2["MedCAT<br/>no cost"]:::method
+        M3["Regex<br/>no cost"]:::method
+        M4["Azure LLM<br/>£ — rare use"]:::cost
+    end
+
+    S3 --> Methods
+
+    S4 -. every routing decision + outcome gets logged .-> S1
+    S4 -. every routing decision + outcome gets logged .-> S2
+```
 
 Stage 3 is the actual deliverable: a router built from evidence, not guesswork, that costs nothing to run because choosing among methods is free — only running Azure carries a real cost, which is why the router's job is to keep that path rare. Stage 5 is deliberately kept separate: it's a live option, not a commitment.
 
-**Legend:** now = what we'd build now · later = deferred, revisit if the log justifies it · cost = carries a real, metered cost
+**Legend:** green solid = what we'd build now · grey dashed = deferred, revisit if the log justifies it · orange = carries a real, metered cost
 
 ## The five stages
 
