@@ -6,4 +6,5 @@
 # Action
 
 - [2026-08-07](Action/2026-08-07.md) — set up the Notebook GitHub repo, linked it locally, created folder structure, and built the NLP/LLM learning maps.
+- [2026-08-08 NLP move chat summary](Action/2026-08-08-nlp-move-chat-summary.md) — summary of the chat that moved the NLP/LLM learning maps into `Learning-maps/` and kept `Concepts/` via a placeholder.
 
