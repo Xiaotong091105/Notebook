@@ -1,6 +1,6 @@
-# Concepts
+# Learning-maps
 
-- [NLP](Concepts/NLP.md) — a learning map for Natural Language Processing: the mental models, task/representation/paradigm landscape, and decision framework for choosing between rules, classical ML, fine-tuning, and prompting LLMs. 
+- [NLP](Learning-maps/NLP.md) — a learning map for Natural Language Processing: the mental models, task/representation/paradigm landscape, and decision framework for choosing between rules, classical ML, fine-tuning, and prompting LLMs. 
 - [LLM](Learning-maps/LLM.md) — a learning map for Large Language Models: the mechanism/steering/integration landscape and decision framework for choosing between prompting, fine-tuning, RAG, and agentic tool use.
 
 # Action
