@@ -6,6 +6,7 @@
 # Action
 
 - [2026-08-07](Action/2026-08-07.md) — set up the Notebook GitHub repo, linked it locally, created folder structure, and built the NLP/LLM learning maps.
+- [2026-08-08](Action/2026-08-08.md) — added the Previous Requests Revision doc and clarified CLAUDE.md's `_index.md` selection rule (Markdown files only, not the local EPUB-conversion leftovers).
 
 # Ideas
 
