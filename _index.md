@@ -14,6 +14,7 @@
 # Ideas
 
 - [Previous Requests Revision](Ideas/Previous%20Requests%20Revision.md) — past clinician data-clinic project requests as landscape tables (yellow/blue/other categories), numbered, with empty datatype columns to fill in.
+- [Previous Requests Revision - README](Ideas/Previous%20Requests%20Revision%20-%20README.md) — draft background on why this catalogue exists (source material for the Classifier benchmark) and the steps for filling it out, for discussion.
 - [2026-08-08 NLP move chat summary](Action/2026-08-08-nlp-move-chat-summary.md) — summary of the chat that moved the NLP/LLM learning maps into `Learning-maps/` and kept `Concepts/` via a placeholder.
 - [2026-08-08 NLPM chat summary](Action/2026-08-08-nlpm-chat-summary.md) — summary of the chat explaining the NLPM config added to this PR and the decision not to install it yet.
 
