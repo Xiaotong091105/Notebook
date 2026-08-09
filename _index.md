@@ -2,6 +2,8 @@
 
 - [NLP](Concepts/NLP.md) — a learning map for Natural Language Processing: the mental models, task/representation/paradigm landscape, and decision framework for choosing between rules, classical ML, fine-tuning, and prompting LLMs. 
 - [LLM](Concepts/LLM.md) — a learning map for Large Language Models: the mechanism/steering/integration landscape and decision framework for choosing between prompting, fine-tuning, RAG, and agentic tool use.
+- [NLP](Learning-maps/NLP.md) — a learning map for Natural Language Processing: the mental models, task/representation/paradigm landscape, and decision framework for choosing between rules, classical ML, fine-tuning, and prompting LLMs. 
+- [LLM](Learning-maps/LLM.md) — a learning map for Large Language Models: the mechanism/steering/integration landscape and decision framework for choosing between prompting, fine-tuning, RAG, and agentic tool use.
 
 # Action
 
@@ -12,4 +14,6 @@
 # Ideas
 
 - [Previous Requests Revision](Ideas/Previous%20Requests%20Revision.md) — past clinician data-clinic project requests as landscape tables (yellow/blue/other categories), numbered, with empty datatype columns to fill in.
+- [2026-08-08 NLP move chat summary](Action/2026-08-08-nlp-move-chat-summary.md) — summary of the chat that moved the NLP/LLM learning maps into `Learning-maps/` and kept `Concepts/` via a placeholder.
+- [2026-08-08 NLPM chat summary](Action/2026-08-08-nlpm-chat-summary.md) — summary of the chat explaining the NLPM config added to this PR and the decision not to install it yet.
 
