@@ -10,6 +10,7 @@
 - [2026-08-07](Action/2026-08-07.md) — set up the Notebook GitHub repo, linked it locally, created folder structure, and built the NLP/LLM learning maps.
 - [2026-08-08](Action/2026-08-08.md) — added the Previous Requests Revision doc and clarified CLAUDE.md's `_index.md` selection rule (Markdown files only, not the local EPUB-conversion leftovers).
 - [2026-08-08 chat summary](Action/2026-08-08-chat-summary.md) — summary of the chat that clarified `_index.md`'s selection rule in CLAUDE.md.
+- [2026-08-09 Previous Requests Revision README chat summary](Action/2026-08-09-previous-requests-readme-chat-summary.md) — summary of the chat that drafted the Previous Requests Revision README and pushed it as PR #8.
 
 # Ideas
 
