@@ -15,6 +15,7 @@
 # Ideas
 
 - [Previous Requests Revision](Ideas/Previous%20Requests%20Revision.md) — past clinician data-clinic project requests as landscape tables (yellow/blue/other categories), numbered, with empty datatype columns to fill in.
+- [Publishing the Classifier Project](Ideas/Publication/Publishing%20the%20Classifier%20Project.md) — feasibility assessment and step-by-step flow (with barriers and solutions) for publishing the Classifier project as a methods/informatics paper.
 - [2026-08-08 NLP move chat summary](Action/2026-08-08-nlp-move-chat-summary.md) — summary of the chat that moved the NLP/LLM learning maps into `Learning-maps/` and kept `Concepts/` via a placeholder.
 - [2026-08-08 NLPM chat summary](Action/2026-08-08-nlpm-chat-summary.md) — summary of the chat explaining the NLPM config added to this PR and the decision not to install it yet.
 
