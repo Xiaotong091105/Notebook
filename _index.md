@@ -12,6 +12,7 @@
 - [2026-08-08 NLP move chat summary](Action/2026-08-08-nlp-move-chat-summary.md) — summary of the chat that moved the NLP/LLM learning maps into `Learning-maps/` and kept `Concepts/` via a placeholder.
 - [2026-08-08 NLPM chat summary](Action/2026-08-08-nlpm-branch-chat-summary.md) — summary of the chat explaining the NLPM config and resolving confusion about why a file on another branch wasn't visible locally.
 - [2026-08-12 OMOP learning map chat summary](Action/2026-08-12-omop-learning-map-chat-summary.md) — summary of building the OMOP at UCLH learning map (PR #14), including the mistake of placing files under `Learning-maps/` with a stray worktree folder instead of `Concepts/`, and the fix.
+- [2026-08-16 Request Category and Schema chat summary](Action/2026-08-16-request-category-schema-chat-summary.md) — summary of building the 156-request clinician-facing category scheme and the Chamberlin/CLEF-grounded request-labeling schema (PR #16), including the three-layer-to-two-layer scoping correction.
 
 # Ideas
 
