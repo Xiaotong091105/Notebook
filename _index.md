@@ -16,6 +16,7 @@
 # Ideas
 
 - [Previous Requests Revision](Ideas/Previous%20Requests%20Revision.md) — past clinician data-clinic project requests as landscape tables (yellow/blue/other categories), numbered, with empty datatype columns to fill in.
+- [Classifier and Rationale V2](Ideas/Classifier/Classifier%20and%20Rationale%20V2.md) — adds Stage 0 (CLEF-extended request labeling with an extraction-method entity) ahead of the existing benchmark-to-router pipeline, plus strengths, limitations, and a scored reference list.
 - [Request 22](Ideas/Requests/Req.22/Request%2022.md) — ICI toxicity incident audit request pulled out from Previous Requests Revision, with empty datatype columns to fill in.
 - [Request 22 - Data Query Guidance](Ideas/Requests/Req.22/data_query_guidance.md) — detailed data query spec for the ICI toxicity audit (cohort, immunosuppressant drugs, and per-organ-toxicity search terms/report headings), converted from the clinician's Word doc.
 - [Request 22 - ICI Toxicity Detection & Grading Learning Map](Ideas/Requests/Req.22/ici-toxicity-detection-grading-learning-map.md) — learning map for why detecting and grading ICI toxicity (irAEs) needs a hybrid SQL+LLM approach, not SQL alone, built around Request 22.
