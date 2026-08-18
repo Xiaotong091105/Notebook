@@ -1,0 +1,262 @@
+{
+  "seed": 19,
+  "n": 30,
+  "selected": [
+    {
+      "request-id": "R-011",
+      "medical-topic": "Transplant / CAR-T / cellular therapy (incl. bispecifics)",
+      "asked-question": "Treatment Pattern & Safety"
+    },
+    {
+      "request-id": "R-135",
+      "medical-topic": "Supportive care / general clinical, not tumour-specific",
+      "asked-question": "Treatment Pattern & Safety"
+    },
+    {
+      "request-id": "R-031",
+      "medical-topic": "Sarcoma",
+      "asked-question": "Treatment Pattern & Safety"
+    },
+    {
+      "request-id": "R-133",
+      "medical-topic": "Transplant / CAR-T / cellular therapy (incl. bispecifics)",
+      "asked-question": "Treatment Pattern & Safety"
+    },
+    {
+      "request-id": "R-053",
+      "medical-topic": "Transplant / CAR-T / cellular therapy (incl. bispecifics)",
+      "asked-question": "Treatment Pattern & Safety"
+    },
+    {
+      "request-id": "R-104",
+      "medical-topic": "Gynaecological cancer",
+      "asked-question": "Prevalence, Rate & Recurrence"
+    },
+    {
+      "request-id": "R-092",
+      "medical-topic": "Gynaecological cancer",
+      "asked-question": "Outcome, Response & Survival"
+    },
+    {
+      "request-id": "R-143",
+      "medical-topic": "Sarcoma",
+      "asked-question": "Prevalence, Rate & Recurrence"
+    },
+    {
+      "request-id": "R-077",
+      "medical-topic": "Thoracic / lung cancer",
+      "asked-question": "Service, Workflow, Documentation & Administrative"
+    },
+    {
+      "request-id": "R-039",
+      "medical-topic": "MPN / MDS / mastocytosis",
+      "asked-question": "Prevalence, Rate & Recurrence"
+    },
+    {
+      "request-id": "R-070",
+      "medical-topic": "Transplant / CAR-T / cellular therapy (incl. bispecifics)",
+      "asked-question": "Treatment Pattern & Safety"
+    },
+    {
+      "request-id": "R-071",
+      "medical-topic": "Lymphoma",
+      "asked-question": "Outcome, Response & Survival"
+    },
+    {
+      "request-id": "R-115",
+      "medical-topic": "Supportive care / general clinical, not tumour-specific",
+      "asked-question": "Treatment Pattern & Safety"
+    },
+    {
+      "request-id": "R-091",
+      "medical-topic": "Leukaemia (ALL/AML)",
+      "asked-question": "Outcome, Response & Survival"
+    },
+    {
+      "request-id": "R-074",
+      "medical-topic": "Genitourinary (prostate)",
+      "asked-question": "Prevalence, Rate & Recurrence"
+    },
+    {
+      "request-id": "R-094",
+      "medical-topic": "GI / hepatobiliary cancer",
+      "asked-question": "Staging & Disease Extent"
+    },
+    {
+      "request-id": "R-088",
+      "medical-topic": "Head & neck / skin / thyroid / salivary gland",
+      "asked-question": "Staging & Disease Extent"
+    },
+    {
+      "request-id": "R-005",
+      "medical-topic": "Benign / non-malignant haematology",
+      "asked-question": "Service, Workflow, Documentation & Administrative"
+    },
+    {
+      "request-id": "R-056",
+      "medical-topic": "Supportive care / general clinical, not tumour-specific",
+      "asked-question": "Treatment Pattern & Safety"
+    },
+    {
+      "request-id": "R-020",
+      "medical-topic": "Operational / service / equity / documentation",
+      "asked-question": "Service, Workflow, Documentation & Administrative"
+    },
+    {
+      "request-id": "R-058",
+      "medical-topic": "GI / hepatobiliary cancer",
+      "asked-question": "Outcome, Response & Survival"
+    },
+    {
+      "request-id": "R-137",
+      "medical-topic": "Supportive care / general clinical, not tumour-specific",
+      "asked-question": "Treatment Pattern & Safety"
+    },
+    {
+      "request-id": "R-118",
+      "medical-topic": "Radiotherapy service evaluation (cross-tumour)",
+      "asked-question": "Service, Workflow, Documentation & Administrative"
+    },
+    {
+      "request-id": "R-004",
+      "medical-topic": "Lymphoma",
+      "asked-question": "Outcome, Response & Survival"
+    },
+    {
+      "request-id": "R-032",
+      "medical-topic": "Cross-tumour toxicity / emergency / diagnostics",
+      "asked-question": "Service, Workflow, Documentation & Administrative"
+    },
+    {
+      "request-id": "R-063",
+      "medical-topic": "Operational / service / equity / documentation",
+      "asked-question": "Prevalence, Rate & Recurrence"
+    },
+    {
+      "request-id": "R-155",
+      "medical-topic": "Genitourinary (prostate)",
+      "asked-question": "Treatment Pattern & Safety"
+    },
+    {
+      "request-id": "R-119",
+      "medical-topic": "Cross-tumour toxicity / emergency / diagnostics",
+      "asked-question": "Treatment Pattern & Safety"
+    },
+    {
+      "request-id": "R-023",
+      "medical-topic": "Breast cancer",
+      "asked-question": "Service, Workflow, Documentation & Administrative"
+    },
+    {
+      "request-id": "R-113",
+      "medical-topic": "Benign / non-malignant haematology",
+      "asked-question": "Outcome, Response & Survival"
+    }
+  ],
+  "summary": {
+    "asked-question": {
+      "Service, Workflow, Documentation & Administrative": {
+        "achieved": 6,
+        "target": 6
+      },
+      "Prevalence, Rate & Recurrence": {
+        "achieved": 5,
+        "target": 5
+      },
+      "Treatment Pattern & Safety": {
+        "achieved": 11,
+        "target": 11
+      },
+      "Outcome, Response & Survival": {
+        "achieved": 6,
+        "target": 6
+      },
+      "Staging & Disease Extent": {
+        "achieved": 2,
+        "target": 2
+      },
+      "Others": {
+        "achieved": 0,
+        "target": 0
+      }
+    },
+    "medical-topic": {
+      "Operational / service / equity / documentation": {
+        "achieved": 2,
+        "target": 2
+      },
+      "Genitourinary (prostate)": {
+        "achieved": 2,
+        "target": 2
+      },
+      "Lymphoma": {
+        "achieved": 2,
+        "target": 2
+      },
+      "Cross-tumour toxicity / emergency / diagnostics": {
+        "achieved": 2,
+        "target": 2
+      },
+      "Benign / non-malignant haematology": {
+        "achieved": 2,
+        "target": 2
+      },
+      "Transplant / CAR-T / cellular therapy (incl. bispecifics)": {
+        "achieved": 4,
+        "target": 4
+      },
+      "Supportive care / general clinical, not tumour-specific": {
+        "achieved": 4,
+        "target": 4
+      },
+      "Breast cancer": {
+        "achieved": 1,
+        "target": 1
+      },
+      "GI / hepatobiliary cancer": {
+        "achieved": 2,
+        "target": 2
+      },
+      "Gynaecological cancer": {
+        "achieved": 2,
+        "target": 2
+      },
+      "Sarcoma": {
+        "achieved": 2,
+        "target": 2
+      },
+      "MPN / MDS / mastocytosis": {
+        "achieved": 1,
+        "target": 1
+      },
+      "Leukaemia (ALL/AML)": {
+        "achieved": 1,
+        "target": 1
+      },
+      "Thoracic / lung cancer": {
+        "achieved": 1,
+        "target": 1
+      },
+      "Myeloma / plasma cell disorders": {
+        "achieved": 0,
+        "target": 0
+      },
+      "Head & neck / skin / thyroid / salivary gland": {
+        "achieved": 1,
+        "target": 1
+      },
+      "CNS / neuro-oncology": {
+        "achieved": 0,
+        "target": 0
+      },
+      "Rare / other solid tumour": {
+        "achieved": 0,
+        "target": 0
+      },
+      "Radiotherapy service evaluation (cross-tumour)": {
+        "achieved": 1,
+        "target": 1
+      }
+    }
+  }
+}

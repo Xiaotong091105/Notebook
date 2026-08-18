@@ -1,0 +1,1874 @@
+[
+  {
+    "request-id": 81,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "Summary of recent use of the HAEMWRGENERIC smartphrase by inpatient clinicians, broken down by sub-speciality; companion to Request 50, document-level marker counting."
+  },
+  {
+    "request-id": 81,
+    "category": "Operational / service / equity / documentation",
+    "axes": "medical-topic",
+    "summary": "Summary of recent use of the HAEMWRGENERIC smartphrase by inpatient clinicians, broken down by sub-speciality; companion to Request 50, document-level marker counting."
+  },
+  {
+    "request-id": 1,
+    "category": "Genitourinary (prostate)",
+    "axes": "medical-topic",
+    "summary": "Building a gold-standard biopsy-proven-recurrence cohort and exploring automated PSA-threshold detection of recurrence/progression in patients with a history of prostate cancer."
+  },
+  {
+    "request-id": 2,
+    "category": "Lymphoma",
+    "axes": "medical-topic",
+    "summary": "Resource-use review (admissions, scans, transfusions, MDT response outcome) for patients treated with R-DA-EPOCH, to inform moving delivery of the regimen to ambulatory care."
+  },
+  {
+    "request-id": 3,
+    "category": "Cross-tumour toxicity / emergency / diagnostics",
+    "axes": "medical-topic",
+    "summary": "Audit of ICI-related GI toxicity (colitis/enteritis/enterocolitis/gastritis/oesophagitis/duodenitis) across solid-tumour immunotherapy patients since 2020, including rates of infliximab/vedolizumab use for management."
+  },
+  {
+    "request-id": 4,
+    "category": "Lymphoma",
+    "axes": "medical-topic",
+    "summary": "Outcomes review of R-CHOP-14 in PMBCL and R-CODOX-M treated patients, including labs, ECOG status, and MDT response category (complete/partial remission/response, no response)."
+  },
+  {
+    "request-id": 5,
+    "category": "Benign / non-malignant haematology",
+    "axes": "medical-topic",
+    "summary": "Turnaround-time audit for sickle cell/thalassaemia and other transfusion-dependent congenital anaemia patients, measuring phlebotomy check-in-to-collection and apheresis check-in-to-transfusion intervals."
+  },
+  {
+    "request-id": 6,
+    "category": "Transplant / CAR-T / cellular therapy (incl. bispecifics)",
+    "axes": "medical-topic",
+    "summary": "Audit of IV-to-oral tacrolimus conversion practice, ratio and linked clinical outcomes over 5 years in adult allogeneic transplant patients."
+  },
+  {
+    "request-id": 7,
+    "category": "Transplant / CAR-T / cellular therapy (incl. bispecifics)",
+    "axes": "medical-topic",
+    "summary": "Multi-factor audit of stem cell harvest (priming regimen, G-CSF/plerixafor dosing, CD34+ counts, dose modifications) and post-ASCT outcomes in CNS lymphoma patients treated with curative intent."
+  },
+  {
+    "request-id": 8,
+    "category": "Cross-tumour toxicity / emergency / diagnostics",
+    "axes": "medical-topic",
+    "summary": "Counting patients diagnosed with a solid malignancy after solid-organ (kidney/liver) transplantation, using ICD-10 codes for both the transplant and the cancer diagnosis."
+  },
+  {
+    "request-id": 9,
+    "category": "Transplant / CAR-T / cellular therapy (incl. bispecifics)",
+    "axes": "medical-topic",
+    "summary": "Evaluation of IVIG/SCIG use for post-CAR-T hypogammaglobulinaemia in DLBCL/mantle cell lymphoma/B-ALL patients (Yescarta/Kymriah/Tecartus), including indications, timing, dosing, and free-text mentions of immunoglobulin replacement."
+  },
+  {
+    "request-id": 10,
+    "category": "Transplant / CAR-T / cellular therapy (incl. bispecifics)",
+    "axes": "medical-topic",
+    "summary": "Blood product (red cell/platelet) utilisation in autologous bone marrow transplant patients with myeloma or lymphoma, to predict demand and reduce waste."
+  },
+  {
+    "request-id": 11,
+    "category": "Transplant / CAR-T / cellular therapy (incl. bispecifics)",
+    "axes": "medical-topic",
+    "summary": "Identifying allogeneic stem cell transplant patients with prior hepatitis B infection via antiviral prescriptions or core antibody status, to study time-to-reactivation after stopping prophylaxis."
+  },
+  {
+    "request-id": 12,
+    "category": "Transplant / CAR-T / cellular therapy (incl. bispecifics)",
+    "axes": "medical-topic",
+    "summary": "Counting external referrals over 5 years for autologous stem cell transplant education days, broken down by lymphoma versus non-lymphoma referrals, for a conference abstract."
+  },
+  {
+    "request-id": 13,
+    "category": "Supportive care / general clinical, not tumour-specific",
+    "axes": "medical-topic",
+    "summary": "Audit of tumour thrombus management (bleeding complications, further thrombotic events, anticoagulant choice and duration, step-down to prophylaxis) in cancer-VTE-clinic patients since EPIC start."
+  },
+  {
+    "request-id": 14,
+    "category": "Lymphoma",
+    "axes": "medical-topic",
+    "summary": "Cohort list of adult Classical Hodgkin Lymphoma patients, with SACT plan status where present, to compare outcomes across age groups."
+  },
+  {
+    "request-id": 15,
+    "category": "Operational / service / equity / documentation",
+    "axes": "medical-topic",
+    "summary": "Equity audit of ethnicity-recording completeness for advanced-cancer patients across seven tumour types and for patients seen by the Enhanced Supportive Care team."
+  },
+  {
+    "request-id": 16,
+    "category": "Benign / non-malignant haematology",
+    "axes": "medical-topic",
+    "summary": "Evaluation of the cytopenia diagnostic pathway and bone marrow biopsy indications (MDS, VEXAS, cytopenia variants), alongside FBC parameters and comorbid autoimmune/malignancy diagnoses."
+  },
+  {
+    "request-id": 17,
+    "category": "Operational / service / equity / documentation",
+    "axes": "medical-topic",
+    "summary": "NHSE benchmarking data on new TYA cancer referrals, relapse rates and outcomes by cancer type (leukaemia, sarcoma, neuro-oncology, lymphoma, other solid tumours), ages 0-24."
+  },
+  {
+    "request-id": 18,
+    "category": "Benign / non-malignant haematology",
+    "axes": "medical-topic",
+    "summary": "Identifying HLH-MDT patients with documented use of JAK inhibitors (JAKi, ruxolitinib, baricitinib) to feed a UK-wide clinical audit of JAK inhibitor use in HLH."
+  },
+  {
+    "request-id": 19,
+    "category": "Supportive care / general clinical, not tumour-specific",
+    "axes": "medical-topic",
+    "summary": "Weekly screening list of patients with newly diagnosed VTE on sliding-scale LMWH for recruitment into the START UK feasibility trial of cancer-associated thrombosis and thrombocytopenia management."
+  },
+  {
+    "request-id": 20,
+    "category": "Operational / service / equity / documentation",
+    "axes": "medical-topic",
+    "summary": "Audit of whether prognosis is clearly documented for oncology inpatients, to improve timely decisions on ceiling of care, resuscitation status and discharge planning."
+  },
+  {
+    "request-id": 21,
+    "category": "Supportive care / general clinical, not tumour-specific",
+    "axes": "medical-topic",
+    "summary": "Incidence audit of central-line-associated bloodstream infection in haematology inpatients with a PICC/CVC/vascath and positive blood cultures."
+  },
+  {
+    "request-id": 22,
+    "category": "Cross-tumour toxicity / emergency / diagnostics",
+    "axes": "medical-topic",
+    "summary": "Broader audit of ICI toxicity incidents and management, including secondary immunosuppressants, across solid tumour oncology patients on immunotherapy since 2020, building on prior steroid and colitis queries."
+  },
+  {
+    "request-id": 23,
+    "category": "Breast cancer",
+    "axes": "medical-topic",
+    "summary": "Identifying hormone-receptor-positive, HER2-negative early breast cancer patients on adjuvant endocrine therapy who may be eligible for ribociclib ahead of anticipated NICE approval."
+  },
+  {
+    "request-id": 24,
+    "category": "GI / hepatobiliary cancer",
+    "axes": "medical-topic",
+    "summary": "Cohort of non-metastatic oesophageal/GOJ adenocarcinoma patients receiving neoadjuvant chemotherapy (+/- oesophagectomy), with staging, biomarkers, treatment course and baseline labs."
+  },
+  {
+    "request-id": 25,
+    "category": "Gynaecological cancer",
+    "axes": "medical-topic",
+    "summary": "Outcomes review of FIGO stage 1A/1B endometrial cancer patients by p53 mutation status, to inform treatment practice changes."
+  },
+  {
+    "request-id": 26,
+    "category": "Gynaecological cancer",
+    "axes": "medical-topic",
+    "summary": "Review of nodal surgery practice and outcomes in FIGO stage 1-2 endometrial cancer patients since 2019, including MMR/p53/ER molecular status from pathology reports."
+  },
+  {
+    "request-id": 27,
+    "category": "Supportive care / general clinical, not tumour-specific",
+    "axes": "medical-topic",
+    "summary": "Follow-up date extraction (last VTE clinic attendance, last hospital encounter, death) for a pre-curated cohort from a prior recurrent-VTE-on-dose-reduced-anticoagulation project."
+  },
+  {
+    "request-id": 28,
+    "category": "Sarcoma",
+    "axes": "medical-topic",
+    "summary": "Clinical audit of new thrombosis incidence over a 3-month period in sarcoma clinic patients undergoing chemotherapy, to assess need for primary thromboprophylaxis."
+  },
+  {
+    "request-id": 29,
+    "category": "Sarcoma",
+    "axes": "medical-topic",
+    "summary": "Treatment pathway review for GIST patients on TKIs (imatinib, sunitinib, regorafenib, ripretinib, avapritinib), focused on neoadjuvant imatinib response and time to surgical resection, split by localised vs metastatic disease."
+  },
+  {
+    "request-id": 30,
+    "category": "Sarcoma",
+    "axes": "medical-topic",
+    "summary": "Review of treatment regimens used for metastatic soft tissue sarcoma patients who received at least one line of systemic therapy, with histological subtype breakdown."
+  },
+  {
+    "request-id": 31,
+    "category": "Sarcoma",
+    "axes": "medical-topic",
+    "summary": "Review of neoadjuvant/adjuvant chemotherapy use in patients over 40 with localised bone sarcoma (osteosarcoma, Ewing, chondrosarcoma, giant cell tumour, undifferentiated pleomorphic sarcoma), given scarce evidence in older adults."
+  },
+  {
+    "request-id": 32,
+    "category": "Cross-tumour toxicity / emergency / diagnostics",
+    "axes": "medical-topic",
+    "summary": "Business case for a cancer assessment unit (CAU) counting cancer patients presenting to A&E with suspected or actual malignant spinal cord compression, and whether they are admitted or discharged."
+  },
+  {
+    "request-id": 33,
+    "category": "Sarcoma",
+    "axes": "medical-topic",
+    "summary": "Osteosarcoma feasibility audit of first-line 3-drug versus 2-drug (AP) chemotherapy and second-line regimens over the last 3 years, broken down by age, sex and ethnicity."
+  },
+  {
+    "request-id": 34,
+    "category": "Transplant / CAR-T / cellular therapy (incl. bispecifics)",
+    "axes": "medical-topic",
+    "summary": "Review of whether switching to a new filgrastim brand (Accofil) for stem cell mobilisation increased the need for plerixafor rescue, using pharmacy dispensing records."
+  },
+  {
+    "request-id": 35,
+    "category": "Lymphoma",
+    "axes": "medical-topic",
+    "summary": "Audit of biopsy mode (FNA, core needle, excisional) and its effect on diagnostic accuracy and time-to-diagnosis in Hodgkin and non-Hodgkin lymphoma patients diagnosed 2020-2024, including re-biopsy decisions and treatment-line outcomes."
+  },
+  {
+    "request-id": 36,
+    "category": "Transplant / CAR-T / cellular therapy (incl. bispecifics)",
+    "axes": "medical-topic",
+    "summary": "Re-audit of tolerability of the cyclophosphamide (Cyclo-prime) mobilisation protocol after removal of a spare mesna dose."
+  },
+  {
+    "request-id": 37,
+    "category": "Transplant / CAR-T / cellular therapy (incl. bispecifics)",
+    "axes": "medical-topic",
+    "summary": "12-month trial of prophylactic nasogastric tube placement in TYA and myeloablative-conditioning allogeneic stem cell transplant patients, assessing nutrition status, GI symptoms, and engraftment/GvHD outcomes."
+  },
+  {
+    "request-id": 38,
+    "category": "Gynaecological cancer",
+    "axes": "medical-topic",
+    "summary": "Audit of management and outcomes for low-grade serous ovarian carcinoma against current guidelines, distinguishing low- from high-grade serous histology."
+  },
+  {
+    "request-id": 39,
+    "category": "MPN / MDS / mastocytosis",
+    "axes": "medical-topic",
+    "summary": "Review of the indolent systemic mastocytosis (ISM) cohort and uptake of the mastocytosis symptom assessment (MAS) score form, including tryptase levels."
+  },
+  {
+    "request-id": 40,
+    "category": "Genitourinary (prostate)",
+    "axes": "medical-topic",
+    "summary": "Tolerability and outcomes of radiotherapy to the primary and bone metastases in metastatic prostate cancer patients treated 2015-2025, including Gleason grade, metastatic burden, and androgen deprivation therapy timing."
+  },
+  {
+    "request-id": 41,
+    "category": "Operational / service / equity / documentation",
+    "axes": "medical-topic",
+    "summary": "Assessment of ethnicity and first-language recording completeness for cancer patients, to inform interventions improving equitable access to cancer clinical trials."
+  },
+  {
+    "request-id": 42,
+    "category": "Supportive care / general clinical, not tumour-specific",
+    "axes": "medical-topic",
+    "summary": "Outcomes of cancer-associated VTE patients whose anticoagulation was dose-reduced after six months, tracking recurrent VTE; companion to Requests 27 and 44."
+  },
+  {
+    "request-id": 43,
+    "category": "Leukaemia (ALL/AML)",
+    "axes": "medical-topic",
+    "summary": "Use of RNA sequencing for MRD marker identification in ALL patients since 2021, linking HILIS lab data with Epic clinical outcomes including induction response and progression to transplant/CAR-T."
+  },
+  {
+    "request-id": 44,
+    "category": "Supportive care / general clinical, not tumour-specific",
+    "axes": "medical-topic",
+    "summary": "Outcomes of cancer patients with tumour thrombus, identified via free-text 'tumour thrombus' search within a defined clinic cohort; companion to Requests 27 and 42."
+  },
+  {
+    "request-id": 45,
+    "category": "Benign / non-malignant haematology",
+    "axes": "medical-topic",
+    "summary": "Response and tolerability of ITP patients treated with eltrombopag and avatrombopag, including adverse events (even if unrelated to the drug) and routine bloods."
+  },
+  {
+    "request-id": 46,
+    "category": "MPN / MDS / mastocytosis",
+    "axes": "medical-topic",
+    "summary": "Assessment of patient uptake of the MPN10-SAF symptom assessment questionnaire sent to MPN clinic patients since Nov 2022, and correlation of SAF scores with symptoms reported at the corresponding clinic visit."
+  },
+  {
+    "request-id": 47,
+    "category": "Thoracic / lung cancer",
+    "axes": "medical-topic",
+    "summary": "Feasibility of building a non-small-cell lung cancer dataset from histopathology reports for patients treated with immunotherapy (nivolumab, pembrolizumab, etc.) since 2020."
+  },
+  {
+    "request-id": 48,
+    "category": "Breast cancer",
+    "axes": "medical-topic",
+    "summary": "For 270 early breast cancer patients with Oncotype DX genomic testing, collection of chemotherapy/endocrine/OFS/bisphosphonate treatment, node status, TNM staging, tumour grade/histology, and ER/PR/Ki-67 results."
+  },
+  {
+    "request-id": 49,
+    "category": "Benign / non-malignant haematology",
+    "axes": "medical-topic",
+    "summary": "Investigation pathway for eosinophilia/hypereosinophilia patients since 2019, including which clinics reviewed them, bone marrow biopsy, and strongyloides testing."
+  },
+  {
+    "request-id": 50,
+    "category": "Operational / service / equity / documentation",
+    "axes": "medical-topic",
+    "summary": "Summary of recent use of the HAEMWRGENERIC smartphrase by inpatient clinicians, and whether the problem list is populated in the new haematology ward-round proforma introduced Feb 2025."
+  },
+  {
+    "request-id": 51,
+    "category": "Transplant / CAR-T / cellular therapy (incl. bispecifics)",
+    "axes": "medical-topic",
+    "summary": "Prospective CAR-T registry for lymphoma (DLBCL) patients tracking disease characteristics, treatment/survival dates, medications, ITU admission, and CRS/ICANS grading after leukapheresis."
+  },
+  {
+    "request-id": 52,
+    "category": "Lymphoma",
+    "axes": "medical-topic",
+    "summary": "Cohort identification of mantle cell lymphoma patients with a SACT plan for a multi-centre audit of BTKi-treated patients who developed CNS involvement; CNS status descoped to manual chart review."
+  },
+  {
+    "request-id": 53,
+    "category": "Transplant / CAR-T / cellular therapy (incl. bispecifics)",
+    "axes": "medical-topic",
+    "summary": "Cohort of autologous stem cell transplant patients from the past 2 years to evaluate impact of conditioning regimens on nutritional status and benefit of prophylactic nasogastric tube feeding."
+  },
+  {
+    "request-id": 54,
+    "category": "Leukaemia (ALL/AML)",
+    "axes": "medical-topic",
+    "summary": "Correlation between sub-therapeutic posaconazole levels and treatment failure in AML patients on reduced-dose venetoclax/azacitidine since May 2025."
+  },
+  {
+    "request-id": 55,
+    "category": "Lymphoma",
+    "axes": "medical-topic",
+    "summary": "Steroid-prescribing habits, dosing/tapering, and adverse effects (metabolic, infective, neurological) in primary CNS lymphoma patients from presentation through end of cycle 1 chemotherapy, assessed against NICE monitoring guidelines."
+  },
+  {
+    "request-id": 56,
+    "category": "Supportive care / general clinical, not tumour-specific",
+    "axes": "medical-topic",
+    "summary": "Audit of compliance with national operation-note standards and postoperative antibiotic use for laparoscopic appendicectomy patients (non-cancer)."
+  },
+  {
+    "request-id": 57,
+    "category": "Supportive care / general clinical, not tumour-specific",
+    "axes": "medical-topic",
+    "summary": "Assessment of acute diverticulitis management (bloods, CT imaging, antibiotics/IV fluids, follow-up colonoscopy) against national guidelines (non-cancer)."
+  },
+  {
+    "request-id": 58,
+    "category": "GI / hepatobiliary cancer",
+    "axes": "medical-topic",
+    "summary": "Treatment response, PFS and OS outcomes in bile duct cancer/cholangiocarcinoma patients receiving immune checkpoint inhibitors, with or without additional systemic agents, Jan 2020-March 2025."
+  },
+  {
+    "request-id": 59,
+    "category": "Myeloma / plasma cell disorders",
+    "axes": "medical-topic",
+    "summary": "National HaemSTAR ATOMM audit of thromboprophylaxis strategies, VTE and bleeding rates in newly diagnosed myeloma patients starting first-line systemic therapy 2021-2024."
+  },
+  {
+    "request-id": 60,
+    "category": "MPN / MDS / mastocytosis",
+    "axes": "medical-topic",
+    "summary": "Multi-cohort study of MPN/MDS overlap patient characteristics, transfusion dependence, splenomegaly on imaging, treatment lines, blood counts, NGS molecular results, and bone marrow fibrosis grade."
+  },
+  {
+    "request-id": 61,
+    "category": "Benign / non-malignant haematology",
+    "axes": "medical-topic",
+    "summary": "Identification of sickle cell disease patients with fentanyl PCA on their care plan during admission for a sickle cell crisis."
+  },
+  {
+    "request-id": 62,
+    "category": "GI / hepatobiliary cancer",
+    "axes": "medical-topic",
+    "summary": "Retrospective analysis of diagnostic pathway timelines for pancreatic ductal adenocarcinoma patients at UCLH and the Royal Free, comparing high-risk surveillance cohorts against registry controls, with staging, resection and survival outcomes."
+  },
+  {
+    "request-id": 63,
+    "category": "Operational / service / equity / documentation",
+    "axes": "medical-topic",
+    "summary": "Annual count of cases discussed across six cancer MDTs (lung, breast, prostate, lymphoma, bowel, melanoma) over the last 5 years, to support a grant application for MDT software development."
+  },
+  {
+    "request-id": 64,
+    "category": "Lymphoma",
+    "axes": "medical-topic",
+    "summary": "Cohort of lymphoma patients admitted to ICU at UCLH, to calculate ICU and in-hospital mortality by care level and explore prognosis and prior treatment (SACT vs CAR-T vs treatment-naive) as predictors."
+  },
+  {
+    "request-id": 65,
+    "category": "Sarcoma",
+    "axes": "medical-topic",
+    "summary": "List of epithelioid hemangioendothelioma patients treated with sirolimus and other chemotherapies over 10 years, with dosing and response, to support an internal funding application."
+  },
+  {
+    "request-id": 66,
+    "category": "Supportive care / general clinical, not tumour-specific",
+    "axes": "medical-topic",
+    "summary": "Baseline usage of iron infusion and red blood cell transfusion in oncology patients with Hb<12 or Hb<8, broken down by treatment modality and specialty, to support a trust anaemia/iron-stock audit."
+  },
+  {
+    "request-id": 67,
+    "category": "Sarcoma",
+    "axes": "medical-topic",
+    "summary": "Sarcoma patients on active SACT and the subset started on high-dose anticoagulation, to evaluate evidence for routine primary VTE thromboprophylaxis given observed VTE incidence."
+  },
+  {
+    "request-id": 68,
+    "category": "GI / hepatobiliary cancer",
+    "axes": "medical-topic",
+    "summary": "Detailed cohort of oesophageal cancer patients treated with radical-intent radiotherapy, covering staging, fitness, treatment delivery and disease progression, to identify prognostic indicators of tolerance and outcomes."
+  },
+  {
+    "request-id": 69,
+    "category": "Transplant / CAR-T / cellular therapy (incl. bispecifics)",
+    "axes": "medical-topic",
+    "summary": "Re-audit of autologous stem cell transplant outcomes in lymphoma patients since 2019, comparing non-relapse vs treatment-related mortality and transplant volumes by indication against a 2019 baseline audit."
+  },
+  {
+    "request-id": 70,
+    "category": "Transplant / CAR-T / cellular therapy (incl. bispecifics)",
+    "axes": "medical-topic",
+    "summary": "Compliance with the updated post-CAR-T PCP prophylaxis guideline (co-trimoxazole vs alternatives) and blood count monitoring through 12 months, to check safety of relaxed count thresholds for starting prophylaxis."
+  },
+  {
+    "request-id": 71,
+    "category": "Lymphoma",
+    "axes": "medical-topic",
+    "summary": "Clinical response and overall survival of patients with transformed low-grade lymphoma (follicular or marginal zone) progressing to high-grade lymphoma (DLBCL/HBL)."
+  },
+  {
+    "request-id": 72,
+    "category": "Gynaecological cancer",
+    "axes": "medical-topic",
+    "summary": "Counts of endometrial cancer patients treated at UCLH in 2024, including how many received immunotherapy (pembrolizumab/dostarlimab) or chemotherapy."
+  },
+  {
+    "request-id": 73,
+    "category": "Gynaecological cancer",
+    "axes": "medical-topic",
+    "summary": "Annual counts of patients (2019-2024) actively treated for ovarian, endometrial, cervical, vulval and vaginal cancers with chemotherapy, immunotherapy or PARP inhibitors, to build a business case for additional gynae-oncology CNS staff."
+  },
+  {
+    "request-id": 74,
+    "category": "Genitourinary (prostate)",
+    "axes": "medical-topic",
+    "summary": "Cohort of patients undergoing radical prostatectomy as first treatment for localised prostate cancer, tracking post-op PSA, subsequent PSMA PET/MRI imaging and radiotherapy, to characterise patterns of biochemical/imaging recurrence."
+  },
+  {
+    "request-id": 75,
+    "category": "GI / hepatobiliary cancer",
+    "axes": "medical-topic",
+    "summary": "Service evaluation of GI oncology inpatients and outpatients since 2020, by diagnosis, patient/GP postcode, length of stay, clinic attendance and completed SACT cycles, to assess the volume of out-of-area patients."
+  },
+  {
+    "request-id": 76,
+    "category": "MPN / MDS / mastocytosis",
+    "axes": "medical-topic",
+    "summary": "Review of follow-up and management of MPN clinic patients with MPL mutations over 5 years, including free-text searches for MPL, JAK2 and 'triple negative' status."
+  },
+  {
+    "request-id": 77,
+    "category": "Thoracic / lung cancer",
+    "axes": "medical-topic",
+    "summary": "Retrospective review of lung cancer patients on tyrosine kinase inhibitors (e.g. osimertinib, alectinib) over 12 months, assessing cardiovascular monitoring compliance and rates of TKI-related cardiac complications."
+  },
+  {
+    "request-id": 78,
+    "category": "Leukaemia (ALL/AML)",
+    "axes": "medical-topic",
+    "summary": "Overall and progression-free survival in adult acute lymphoblastic leukaemia patients, including demographics, Beacon treatment data and blinatumomab/inotuzumab dosing, compared against published outcomes."
+  },
+  {
+    "request-id": 79,
+    "category": "MPN / MDS / mastocytosis",
+    "axes": "medical-topic",
+    "summary": "Audit of treatments received, clinical history and symptom assessment in systemic mastocytosis patients, including free-text search for KIT and tryptase mentions across diagnosis synonym variants."
+  },
+  {
+    "request-id": 80,
+    "category": "Head & neck / skin / thyroid / salivary gland",
+    "axes": "medical-topic",
+    "summary": "Molecular profiling study (INDAGA-UK) of locally advanced or recurrent/metastatic salivary gland cancer patients diagnosed 2013-2024 with archival tissue, covering demographics, smoking/alcohol status and pathology sample availability."
+  },
+  {
+    "request-id": 82,
+    "category": "Thoracic / lung cancer",
+    "axes": "medical-topic",
+    "summary": "Lung cancer patients undergoing curative-intent radiotherapy, checking whether they received a PET-CT within 6 weeks before treatment and referral timing between lung clinical and medical oncology."
+  },
+  {
+    "request-id": 83,
+    "category": "Cross-tumour toxicity / emergency / diagnostics",
+    "axes": "medical-topic",
+    "summary": "Number of patients prescribed lenvatinib across tumour subtypes (predominantly gynae and thyroid cancers), to assess feasibility of a dedicated cardiology clinic for lenvatinib-related hypertension and cardiac failure."
+  },
+  {
+    "request-id": 84,
+    "category": "Operational / service / equity / documentation",
+    "axes": "medical-topic",
+    "summary": "Frequency of out-of-hours aseptically prepared SACT manufacture (drug, time, date) across all ages and in/outpatients, to justify continued investment in the out-of-hours pharmacy service."
+  },
+  {
+    "request-id": 85,
+    "category": "Lymphoma",
+    "axes": "medical-topic",
+    "summary": "Radiotherapy dose to mediastinal organs at risk in lymphoma patients receiving mediastinal RT, comparing proton vs photon therapy and cardiac risk factors such as diabetes, cholesterol, smoking and BMI."
+  },
+  {
+    "request-id": 86,
+    "category": "GI / hepatobiliary cancer",
+    "axes": "medical-topic",
+    "summary": "Identification of gastrointestinal oncology patients with genetic profiling results (Foundation Medicine, Caris, Guardant360 PDFs) since 2019, to correlate genomic data with systemic treatment response and survival across GI cancer subtypes."
+  },
+  {
+    "request-id": 87,
+    "category": "CNS / neuro-oncology",
+    "axes": "medical-topic",
+    "summary": "Study of radiation-induced alopecia in brain tumour patients treated with proton beam therapy, correlating scalp dose received with alopecia grade at baseline, on-treatment and follow-up."
+  },
+  {
+    "request-id": 88,
+    "category": "Head & neck / skin / thyroid / salivary gland",
+    "axes": "medical-topic",
+    "summary": "Feasibility study of real-world treatment patterns and outcomes in newly diagnosed locally advanced (stage III-IVb) head and neck squamous cell carcinoma since 2018, using ICD-10/ICD-O-3 codes, stage and smoking/alcohol history."
+  },
+  {
+    "request-id": 89,
+    "category": "Transplant / CAR-T / cellular therapy (incl. bispecifics)",
+    "axes": "medical-topic",
+    "summary": "Audit of tyrosine kinase inhibitor prescribing practices (e.g. imatinib, dasatinib, ponatinib) after allogeneic transplant or CAR-T therapy, including Ph+/BCR::ABL1 status and explicit capture of patients who did not receive a TKI."
+  },
+  {
+    "request-id": 90,
+    "category": "Genitourinary (prostate)",
+    "axes": "medical-topic",
+    "summary": "Counts of prostate cancer patients with both prostate MRI and PSMA PET imaging within 120 days, to support feasibility of a tumour-delineation AI project."
+  },
+  {
+    "request-id": 91,
+    "category": "Leukaemia (ALL/AML)",
+    "axes": "medical-topic",
+    "summary": "Outcomes (remission, relapse, allograft, death) of adult T-ALL/T-LBL patients since 2019, noting that T-LBL cases are not reliably captured in HILIS and must be retrieved from Epic instead."
+  },
+  {
+    "request-id": 92,
+    "category": "Gynaecological cancer",
+    "axes": "medical-topic",
+    "summary": "Patients with atypical endometrial hyperplasia (2015-2025), tracking hysteroscopic biopsy frequency, progesterone treatment duration, hysterectomy rates, and subsequent diagnosis of endometrial cancer."
+  },
+  {
+    "request-id": 93,
+    "category": "Lymphoma",
+    "axes": "medical-topic",
+    "summary": "Patients with lymphoma-associated haemophagocytic lymphohistiocytosis (HLH) since EPIC inception, plus lymphoma patients admitted to ICU who may meet undiagnosed HLH criteria, given HLH's poor survival."
+  },
+  {
+    "request-id": 94,
+    "category": "GI / hepatobiliary cancer",
+    "axes": "medical-topic",
+    "summary": "Retrospective 2010-2024 cohort study of oesophagogastric adenocarcinoma and colorectal cancer comparing trends in diagnostic age, stage, treatment pathways, and survival between young-onset (<50) and late-onset (>=60) patients."
+  },
+  {
+    "request-id": 95,
+    "category": "Supportive care / general clinical, not tumour-specific",
+    "axes": "medical-topic",
+    "summary": "Count of haematology inpatients/outpatients with a recorded penicillin allergy, to identify patients eligible for referral to the penicillin allergy delabelling service."
+  },
+  {
+    "request-id": 96,
+    "category": "Supportive care / general clinical, not tumour-specific",
+    "axes": "medical-topic",
+    "summary": "Audit of antifungal (echinocandin/fluconazole) prescribing for candidaemia in oncology inpatients (2022-2025) against guideline compliance on agent choice, dosing, de-escalation, source control, and susceptibility-testing follow-up."
+  },
+  {
+    "request-id": 97,
+    "category": "Sarcoma",
+    "axes": "medical-topic",
+    "summary": "Cohort identification of patients diagnosed with head & neck rhabdomyosarcoma (parameningeal and non-parameningeal) to review imaging features at presentation and correlate with outcome."
+  },
+  {
+    "request-id": 98,
+    "category": "MPN / MDS / mastocytosis",
+    "axes": "medical-topic",
+    "summary": "Identification of MPN patients on hydroxycarbamide who developed skin cancer since 2020, to establish high-risk groups and introduce risk-reduction measures."
+  },
+  {
+    "request-id": 99,
+    "category": "Benign / non-malignant haematology",
+    "axes": "medical-topic",
+    "summary": "Audit of patients with a G6PD deficiency diagnosis to assess whether existing clinical advice has led to any haemolysis cases, contacting the cohort via questionnaire for publication."
+  },
+  {
+    "request-id": 100,
+    "category": "Gynaecological cancer",
+    "axes": "medical-topic",
+    "summary": "Cohort of BRCA-associated versus BRCA wild-type high-grade serous ovarian cancer/STIC patients, comparing stage at diagnosis, presentation, surgical complexity and outcomes."
+  },
+  {
+    "request-id": 101,
+    "category": "Operational / service / equity / documentation",
+    "axes": "medical-topic",
+    "summary": "Review of documentation of patients' religion/faith on admission for oncology and haematology inpatients over 6 months, including whether the record was later updated, to inform spiritual care provision."
+  },
+  {
+    "request-id": 102,
+    "category": "Cross-tumour toxicity / emergency / diagnostics",
+    "axes": "medical-topic",
+    "summary": "Usage split of lomustine (including 10mg capsules) across haematology, oncology and TYA/paediatrics by protocol and cycle number for the last financial year, following discontinuation of the licensed capsule."
+  },
+  {
+    "request-id": 103,
+    "category": "Transplant / CAR-T / cellular therapy (incl. bispecifics)",
+    "axes": "medical-topic",
+    "summary": "Longitudinal inflammatory markers (CRP, ferritin, blood counts) and steroid dosing over 4 weeks post-CAR-T infusion for ~267 patients (2019-2022), to identify risk factors for prolonged ICANS/encephalopathy."
+  },
+  {
+    "request-id": 104,
+    "category": "Gynaecological cancer",
+    "axes": "medical-topic",
+    "summary": "Count of female patients with RAD51C/RAD51D/BRIP1/PALB2 mentioned in gynaecological clinic free text (2019-2025), to estimate numbers eligible for ROCA ovarian cancer surveillance testing under NICE guidance."
+  },
+  {
+    "request-id": 105,
+    "category": "Genitourinary (prostate)",
+    "axes": "medical-topic",
+    "summary": "Evaluation of the 'Buddy Project' addressing inequalities in prostate cancer care for Black men, comparing referral, treatment and loss-to-follow-up rates by ethnicity before and after the initiative."
+  },
+  {
+    "request-id": 106,
+    "category": "Sarcoma",
+    "axes": "medical-topic",
+    "summary": "Cohort of children/adolescents (0-17) treated for osteosarcoma 2014-2024, including those on the EURAMOS protocol, to study nutritional support (gastrostomy vs nasogastric feeding) and growth/health outcomes."
+  },
+  {
+    "request-id": 107,
+    "category": "GI / hepatobiliary cancer",
+    "axes": "medical-topic",
+    "summary": "Cholangiocarcinoma patients admitted since 2020 with blood-culture-proven biliary bacteraemia, linking organism trends, survival, ICU admission and biliary interventional radiology/ERCP procedures to admission cost and outcomes."
+  },
+  {
+    "request-id": 108,
+    "category": "GI / hepatobiliary cancer",
+    "axes": "medical-topic",
+    "summary": "Continuation extract of colorectal cancer patients (ICD C18-20) diagnosed since 2019 with Epic and SACT data, to complete a previously shared spreadsheet."
+  },
+  {
+    "request-id": 109,
+    "category": "Gynaecological cancer",
+    "axes": "medical-topic",
+    "summary": "Cohort of early-stage (I-II) high-grade serous or clear-cell ovarian cancer patients undergoing staging surgery with lymphadenectomy (2019-2024), to assess nodal metastasis incidence, risk factors, and safety of omitting systematic lymphadenectomy."
+  },
+  {
+    "request-id": 110,
+    "category": "Rare / other solid tumour",
+    "axes": "medical-topic",
+    "summary": "Cohort of olfactory neuroblastoma patients treated with photon or proton radiotherapy since 2010, comparing oncological outcomes and long-term treatment-related effects."
+  },
+  {
+    "request-id": 111,
+    "category": "MPN / MDS / mastocytosis",
+    "axes": "medical-topic",
+    "summary": "Count of MPN patients (polycythaemia vera, myelofibrosis, essential thrombocythaemia) treated in the past 24 months, for a sponsor questionnaire."
+  },
+  {
+    "request-id": 112,
+    "category": "Transplant / CAR-T / cellular therapy (incl. bispecifics)",
+    "axes": "medical-topic",
+    "summary": "Mandatory NHS England audit of plerixafor use for stem cell mobilisation (April 2023-March 2024), covering dose counts, CD34+ cell yield, collection days, and engraftment timing."
+  },
+  {
+    "request-id": 113,
+    "category": "Benign / non-malignant haematology",
+    "axes": "medical-topic",
+    "summary": "Retrospective review of sickle cell patients with Acute Chest Syndrome who could not be transfused (due to hyperhaemolysis/antibodies) and were managed with pre-emptive HFNO or CPAP, assessing benefit versus invasive ventilation and length of stay."
+  },
+  {
+    "request-id": 114,
+    "category": "Supportive care / general clinical, not tumour-specific",
+    "axes": "medical-topic",
+    "summary": "Review of ~100 oncology ward patients to assess how special blood transfusion requirements are documented, aiming to improve documentation practice and transfusion safety."
+  },
+  {
+    "request-id": 115,
+    "category": "Supportive care / general clinical, not tumour-specific",
+    "axes": "medical-topic",
+    "summary": "Audit of adherence to trust guidelines (from July 2024) on diagnosing and managing diabetes in haematology and oncology patients starting SACT, using diabetes diagnosis, HbA1c and glucose results."
+  },
+  {
+    "request-id": 116,
+    "category": "Genitourinary (prostate)",
+    "axes": "medical-topic",
+    "summary": "Retrospective real-world review of prostate cancer patients treated with radium-223 for symptomatic bone metastases, evaluating outcomes and toxicity against the ALSYMPCA trial."
+  },
+  {
+    "request-id": 117,
+    "category": "Sarcoma",
+    "axes": "medical-topic",
+    "summary": "Detailed timeline extraction for sarcoma patients accessing free-of-charge drug schemes, covering application, approval, dosing changes, toxicity and treatment outcomes, to evaluate scheme processes and timelines."
+  },
+  {
+    "request-id": 118,
+    "category": "Radiotherapy service evaluation (cross-tumour)",
+    "axes": "medical-topic",
+    "summary": "Service evaluation of dietetic input during radiotherapy over 6 months, identifying most commonly seen tumour groups, referral timing, weight loss, and nutritional risk at first contact."
+  },
+  {
+    "request-id": 119,
+    "category": "Cross-tumour toxicity / emergency / diagnostics",
+    "axes": "medical-topic",
+    "summary": "Urine output, volume and pH time-series for sarcoma and lymphoma patients receiving high-dose methotrexate (Sept 2024-Sept 2025), to assess guideline adherence and reduce toxicity/avoidable glucarpidase use."
+  },
+  {
+    "request-id": 120,
+    "category": "Breast cancer",
+    "axes": "medical-topic",
+    "summary": "Quantification of patient deferrals and clinic capacity in breast oncology outpatient clinics over three months, including repeated-deferral patterns, to inform workforce planning."
+  },
+  {
+    "request-id": 121,
+    "category": "Operational / service / equity / documentation",
+    "axes": "medical-topic",
+    "summary": "Ethnicity and preferred-language data for all cancer service patients attending in 2025, replicating a prior year's extract as baseline for a quality improvement project on equity documentation."
+  },
+  {
+    "request-id": 122,
+    "category": "CNS / neuro-oncology",
+    "axes": "medical-topic",
+    "summary": "Identification of non-metastatic lung cancer patients with a normal brain PET signal, to build a control dataset for a quantitative PET analysis tool supporting epilepsy surgery biomarker research."
+  },
+  {
+    "request-id": 123,
+    "category": "Supportive care / general clinical, not tumour-specific",
+    "axes": "medical-topic",
+    "summary": "Audit of CTPA requests for suspected pulmonary embolism in adult oncology inpatients, assessing adherence to pre-imaging work-up (ECG, chest X-ray, D-dimer) and diagnostic yield against RCR standards."
+  },
+  {
+    "request-id": 124,
+    "category": "Supportive care / general clinical, not tumour-specific",
+    "axes": "medical-topic",
+    "summary": "Percentage of adult haematology inpatients (leukaemia, lymphoma, myeloma, BMT etc.) who developed a VTE during admission without a completed VTE risk assessment, or despite prophylactic enoxaparin, for teaching purposes."
+  },
+  {
+    "request-id": 125,
+    "category": "Radiotherapy service evaluation (cross-tumour)",
+    "axes": "medical-topic",
+    "summary": "Use of the PedsQL Multidimensional Fatigue Scale flowsheet to support fatigue management in paediatric patients (0-18) undergoing proton beam therapy, comparing initial and follow-up occupational/physio therapy scores."
+  },
+  {
+    "request-id": 126,
+    "category": "Gynaecological cancer",
+    "axes": "medical-topic",
+    "summary": "Longitudinal CA125 measurements and chemotherapy regimen details (drug, dates, cycles) in relapsed high-grade serous ovarian cancer patients on at least second-line therapy, to model evolution of carboplatin drug resistance."
+  },
+  {
+    "request-id": 127,
+    "category": "GI / hepatobiliary cancer",
+    "axes": "medical-topic",
+    "summary": "Feasibility study on cholangiocarcinoma/biliary tract cancer patients (2020-2025) comparing age-at-diagnosis trends and characterizing under-40 patients by molecular testing, actionable alterations, targeted therapy, and survival."
+  },
+  {
+    "request-id": 128,
+    "category": "Gynaecological cancer",
+    "axes": "medical-topic",
+    "summary": "Identification of all female patients with immature teratoma (all grades) to review surgical and oncological management, including de-escalated chemotherapy/surgery, against national guidance and recurrence/death outcomes."
+  },
+  {
+    "request-id": 129,
+    "category": "Gynaecological cancer",
+    "axes": "medical-topic",
+    "summary": "MRN and SACT regimen counts for patients currently receiving systemic anti-cancer therapy in gynae oncology clinics, to quantify workload growth from increased endometrial cancer treatment volume."
+  },
+  {
+    "request-id": 130,
+    "category": "Gynaecological cancer",
+    "axes": "medical-topic",
+    "summary": "Rate, type, and approach of radical hysterectomy performed for early cervical cancer at UCLH over the last 5 years, including peri-operative complications from operation notes and discharge summaries."
+  },
+  {
+    "request-id": 131,
+    "category": "Operational / service / equity / documentation",
+    "axes": "medical-topic",
+    "summary": "Audit of planned and unplanned Day Care reviews (chemo day care, supportive care, apheresis) documented by a named advanced nurse practitioner, to evaluate the new ANP-led day care service model."
+  },
+  {
+    "request-id": 132,
+    "category": "Thoracic / lung cancer",
+    "axes": "medical-topic",
+    "summary": "Audit of the proportion of stage IIIB-IV NSCLC patients receiving SACT in Q3 2025, identified via metastatic-related phrases within lung cancer MDM outcome notes, to check for a data-capture gap versus a national target."
+  },
+  {
+    "request-id": 133,
+    "category": "Transplant / CAR-T / cellular therapy (incl. bispecifics)",
+    "axes": "medical-topic",
+    "summary": "Myeloma patients on teclistamab, elranatamab, or talquetamab who paused and resumed treatment with re-priming step-up doses, tracking CRS/ICANS rates and treatment response, to assess feasibility of outpatient re-priming."
+  },
+  {
+    "request-id": 134,
+    "category": "Supportive care / general clinical, not tumour-specific",
+    "axes": "medical-topic",
+    "summary": "Serum calcium and vitamin D levels for haematology inpatients with low blood calcium (Feb-March 2025), to check whether vitamin D deficiency is being investigated as a cause of hypocalcaemia."
+  },
+  {
+    "request-id": 135,
+    "category": "Supportive care / general clinical, not tumour-specific",
+    "axes": "medical-topic",
+    "summary": "Haematology patients with acute kidney injury (Feb-March 2026, presenting or ward-onset) to check whether urine dip testing was part of the initial investigation plan on the day AKI was documented."
+  },
+  {
+    "request-id": 136,
+    "category": "Head & neck / skin / thyroid / salivary gland",
+    "axes": "medical-topic",
+    "summary": "Head and neck radiotherapy patients over the last 5 years, tracking subsequent carotid complications (mainly stroke) at any point post-treatment, to assess late radiotherapy effects and inform screening need."
+  },
+  {
+    "request-id": 137,
+    "category": "Supportive care / general clinical, not tumour-specific",
+    "axes": "medical-topic",
+    "summary": "Review of platelet transfusions given to TYA patients (age 13-24) between 2023-2025, capturing pre/post counts, transfusion indication, bleeding status, and tranexamic acid use to assess transfusion effectiveness."
+  },
+  {
+    "request-id": 138,
+    "category": "Transplant / CAR-T / cellular therapy (incl. bispecifics)",
+    "axes": "medical-topic",
+    "summary": "Mandatory NHS England audit of Plerixafor use for stem cell mobilisation, covering dose counts, CD34+ cell yield, collection days, and neutrophil/platelet engraftment time, across two consecutive financial years."
+  },
+  {
+    "request-id": 139,
+    "category": "Benign / non-malignant haematology",
+    "axes": "medical-topic",
+    "summary": "Screening of general haematology clinic patients with raised serum ferritin (sex-specific thresholds) to categorise diagnoses (haemochromatosis, fatty liver, malignancy, undiagnosed) and identify SF3B1 mutation carriers as a possible cause."
+  },
+  {
+    "request-id": 140,
+    "category": "Sarcoma",
+    "axes": "medical-topic",
+    "summary": "Service evaluation of Holistic Needs Assessment data in the sarcoma pathway (Oct 2025-Apr 2026), analysing types/timing of patient-reported concerns and free-text responses against documented clinical actions and referrals."
+  },
+  {
+    "request-id": 141,
+    "category": "Transplant / CAR-T / cellular therapy (incl. bispecifics)",
+    "axes": "medical-topic",
+    "summary": "Determinants and rates of AKI and new-onset CKD in roughly 300 CAR-T therapy patients, using creatinine/eGFR time series, weight, and urine output to characterise renal dysfunction and its link to long-term outcomes."
+  },
+  {
+    "request-id": 142,
+    "category": "GI / hepatobiliary cancer",
+    "axes": "medical-topic",
+    "summary": "Retrospective review of elective colorectal cancer surgery patients evaluating compliance with ERAS/ESPEN perioperative nutrition guidelines, including weight, BMI, diet initiation timing, supplements, and length of stay."
+  },
+  {
+    "request-id": 143,
+    "category": "Sarcoma",
+    "axes": "medical-topic",
+    "summary": "Sarcoma patients (including GIST) over 25 with confirmed recurrence more than 2 years post curative-intent treatment, capturing time to recurrence, detection method, local vs metastatic spread, and salvage success."
+  },
+  {
+    "request-id": 144,
+    "category": "Transplant / CAR-T / cellular therapy (incl. bispecifics)",
+    "axes": "medical-topic",
+    "summary": "Lymphoma patients treated with glofitamab/blinatumumab, tracking CRS/ICANS grading, tocilizumab/steroid/furosemide use, and creatinine/eGFR trends to evaluate kidney-related complications of bispecific antibody therapy."
+  },
+  {
+    "request-id": 145,
+    "category": "Supportive care / general clinical, not tumour-specific",
+    "axes": "medical-topic",
+    "summary": "Adult solid-tumour oncology inpatients (2024-2026) who developed candidaemia, characterising risk factors, Candida species/antifungal susceptibility, and outcomes (mortality, ICU admission, length of stay)."
+  },
+  {
+    "request-id": 146,
+    "category": "Genitourinary (prostate)",
+    "axes": "medical-topic",
+    "summary": "Prostate cancer patients on androgen deprivation therapy plus androgen receptor pathway inhibitors, evaluating comorbidity/toxicity management (cardiac, bone, diabetic) and efficacy (testosterone suppression, imaging, compliance)."
+  },
+  {
+    "request-id": 147,
+    "category": "Leukaemia (ALL/AML)",
+    "axes": "medical-topic",
+    "summary": "Referral pathway and outcomes for AML patients with TP53 mutation diagnosed via SIHMDS, tracking MDT discussion, treatment received, blood counts around treatment cycles, and relapse from Leukaemia MDT outcome notes."
+  },
+  {
+    "request-id": 148,
+    "category": "Transplant / CAR-T / cellular therapy (incl. bispecifics)",
+    "axes": "medical-topic",
+    "summary": "Administration records (dates, location, SACT plan) for inpatients given Thymoglobuline/ATG since April 2020, to evaluate the incidence of infusion-related reactions and consider moving treatment to outpatient setting."
+  },
+  {
+    "request-id": 149,
+    "category": "Leukaemia (ALL/AML)",
+    "axes": "medical-topic",
+    "summary": "141 AML patients who received gemtuzumab ozogamicin (Mylotarg), tracking dosing frequency, lab parameters, and veno-occlusive liver disease complications to assess prescribing variation and predictors of side effects."
+  },
+  {
+    "request-id": 150,
+    "category": "Cross-tumour toxicity / emergency / diagnostics",
+    "axes": "medical-topic",
+    "summary": "Counts of immune checkpoint inhibitor treatments (nivolumab, pembrolizumab, and others) across oncology and haematology since 2020, to support a business case for a neurotoxicity service."
+  },
+  {
+    "request-id": 151,
+    "category": "Cross-tumour toxicity / emergency / diagnostics",
+    "axes": "medical-topic",
+    "summary": "TYA cancer patients (13-25) with a biopsy/histology sample, identifying whole genome sequencing completion by cancer type and disease stage (diagnosis/relapse), where WGS is embedded within bone marrow biopsy lab order text."
+  },
+  {
+    "request-id": 152,
+    "category": "Rare / other solid tumour",
+    "axes": "medical-topic",
+    "summary": "Patients with lacrimal outflow or nasolacrimal cancer, comparing morbidity and mortality between those who had orbital exenteration versus those who did not, combining EPIC data with historical paper-notes records."
+  },
+  {
+    "request-id": 153,
+    "category": "Myeloma / plasma cell disorders",
+    "axes": "medical-topic",
+    "summary": "Multiple myeloma patients on lenalidomide maintenance post autologous stem cell transplant (2021-2026), tracking dose reductions, supportive measures (GCSF, transfusions), and treatment tolerability against guideline compliance."
+  },
+  {
+    "request-id": 154,
+    "category": "Lymphoma",
+    "axes": "medical-topic",
+    "summary": "Prevalence of clonal haematopoiesis of indeterminate potential (CHIP) in Waldenstrom macroglobulinaemia patients with NGS testing, assessing associations with inflammatory markers, cytopenias, neuropathy, and clinical phenotype."
+  },
+  {
+    "request-id": 155,
+    "category": "Genitourinary (prostate)",
+    "axes": "medical-topic",
+    "summary": "Cohort of prostate cancer patients treated at UCLH (2015-2022) as the basis for assessing cardiovascular risk-screening uptake against ESC Cardio-Oncology guidelines and validating traditional versus novel CVD risk scores."
+  },
+  {
+    "request-id": 156,
+    "category": "Radiotherapy service evaluation (cross-tumour)",
+    "axes": "medical-topic",
+    "summary": "MRNs and proton beam therapy start/end dates for sarcoma, breast, neurology, and lymphoma patients (Feb-July 2026) to audit compliance and accuracy of a new nutritional screening tool for non-head-and-neck PBT patients."
+  },
+  {
+    "request-id": 1,
+    "category": "Prevalence, Rate & Recurrence",
+    "axes": "asked-question",
+    "summary": "Building a gold-standard biopsy-proven-recurrence cohort and exploring automated PSA-threshold detection of recurrence/progression in patients with a history of prostate cancer."
+  },
+  {
+    "request-id": 2,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "Resource-use review (admissions, scans, transfusions, MDT response outcome) for patients treated with R-DA-EPOCH, to inform moving delivery of the regimen to ambulatory care."
+  },
+  {
+    "request-id": 3,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Audit of ICI-related GI toxicity (colitis/enteritis/enterocolitis/gastritis/oesophagitis/duodenitis) across solid-tumour immunotherapy patients since 2020, including rates of infliximab/vedolizumab use for management."
+  },
+  {
+    "request-id": 4,
+    "category": "Outcome, Response & Survival",
+    "axes": "asked-question",
+    "summary": "Outcomes review of R-CHOP-14 in PMBCL and R-CODOX-M treated patients, including labs, ECOG status, and MDT response category (complete/partial remission/response, no response)."
+  },
+  {
+    "request-id": 5,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "Turnaround-time audit for sickle cell/thalassaemia and other transfusion-dependent congenital anaemia patients, measuring phlebotomy check-in-to-collection and apheresis check-in-to-transfusion intervals."
+  },
+  {
+    "request-id": 6,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Audit of IV-to-oral tacrolimus conversion practice, ratio and linked clinical outcomes over 5 years in adult allogeneic transplant patients."
+  },
+  {
+    "request-id": 7,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Multi-factor audit of stem cell harvest (priming regimen, G-CSF/plerixafor dosing, CD34+ counts, dose modifications) and post-ASCT outcomes in CNS lymphoma patients treated with curative intent."
+  },
+  {
+    "request-id": 8,
+    "category": "Prevalence, Rate & Recurrence",
+    "axes": "asked-question",
+    "summary": "Counting patients diagnosed with a solid malignancy after solid-organ (kidney/liver) transplantation, using ICD-10 codes for both the transplant and the cancer diagnosis."
+  },
+  {
+    "request-id": 9,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Evaluation of IVIG/SCIG use for post-CAR-T hypogammaglobulinaemia in DLBCL/mantle cell lymphoma/B-ALL patients (Yescarta/Kymriah/Tecartus), including indications, timing, dosing, and free-text mentions of immunoglobulin replacement."
+  },
+  {
+    "request-id": 10,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "Blood product (red cell/platelet) utilisation in autologous bone marrow transplant patients with myeloma or lymphoma, to predict demand and reduce waste."
+  },
+  {
+    "request-id": 11,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Identifying allogeneic stem cell transplant patients with prior hepatitis B infection via antiviral prescriptions or core antibody status, to study time-to-reactivation after stopping prophylaxis."
+  },
+  {
+    "request-id": 12,
+    "category": "Prevalence, Rate & Recurrence",
+    "axes": "asked-question",
+    "summary": "Counting external referrals over 5 years for autologous stem cell transplant education days, broken down by lymphoma versus non-lymphoma referrals, for a conference abstract."
+  },
+  {
+    "request-id": 13,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Audit of tumour thrombus management (bleeding complications, further thrombotic events, anticoagulant choice and duration, step-down to prophylaxis) in cancer-VTE-clinic patients since EPIC start."
+  },
+  {
+    "request-id": 14,
+    "category": "Outcome, Response & Survival",
+    "axes": "asked-question",
+    "summary": "Cohort list of adult Classical Hodgkin Lymphoma patients, with SACT plan status where present, to compare outcomes across age groups."
+  },
+  {
+    "request-id": 15,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "Equity audit of ethnicity-recording completeness for advanced-cancer patients across seven tumour types and for patients seen by the Enhanced Supportive Care team."
+  },
+  {
+    "request-id": 16,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Evaluation of the cytopenia diagnostic pathway and bone marrow biopsy indications (MDS, VEXAS, cytopenia variants), alongside FBC parameters and comorbid autoimmune/malignancy diagnoses."
+  },
+  {
+    "request-id": 17,
+    "category": "Prevalence, Rate & Recurrence",
+    "axes": "asked-question",
+    "summary": "NHSE benchmarking data on new TYA cancer referrals, relapse rates and outcomes by cancer type (leukaemia, sarcoma, neuro-oncology, lymphoma, other solid tumours), ages 0-24."
+  },
+  {
+    "request-id": 18,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Identifying HLH-MDT patients with documented use of JAK inhibitors (JAKi, ruxolitinib, baricitinib) to feed a UK-wide clinical audit of JAK inhibitor use in HLH."
+  },
+  {
+    "request-id": 19,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "Weekly screening list of patients with newly diagnosed VTE on sliding-scale LMWH for recruitment into the START UK feasibility trial of cancer-associated thrombosis and thrombocytopenia management."
+  },
+  {
+    "request-id": 20,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "Audit of whether prognosis is clearly documented for oncology inpatients, to improve timely decisions on ceiling of care, resuscitation status and discharge planning."
+  },
+  {
+    "request-id": 21,
+    "category": "Prevalence, Rate & Recurrence",
+    "axes": "asked-question",
+    "summary": "Incidence audit of central-line-associated bloodstream infection in haematology inpatients with a PICC/CVC/vascath and positive blood cultures."
+  },
+  {
+    "request-id": 22,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Broader audit of ICI toxicity incidents and management, including secondary immunosuppressants, across solid tumour oncology patients on immunotherapy since 2020, building on prior steroid and colitis queries."
+  },
+  {
+    "request-id": 23,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "Identifying hormone-receptor-positive, HER2-negative early breast cancer patients on adjuvant endocrine therapy who may be eligible for ribociclib ahead of anticipated NICE approval."
+  },
+  {
+    "request-id": 24,
+    "category": "Outcome, Response & Survival",
+    "axes": "asked-question",
+    "summary": "Cohort of non-metastatic oesophageal/GOJ adenocarcinoma patients receiving neoadjuvant chemotherapy (+/- oesophagectomy), with staging, biomarkers, treatment course and baseline labs."
+  },
+  {
+    "request-id": 25,
+    "category": "Staging & Disease Extent",
+    "axes": "asked-question",
+    "summary": "Outcomes review of FIGO stage 1A/1B endometrial cancer patients by p53 mutation status, to inform treatment practice changes."
+  },
+  {
+    "request-id": 26,
+    "category": "Staging & Disease Extent",
+    "axes": "asked-question",
+    "summary": "Review of nodal surgery practice and outcomes in FIGO stage 1-2 endometrial cancer patients since 2019, including MMR/p53/ER molecular status from pathology reports."
+  },
+  {
+    "request-id": 27,
+    "category": "Prevalence, Rate & Recurrence",
+    "axes": "asked-question",
+    "summary": "Follow-up date extraction (last VTE clinic attendance, last hospital encounter, death) for a pre-curated cohort from a prior recurrent-VTE-on-dose-reduced-anticoagulation project."
+  },
+  {
+    "request-id": 28,
+    "category": "Prevalence, Rate & Recurrence",
+    "axes": "asked-question",
+    "summary": "Clinical audit of new thrombosis incidence over a 3-month period in sarcoma clinic patients undergoing chemotherapy, to assess need for primary thromboprophylaxis."
+  },
+  {
+    "request-id": 29,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Treatment pathway review for GIST patients on TKIs (imatinib, sunitinib, regorafenib, ripretinib, avapritinib), focused on neoadjuvant imatinib response and time to surgical resection, split by localised vs metastatic disease."
+  },
+  {
+    "request-id": 30,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Review of treatment regimens used for metastatic soft tissue sarcoma patients who received at least one line of systemic therapy, with histological subtype breakdown."
+  },
+  {
+    "request-id": 31,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Review of neoadjuvant/adjuvant chemotherapy use in patients over 40 with localised bone sarcoma (osteosarcoma, Ewing, chondrosarcoma, giant cell tumour, undifferentiated pleomorphic sarcoma), given scarce evidence in older adults."
+  },
+  {
+    "request-id": 32,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "Business case for a cancer assessment unit (CAU) counting cancer patients presenting to A&E with suspected or actual malignant spinal cord compression, and whether they are admitted or discharged."
+  },
+  {
+    "request-id": 33,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Osteosarcoma feasibility audit of first-line 3-drug versus 2-drug (AP) chemotherapy and second-line regimens over the last 3 years, broken down by age, sex and ethnicity."
+  },
+  {
+    "request-id": 34,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Review of whether switching to a new filgrastim brand (Accofil) for stem cell mobilisation increased the need for plerixafor rescue, using pharmacy dispensing records."
+  },
+  {
+    "request-id": 35,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "Audit of biopsy mode (FNA, core needle, excisional) and its effect on diagnostic accuracy and time-to-diagnosis in Hodgkin and non-Hodgkin lymphoma patients diagnosed 2020-2024, including re-biopsy decisions and treatment-line outcomes."
+  },
+  {
+    "request-id": 36,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Re-audit of tolerability of the cyclophosphamide (Cyclo-prime) mobilisation protocol after removal of a spare mesna dose."
+  },
+  {
+    "request-id": 37,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "12-month trial of prophylactic nasogastric tube placement in TYA and myeloablative-conditioning allogeneic stem cell transplant patients, assessing nutrition status, GI symptoms, and engraftment/GvHD outcomes."
+  },
+  {
+    "request-id": 38,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Audit of management and outcomes for low-grade serous ovarian carcinoma against current guidelines, distinguishing low- from high-grade serous histology."
+  },
+  {
+    "request-id": 39,
+    "category": "Prevalence, Rate & Recurrence",
+    "axes": "asked-question",
+    "summary": "Review of the indolent systemic mastocytosis (ISM) cohort and uptake of the mastocytosis symptom assessment (MAS) score form, including tryptase levels."
+  },
+  {
+    "request-id": 40,
+    "category": "Outcome, Response & Survival",
+    "axes": "asked-question",
+    "summary": "Tolerability and outcomes of radiotherapy to the primary and bone metastases in metastatic prostate cancer patients treated 2015-2025, including Gleason grade, metastatic burden, and androgen deprivation therapy timing."
+  },
+  {
+    "request-id": 41,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "Assessment of ethnicity and first-language recording completeness for cancer patients, to inform interventions improving equitable access to cancer clinical trials."
+  },
+  {
+    "request-id": 42,
+    "category": "Outcome, Response & Survival",
+    "axes": "asked-question",
+    "summary": "Outcomes of cancer-associated VTE patients whose anticoagulation was dose-reduced after six months, tracking recurrent VTE; companion to Requests 27 and 44."
+  },
+  {
+    "request-id": 43,
+    "category": "Outcome, Response & Survival",
+    "axes": "asked-question",
+    "summary": "Use of RNA sequencing for MRD marker identification in ALL patients since 2021, linking HILIS lab data with Epic clinical outcomes including induction response and progression to transplant/CAR-T."
+  },
+  {
+    "request-id": 44,
+    "category": "Outcome, Response & Survival",
+    "axes": "asked-question",
+    "summary": "Outcomes of cancer patients with tumour thrombus, identified via free-text 'tumour thrombus' search within a defined clinic cohort; companion to Requests 27 and 42."
+  },
+  {
+    "request-id": 45,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Response and tolerability of ITP patients treated with eltrombopag and avatrombopag, including adverse events (even if unrelated to the drug) and routine bloods."
+  },
+  {
+    "request-id": 46,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "Assessment of patient uptake of the MPN10-SAF symptom assessment questionnaire sent to MPN clinic patients since Nov 2022, and correlation of SAF scores with symptoms reported at the corresponding clinic visit."
+  },
+  {
+    "request-id": 47,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Feasibility of building a non-small-cell lung cancer dataset from histopathology reports for patients treated with immunotherapy (nivolumab, pembrolizumab, etc.) since 2020."
+  },
+  {
+    "request-id": 48,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "For 270 early breast cancer patients with Oncotype DX genomic testing, collection of chemotherapy/endocrine/OFS/bisphosphonate treatment, node status, TNM staging, tumour grade/histology, and ER/PR/Ki-67 results."
+  },
+  {
+    "request-id": 49,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Investigation pathway for eosinophilia/hypereosinophilia patients since 2019, including which clinics reviewed them, bone marrow biopsy, and strongyloides testing."
+  },
+  {
+    "request-id": 50,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "Summary of recent use of the HAEMWRGENERIC smartphrase by inpatient clinicians, and whether the problem list is populated in the new haematology ward-round proforma introduced Feb 2025."
+  },
+  {
+    "request-id": 51,
+    "category": "Outcome, Response & Survival",
+    "axes": "asked-question",
+    "summary": "Prospective CAR-T registry for lymphoma (DLBCL) patients tracking disease characteristics, treatment/survival dates, medications, ITU admission, and CRS/ICANS grading after leukapheresis."
+  },
+  {
+    "request-id": 52,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "Cohort identification of mantle cell lymphoma patients with a SACT plan for a multi-centre audit of BTKi-treated patients who developed CNS involvement; CNS status descoped to manual chart review."
+  },
+  {
+    "request-id": 53,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Cohort of autologous stem cell transplant patients from the past 2 years to evaluate impact of conditioning regimens on nutritional status and benefit of prophylactic nasogastric tube feeding."
+  },
+  {
+    "request-id": 54,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Correlation between sub-therapeutic posaconazole levels and treatment failure in AML patients on reduced-dose venetoclax/azacitidine since May 2025."
+  },
+  {
+    "request-id": 55,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Steroid-prescribing habits, dosing/tapering, and adverse effects (metabolic, infective, neurological) in primary CNS lymphoma patients from presentation through end of cycle 1 chemotherapy, assessed against NICE monitoring guidelines."
+  },
+  {
+    "request-id": 56,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Audit of compliance with national operation-note standards and postoperative antibiotic use for laparoscopic appendicectomy patients (non-cancer)."
+  },
+  {
+    "request-id": 57,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Assessment of acute diverticulitis management (bloods, CT imaging, antibiotics/IV fluids, follow-up colonoscopy) against national guidelines (non-cancer)."
+  },
+  {
+    "request-id": 58,
+    "category": "Outcome, Response & Survival",
+    "axes": "asked-question",
+    "summary": "Treatment response, PFS and OS outcomes in bile duct cancer/cholangiocarcinoma patients receiving immune checkpoint inhibitors, with or without additional systemic agents, Jan 2020-March 2025."
+  },
+  {
+    "request-id": 59,
+    "category": "Prevalence, Rate & Recurrence",
+    "axes": "asked-question",
+    "summary": "National HaemSTAR ATOMM audit of thromboprophylaxis strategies, VTE and bleeding rates in newly diagnosed myeloma patients starting first-line systemic therapy 2021-2024."
+  },
+  {
+    "request-id": 60,
+    "category": "Outcome, Response & Survival",
+    "axes": "asked-question",
+    "summary": "Multi-cohort study of MPN/MDS overlap patient characteristics, transfusion dependence, splenomegaly on imaging, treatment lines, blood counts, NGS molecular results, and bone marrow fibrosis grade."
+  },
+  {
+    "request-id": 61,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "Identification of sickle cell disease patients with fentanyl PCA on their care plan during admission for a sickle cell crisis."
+  },
+  {
+    "request-id": 62,
+    "category": "Staging & Disease Extent",
+    "axes": "asked-question",
+    "summary": "Retrospective analysis of diagnostic pathway timelines for pancreatic ductal adenocarcinoma patients at UCLH and the Royal Free, comparing high-risk surveillance cohorts against registry controls, with staging, resection and survival outcomes."
+  },
+  {
+    "request-id": 63,
+    "category": "Prevalence, Rate & Recurrence",
+    "axes": "asked-question",
+    "summary": "Annual count of cases discussed across six cancer MDTs (lung, breast, prostate, lymphoma, bowel, melanoma) over the last 5 years, to support a grant application for MDT software development."
+  },
+  {
+    "request-id": 64,
+    "category": "Outcome, Response & Survival",
+    "axes": "asked-question",
+    "summary": "Cohort of lymphoma patients admitted to ICU at UCLH, to calculate ICU and in-hospital mortality by care level and explore prognosis and prior treatment (SACT vs CAR-T vs treatment-naive) as predictors."
+  },
+  {
+    "request-id": 65,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "List of epithelioid hemangioendothelioma patients treated with sirolimus and other chemotherapies over 10 years, with dosing and response, to support an internal funding application."
+  },
+  {
+    "request-id": 66,
+    "category": "Prevalence, Rate & Recurrence",
+    "axes": "asked-question",
+    "summary": "Baseline usage of iron infusion and red blood cell transfusion in oncology patients with Hb<12 or Hb<8, broken down by treatment modality and specialty, to support a trust anaemia/iron-stock audit."
+  },
+  {
+    "request-id": 67,
+    "category": "Prevalence, Rate & Recurrence",
+    "axes": "asked-question",
+    "summary": "Sarcoma patients on active SACT and the subset started on high-dose anticoagulation, to evaluate evidence for routine primary VTE thromboprophylaxis given observed VTE incidence."
+  },
+  {
+    "request-id": 68,
+    "category": "Outcome, Response & Survival",
+    "axes": "asked-question",
+    "summary": "Detailed cohort of oesophageal cancer patients treated with radical-intent radiotherapy, covering staging, fitness, treatment delivery and disease progression, to identify prognostic indicators of tolerance and outcomes."
+  },
+  {
+    "request-id": 69,
+    "category": "Outcome, Response & Survival",
+    "axes": "asked-question",
+    "summary": "Re-audit of autologous stem cell transplant outcomes in lymphoma patients since 2019, comparing non-relapse vs treatment-related mortality and transplant volumes by indication against a 2019 baseline audit."
+  },
+  {
+    "request-id": 70,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Compliance with the updated post-CAR-T PCP prophylaxis guideline (co-trimoxazole vs alternatives) and blood count monitoring through 12 months, to check safety of relaxed count thresholds for starting prophylaxis."
+  },
+  {
+    "request-id": 71,
+    "category": "Outcome, Response & Survival",
+    "axes": "asked-question",
+    "summary": "Clinical response and overall survival of patients with transformed low-grade lymphoma (follicular or marginal zone) progressing to high-grade lymphoma (DLBCL/HBL)."
+  },
+  {
+    "request-id": 72,
+    "category": "Prevalence, Rate & Recurrence",
+    "axes": "asked-question",
+    "summary": "Counts of endometrial cancer patients treated at UCLH in 2024, including how many received immunotherapy (pembrolizumab/dostarlimab) or chemotherapy."
+  },
+  {
+    "request-id": 73,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "Annual counts of patients (2019-2024) actively treated for ovarian, endometrial, cervical, vulval and vaginal cancers with chemotherapy, immunotherapy or PARP inhibitors, to build a business case for additional gynae-oncology CNS staff."
+  },
+  {
+    "request-id": 74,
+    "category": "Prevalence, Rate & Recurrence",
+    "axes": "asked-question",
+    "summary": "Cohort of patients undergoing radical prostatectomy as first treatment for localised prostate cancer, tracking post-op PSA, subsequent PSMA PET/MRI imaging and radiotherapy, to characterise patterns of biochemical/imaging recurrence."
+  },
+  {
+    "request-id": 75,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "Service evaluation of GI oncology inpatients and outpatients since 2020, by diagnosis, patient/GP postcode, length of stay, clinic attendance and completed SACT cycles, to assess the volume of out-of-area patients."
+  },
+  {
+    "request-id": 76,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Review of follow-up and management of MPN clinic patients with MPL mutations over 5 years, including free-text searches for MPL, JAK2 and 'triple negative' status."
+  },
+  {
+    "request-id": 77,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "Retrospective review of lung cancer patients on tyrosine kinase inhibitors (e.g. osimertinib, alectinib) over 12 months, assessing cardiovascular monitoring compliance and rates of TKI-related cardiac complications."
+  },
+  {
+    "request-id": 78,
+    "category": "Outcome, Response & Survival",
+    "axes": "asked-question",
+    "summary": "Overall and progression-free survival in adult acute lymphoblastic leukaemia patients, including demographics, Beacon treatment data and blinatumomab/inotuzumab dosing, compared against published outcomes."
+  },
+  {
+    "request-id": 79,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Audit of treatments received, clinical history and symptom assessment in systemic mastocytosis patients, including free-text search for KIT and tryptase mentions across diagnosis synonym variants."
+  },
+  {
+    "request-id": 80,
+    "category": "Outcome, Response & Survival",
+    "axes": "asked-question",
+    "summary": "Molecular profiling study (INDAGA-UK) of locally advanced or recurrent/metastatic salivary gland cancer patients diagnosed 2013-2024 with archival tissue, covering demographics, smoking/alcohol status and pathology sample availability."
+  },
+  {
+    "request-id": 82,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "Lung cancer patients undergoing curative-intent radiotherapy, checking whether they received a PET-CT within 6 weeks before treatment and referral timing between lung clinical and medical oncology."
+  },
+  {
+    "request-id": 83,
+    "category": "Prevalence, Rate & Recurrence",
+    "axes": "asked-question",
+    "summary": "Number of patients prescribed lenvatinib across tumour subtypes (predominantly gynae and thyroid cancers), to assess feasibility of a dedicated cardiology clinic for lenvatinib-related hypertension and cardiac failure."
+  },
+  {
+    "request-id": 84,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "Frequency of out-of-hours aseptically prepared SACT manufacture (drug, time, date) across all ages and in/outpatients, to justify continued investment in the out-of-hours pharmacy service."
+  },
+  {
+    "request-id": 85,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Radiotherapy dose to mediastinal organs at risk in lymphoma patients receiving mediastinal RT, comparing proton vs photon therapy and cardiac risk factors such as diabetes, cholesterol, smoking and BMI."
+  },
+  {
+    "request-id": 86,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "Identification of gastrointestinal oncology patients with genetic profiling results (Foundation Medicine, Caris, Guardant360 PDFs) since 2019, to correlate genomic data with systemic treatment response and survival across GI cancer subtypes."
+  },
+  {
+    "request-id": 87,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Study of radiation-induced alopecia in brain tumour patients treated with proton beam therapy, correlating scalp dose received with alopecia grade at baseline, on-treatment and follow-up."
+  },
+  {
+    "request-id": 88,
+    "category": "Staging & Disease Extent",
+    "axes": "asked-question",
+    "summary": "Feasibility study of real-world treatment patterns and outcomes in newly diagnosed locally advanced (stage III-IVb) head and neck squamous cell carcinoma since 2018, using ICD-10/ICD-O-3 codes, stage and smoking/alcohol history."
+  },
+  {
+    "request-id": 89,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Audit of tyrosine kinase inhibitor prescribing practices (e.g. imatinib, dasatinib, ponatinib) after allogeneic transplant or CAR-T therapy, including Ph+/BCR::ABL1 status and explicit capture of patients who did not receive a TKI."
+  },
+  {
+    "request-id": 90,
+    "category": "Others",
+    "axes": "asked-question",
+    "summary": "Counts of prostate cancer patients with both prostate MRI and PSMA PET imaging within 120 days, to support feasibility of a tumour-delineation AI project."
+  },
+  {
+    "request-id": 91,
+    "category": "Outcome, Response & Survival",
+    "axes": "asked-question",
+    "summary": "Outcomes (remission, relapse, allograft, death) of adult T-ALL/T-LBL patients since 2019, noting that T-LBL cases are not reliably captured in HILIS and must be retrieved from Epic instead."
+  },
+  {
+    "request-id": 92,
+    "category": "Outcome, Response & Survival",
+    "axes": "asked-question",
+    "summary": "Patients with atypical endometrial hyperplasia (2015-2025), tracking hysteroscopic biopsy frequency, progesterone treatment duration, hysterectomy rates, and subsequent diagnosis of endometrial cancer."
+  },
+  {
+    "request-id": 93,
+    "category": "Outcome, Response & Survival",
+    "axes": "asked-question",
+    "summary": "Patients with lymphoma-associated haemophagocytic lymphohistiocytosis (HLH) since EPIC inception, plus lymphoma patients admitted to ICU who may meet undiagnosed HLH criteria, given HLH's poor survival."
+  },
+  {
+    "request-id": 94,
+    "category": "Staging & Disease Extent",
+    "axes": "asked-question",
+    "summary": "Retrospective 2010-2024 cohort study of oesophagogastric adenocarcinoma and colorectal cancer comparing trends in diagnostic age, stage, treatment pathways, and survival between young-onset (<50) and late-onset (>=60) patients."
+  },
+  {
+    "request-id": 95,
+    "category": "Prevalence, Rate & Recurrence",
+    "axes": "asked-question",
+    "summary": "Count of haematology inpatients/outpatients with a recorded penicillin allergy, to identify patients eligible for referral to the penicillin allergy delabelling service."
+  },
+  {
+    "request-id": 96,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Audit of antifungal (echinocandin/fluconazole) prescribing for candidaemia in oncology inpatients (2022-2025) against guideline compliance on agent choice, dosing, de-escalation, source control, and susceptibility-testing follow-up."
+  },
+  {
+    "request-id": 97,
+    "category": "Outcome, Response & Survival",
+    "axes": "asked-question",
+    "summary": "Cohort identification of patients diagnosed with head & neck rhabdomyosarcoma (parameningeal and non-parameningeal) to review imaging features at presentation and correlate with outcome."
+  },
+  {
+    "request-id": 98,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Identification of MPN patients on hydroxycarbamide who developed skin cancer since 2020, to establish high-risk groups and introduce risk-reduction measures."
+  },
+  {
+    "request-id": 99,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Audit of patients with a G6PD deficiency diagnosis to assess whether existing clinical advice has led to any haemolysis cases, contacting the cohort via questionnaire for publication."
+  },
+  {
+    "request-id": 100,
+    "category": "Staging & Disease Extent",
+    "axes": "asked-question",
+    "summary": "Cohort of BRCA-associated versus BRCA wild-type high-grade serous ovarian cancer/STIC patients, comparing stage at diagnosis, presentation, surgical complexity and outcomes."
+  },
+  {
+    "request-id": 101,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "Review of documentation of patients' religion/faith on admission for oncology and haematology inpatients over 6 months, including whether the record was later updated, to inform spiritual care provision."
+  },
+  {
+    "request-id": 102,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Usage split of lomustine (including 10mg capsules) across haematology, oncology and TYA/paediatrics by protocol and cycle number for the last financial year, following discontinuation of the licensed capsule."
+  },
+  {
+    "request-id": 103,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Longitudinal inflammatory markers (CRP, ferritin, blood counts) and steroid dosing over 4 weeks post-CAR-T infusion for ~267 patients (2019-2022), to identify risk factors for prolonged ICANS/encephalopathy."
+  },
+  {
+    "request-id": 104,
+    "category": "Prevalence, Rate & Recurrence",
+    "axes": "asked-question",
+    "summary": "Count of female patients with RAD51C/RAD51D/BRIP1/PALB2 mentioned in gynaecological clinic free text (2019-2025), to estimate numbers eligible for ROCA ovarian cancer surveillance testing under NICE guidance."
+  },
+  {
+    "request-id": 105,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "Evaluation of the 'Buddy Project' addressing inequalities in prostate cancer care for Black men, comparing referral, treatment and loss-to-follow-up rates by ethnicity before and after the initiative."
+  },
+  {
+    "request-id": 106,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "Cohort of children/adolescents (0-17) treated for osteosarcoma 2014-2024, including those on the EURAMOS protocol, to study nutritional support (gastrostomy vs nasogastric feeding) and growth/health outcomes."
+  },
+  {
+    "request-id": 107,
+    "category": "Outcome, Response & Survival",
+    "axes": "asked-question",
+    "summary": "Cholangiocarcinoma patients admitted since 2020 with blood-culture-proven biliary bacteraemia, linking organism trends, survival, ICU admission and biliary interventional radiology/ERCP procedures to admission cost and outcomes."
+  },
+  {
+    "request-id": 108,
+    "category": "Staging & Disease Extent",
+    "axes": "asked-question",
+    "summary": "Continuation extract of colorectal cancer patients (ICD C18-20) diagnosed since 2019 with Epic and SACT data, to complete a previously shared spreadsheet."
+  },
+  {
+    "request-id": 109,
+    "category": "Staging & Disease Extent",
+    "axes": "asked-question",
+    "summary": "Cohort of early-stage (I-II) high-grade serous or clear-cell ovarian cancer patients undergoing staging surgery with lymphadenectomy (2019-2024), to assess nodal metastasis incidence, risk factors, and safety of omitting systematic lymphadenectomy."
+  },
+  {
+    "request-id": 110,
+    "category": "Outcome, Response & Survival",
+    "axes": "asked-question",
+    "summary": "Cohort of olfactory neuroblastoma patients treated with photon or proton radiotherapy since 2010, comparing oncological outcomes and long-term treatment-related effects."
+  },
+  {
+    "request-id": 111,
+    "category": "Prevalence, Rate & Recurrence",
+    "axes": "asked-question",
+    "summary": "Count of MPN patients (polycythaemia vera, myelofibrosis, essential thrombocythaemia) treated in the past 24 months, for a sponsor questionnaire."
+  },
+  {
+    "request-id": 112,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Mandatory NHS England audit of plerixafor use for stem cell mobilisation (April 2023-March 2024), covering dose counts, CD34+ cell yield, collection days, and engraftment timing."
+  },
+  {
+    "request-id": 113,
+    "category": "Outcome, Response & Survival",
+    "axes": "asked-question",
+    "summary": "Retrospective review of sickle cell patients with Acute Chest Syndrome who could not be transfused (due to hyperhaemolysis/antibodies) and were managed with pre-emptive HFNO or CPAP, assessing benefit versus invasive ventilation and length of stay."
+  },
+  {
+    "request-id": 114,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "Review of ~100 oncology ward patients to assess how special blood transfusion requirements are documented, aiming to improve documentation practice and transfusion safety."
+  },
+  {
+    "request-id": 115,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Audit of adherence to trust guidelines (from July 2024) on diagnosing and managing diabetes in haematology and oncology patients starting SACT, using diabetes diagnosis, HbA1c and glucose results."
+  },
+  {
+    "request-id": 116,
+    "category": "Outcome, Response & Survival",
+    "axes": "asked-question",
+    "summary": "Retrospective real-world review of prostate cancer patients treated with radium-223 for symptomatic bone metastases, evaluating outcomes and toxicity against the ALSYMPCA trial."
+  },
+  {
+    "request-id": 117,
+    "category": "Outcome, Response & Survival",
+    "axes": "asked-question",
+    "summary": "Detailed timeline extraction for sarcoma patients accessing free-of-charge drug schemes, covering application, approval, dosing changes, toxicity and treatment outcomes, to evaluate scheme processes and timelines."
+  },
+  {
+    "request-id": 118,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "Service evaluation of dietetic input during radiotherapy over 6 months, identifying most commonly seen tumour groups, referral timing, weight loss, and nutritional risk at first contact."
+  },
+  {
+    "request-id": 119,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Urine output, volume and pH time-series for sarcoma and lymphoma patients receiving high-dose methotrexate (Sept 2024-Sept 2025), to assess guideline adherence and reduce toxicity/avoidable glucarpidase use."
+  },
+  {
+    "request-id": 120,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "Quantification of patient deferrals and clinic capacity in breast oncology outpatient clinics over three months, including repeated-deferral patterns, to inform workforce planning."
+  },
+  {
+    "request-id": 121,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "Ethnicity and preferred-language data for all cancer service patients attending in 2025, replicating a prior year's extract as baseline for a quality improvement project on equity documentation."
+  },
+  {
+    "request-id": 122,
+    "category": "Others",
+    "axes": "asked-question",
+    "summary": "Identification of non-metastatic lung cancer patients with a normal brain PET signal, to build a control dataset for a quantitative PET analysis tool supporting epilepsy surgery biomarker research."
+  },
+  {
+    "request-id": 123,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Audit of CTPA requests for suspected pulmonary embolism in adult oncology inpatients, assessing adherence to pre-imaging work-up (ECG, chest X-ray, D-dimer) and diagnostic yield against RCR standards."
+  },
+  {
+    "request-id": 124,
+    "category": "Prevalence, Rate & Recurrence",
+    "axes": "asked-question",
+    "summary": "Percentage of adult haematology inpatients (leukaemia, lymphoma, myeloma, BMT etc.) who developed a VTE during admission without a completed VTE risk assessment, or despite prophylactic enoxaparin, for teaching purposes."
+  },
+  {
+    "request-id": 125,
+    "category": "Outcome, Response & Survival",
+    "axes": "asked-question",
+    "summary": "Use of the PedsQL Multidimensional Fatigue Scale flowsheet to support fatigue management in paediatric patients (0-18) undergoing proton beam therapy, comparing initial and follow-up occupational/physio therapy scores."
+  },
+  {
+    "request-id": 126,
+    "category": "Outcome, Response & Survival",
+    "axes": "asked-question",
+    "summary": "Longitudinal CA125 measurements and chemotherapy regimen details (drug, dates, cycles) in relapsed high-grade serous ovarian cancer patients on at least second-line therapy, to model evolution of carboplatin drug resistance."
+  },
+  {
+    "request-id": 127,
+    "category": "Outcome, Response & Survival",
+    "axes": "asked-question",
+    "summary": "Feasibility study on cholangiocarcinoma/biliary tract cancer patients (2020-2025) comparing age-at-diagnosis trends and characterizing under-40 patients by molecular testing, actionable alterations, targeted therapy, and survival."
+  },
+  {
+    "request-id": 128,
+    "category": "Prevalence, Rate & Recurrence",
+    "axes": "asked-question",
+    "summary": "Identification of all female patients with immature teratoma (all grades) to review surgical and oncological management, including de-escalated chemotherapy/surgery, against national guidance and recurrence/death outcomes."
+  },
+  {
+    "request-id": 129,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "MRN and SACT regimen counts for patients currently receiving systemic anti-cancer therapy in gynae oncology clinics, to quantify workload growth from increased endometrial cancer treatment volume."
+  },
+  {
+    "request-id": 130,
+    "category": "Prevalence, Rate & Recurrence",
+    "axes": "asked-question",
+    "summary": "Rate, type, and approach of radical hysterectomy performed for early cervical cancer at UCLH over the last 5 years, including peri-operative complications from operation notes and discharge summaries."
+  },
+  {
+    "request-id": 131,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "Audit of planned and unplanned Day Care reviews (chemo day care, supportive care, apheresis) documented by a named advanced nurse practitioner, to evaluate the new ANP-led day care service model."
+  },
+  {
+    "request-id": 132,
+    "category": "Prevalence, Rate & Recurrence",
+    "axes": "asked-question",
+    "summary": "Audit of the proportion of stage IIIB-IV NSCLC patients receiving SACT in Q3 2025, identified via metastatic-related phrases within lung cancer MDM outcome notes, to check for a data-capture gap versus a national target."
+  },
+  {
+    "request-id": 133,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Myeloma patients on teclistamab, elranatamab, or talquetamab who paused and resumed treatment with re-priming step-up doses, tracking CRS/ICANS rates and treatment response, to assess feasibility of outpatient re-priming."
+  },
+  {
+    "request-id": 134,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Serum calcium and vitamin D levels for haematology inpatients with low blood calcium (Feb-March 2025), to check whether vitamin D deficiency is being investigated as a cause of hypocalcaemia."
+  },
+  {
+    "request-id": 135,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Haematology patients with acute kidney injury (Feb-March 2026, presenting or ward-onset) to check whether urine dip testing was part of the initial investigation plan on the day AKI was documented."
+  },
+  {
+    "request-id": 136,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Head and neck radiotherapy patients over the last 5 years, tracking subsequent carotid complications (mainly stroke) at any point post-treatment, to assess late radiotherapy effects and inform screening need."
+  },
+  {
+    "request-id": 137,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Review of platelet transfusions given to TYA patients (age 13-24) between 2023-2025, capturing pre/post counts, transfusion indication, bleeding status, and tranexamic acid use to assess transfusion effectiveness."
+  },
+  {
+    "request-id": 138,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Mandatory NHS England audit of Plerixafor use for stem cell mobilisation, covering dose counts, CD34+ cell yield, collection days, and neutrophil/platelet engraftment time, across two consecutive financial years."
+  },
+  {
+    "request-id": 139,
+    "category": "Prevalence, Rate & Recurrence",
+    "axes": "asked-question",
+    "summary": "Screening of general haematology clinic patients with raised serum ferritin (sex-specific thresholds) to categorise diagnoses (haemochromatosis, fatty liver, malignancy, undiagnosed) and identify SF3B1 mutation carriers as a possible cause."
+  },
+  {
+    "request-id": 140,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "Service evaluation of Holistic Needs Assessment data in the sarcoma pathway (Oct 2025-Apr 2026), analysing types/timing of patient-reported concerns and free-text responses against documented clinical actions and referrals."
+  },
+  {
+    "request-id": 141,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Determinants and rates of AKI and new-onset CKD in roughly 300 CAR-T therapy patients, using creatinine/eGFR time series, weight, and urine output to characterise renal dysfunction and its link to long-term outcomes."
+  },
+  {
+    "request-id": 142,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Retrospective review of elective colorectal cancer surgery patients evaluating compliance with ERAS/ESPEN perioperative nutrition guidelines, including weight, BMI, diet initiation timing, supplements, and length of stay."
+  },
+  {
+    "request-id": 143,
+    "category": "Prevalence, Rate & Recurrence",
+    "axes": "asked-question",
+    "summary": "Sarcoma patients (including GIST) over 25 with confirmed recurrence more than 2 years post curative-intent treatment, capturing time to recurrence, detection method, local vs metastatic spread, and salvage success."
+  },
+  {
+    "request-id": 144,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Lymphoma patients treated with glofitamab/blinatumumab, tracking CRS/ICANS grading, tocilizumab/steroid/furosemide use, and creatinine/eGFR trends to evaluate kidney-related complications of bispecific antibody therapy."
+  },
+  {
+    "request-id": 145,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Adult solid-tumour oncology inpatients (2024-2026) who developed candidaemia, characterising risk factors, Candida species/antifungal susceptibility, and outcomes (mortality, ICU admission, length of stay)."
+  },
+  {
+    "request-id": 146,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Prostate cancer patients on androgen deprivation therapy plus androgen receptor pathway inhibitors, evaluating comorbidity/toxicity management (cardiac, bone, diabetic) and efficacy (testosterone suppression, imaging, compliance)."
+  },
+  {
+    "request-id": 147,
+    "category": "Outcome, Response & Survival",
+    "axes": "asked-question",
+    "summary": "Referral pathway and outcomes for AML patients with TP53 mutation diagnosed via SIHMDS, tracking MDT discussion, treatment received, blood counts around treatment cycles, and relapse from Leukaemia MDT outcome notes."
+  },
+  {
+    "request-id": 148,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Administration records (dates, location, SACT plan) for inpatients given Thymoglobuline/ATG since April 2020, to evaluate the incidence of infusion-related reactions and consider moving treatment to outpatient setting."
+  },
+  {
+    "request-id": 149,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "141 AML patients who received gemtuzumab ozogamicin (Mylotarg), tracking dosing frequency, lab parameters, and veno-occlusive liver disease complications to assess prescribing variation and predictors of side effects."
+  },
+  {
+    "request-id": 150,
+    "category": "Service, Workflow, Documentation & Administrative",
+    "axes": "asked-question",
+    "summary": "Counts of immune checkpoint inhibitor treatments (nivolumab, pembrolizumab, and others) across oncology and haematology since 2020, to support a business case for a neurotoxicity service."
+  },
+  {
+    "request-id": 151,
+    "category": "Prevalence, Rate & Recurrence",
+    "axes": "asked-question",
+    "summary": "TYA cancer patients (13-25) with a biopsy/histology sample, identifying whole genome sequencing completion by cancer type and disease stage (diagnosis/relapse), where WGS is embedded within bone marrow biopsy lab order text."
+  },
+  {
+    "request-id": 152,
+    "category": "Outcome, Response & Survival",
+    "axes": "asked-question",
+    "summary": "Patients with lacrimal outflow or nasolacrimal cancer, comparing morbidity and mortality between those who had orbital exenteration versus those who did not, combining EPIC data with historical paper-notes records."
+  },
+  {
+    "request-id": 153,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Multiple myeloma patients on lenalidomide maintenance post autologous stem cell transplant (2021-2026), tracking dose reductions, supportive measures (GCSF, transfusions), and treatment tolerability against guideline compliance."
+  },
+  {
+    "request-id": 154,
+    "category": "Prevalence, Rate & Recurrence",
+    "axes": "asked-question",
+    "summary": "Prevalence of clonal haematopoiesis of indeterminate potential (CHIP) in Waldenstrom macroglobulinaemia patients with NGS testing, assessing associations with inflammatory markers, cytopenias, neuropathy, and clinical phenotype."
+  },
+  {
+    "request-id": 155,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "Cohort of prostate cancer patients treated at UCLH (2015-2022) as the basis for assessing cardiovascular risk-screening uptake against ESC Cardio-Oncology guidelines and validating traditional versus novel CVD risk scores."
+  },
+  {
+    "request-id": 156,
+    "category": "Treatment Pattern & Safety",
+    "axes": "asked-question",
+    "summary": "MRNs and proton beam therapy start/end dates for sarcoma, breast, neurology, and lymphoma patients (Feb-July 2026) to audit compliance and accuracy of a new nutritional screening tool for non-head-and-neck PBT patients."
+  }
+]

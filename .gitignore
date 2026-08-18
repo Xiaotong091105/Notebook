@@ -1,6 +1,10 @@
 # nlpm generated artifacts
 .claude/nlpm-history.json
 
+# Python
+__pycache__/
+*.pyc
+
 # generated exports (Concepts/, Learning-maps/)
 Concepts/covers/
 Concepts/*.epub
