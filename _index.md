@@ -12,6 +12,7 @@
 - [2026-08-08 chat summary](Action/2026-08-08-chat-summary.md) — summary of the chat that clarified `_index.md`'s selection rule in CLAUDE.md.
 - [2026-08-10 Classifier V2 and publication PRs chat summary](Action/2026-08-10-classifier-v2-publication-chat-summary.md) — summary of the chat that built the Classifier V2 plan and the publication feasibility doc, and split them into two independent PRs.
 - [2026-08-09 Previous Requests Revision README chat summary](Action/2026-08-09-previous-requests-readme-chat-summary.md) — summary of the chat that drafted the Previous Requests Revision README and pushed it as PR #8.
+- [2026-08-12 OMOP learning map chat summary](Action/2026-08-12-omop-learning-map-chat-summary.md) — summary of building the OMOP at UCLH learning map (PR #14), including the mistake of placing files under `Learning-maps/` with a stray worktree folder instead of `Concepts/`, and the fix.
 
 # Ideas
 
