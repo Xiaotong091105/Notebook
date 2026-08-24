@@ -219,24 +219,7 @@ Annotator name / persona: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ Categor
 |----|----|----|----|----|----|----|----|----|
 | 22 | 4 | Y (All solid tumour patients started on Immunotherapy drugs from Jan 2020) | Y (toxicity description) | Y (Nivolumab, ipilimumab, pembrolizumab, atezolizumab, durvalumab, cemiplimab, avelumab, tremelimumab, dostarlimab, relatlimab,botensilimab, Balstilimab) | N (but check procedural report) | Y (clinical notes, scan, Colonoscopy,) | Y (All solid tumour) |  |
 |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |
+| ... |  |  |  |  |  |  |  |  |
 
 ## Worksheet B — Linguistic flags (fill only where Worksheet A Text = Y) & Outcome
 
@@ -244,23 +227,6 @@ Annotator name / persona: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ Categor
 |----|----|----|----|----|----|----|----|----|----|
 | 22 | N | Y | Unsure (toxicity can happen in skin, lung, etc) | N | Not sure | N | Unsure |  |  |
 |  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |  |  |
+| ... |  |  |  |  |  |  |  |  |  |
 
 *Reminder: leave all 7 linguistic columns blank (not “N”) for any request where Text = N on Worksheet A.*
