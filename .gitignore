@@ -1,0 +1,10 @@
+# nlpm generated artifacts
+.claude/nlpm-history.json
+
+# generated exports (Concepts/, Learning-maps/)
+Concepts/covers/
+Concepts/*.epub
+Concepts/*.plain.md
+Learning-maps/covers/
+Learning-maps/*.epub
+Learning-maps/*.plain.md
