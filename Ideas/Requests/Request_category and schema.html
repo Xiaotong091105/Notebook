@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Request Category and Schema</title>
+<style>
+  :root{
+    --bg:#eef0f2; --surface:#ffffff; --surface-2:#e2e6ea;
+    --ink:#1a1f27; --ink-dim:#57616c; --ink-faint:#8b95a0;
+    --rule:#d9dee3;
+    --accent:#2f7a4f; --accent-tint:#dcefe2; --accent-ink:#1c4a30;
+    --warn:#a3491c; --warn-tint:#f6e6dc;
+    --serif: Charter, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    --sans: system-ui, "Segoe UI", Roboto, sans-serif;
+    --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#12161b; --surface:#191f26; --surface-2:#212933;
+      --ink:#e8ecef; --ink-dim:#a7b1ba; --ink-faint:#78828c;
+      --rule:#2a323b;
+      --accent:#66c28a; --accent-tint:#173325; --accent-ink:#bdeecb;
+      --warn:#e08a56; --warn-tint:#3a2618;
+    }
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .page{max-width:980px;margin:0 auto;padding:3.5rem 1.5rem 6rem;}
+  h1{font-family:var(--serif);font-weight:600;font-size:1.9rem;line-height:1.22;margin:0 0 .5rem;}
+  h2{font-family:var(--serif);font-weight:600;font-size:1.15rem;margin:2.4rem 0 .8rem;}
+  h2:first-of-type{margin-top:0;}
+  .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 .5rem;}
+  .lede{color:var(--ink-dim);font-size:1.02rem;max-width:70ch;margin:0 0 .9rem;}
+  p{margin:0 0 .9rem;max-width:72ch;color:var(--ink-dim);}
+  a{color:var(--accent-ink);}
+
+  .tabbar{display:flex;gap:.3rem;margin:0 0 2.2rem;border-bottom:1px solid var(--rule);}
+  .tabbtn{appearance:none;background:none;border:none;cursor:pointer;font-family:var(--sans);font-size:.95rem;font-weight:600;color:var(--ink-faint);padding:.75rem 1.1rem;border-bottom:2px solid transparent;margin-bottom:-1px;}
+  .tabbtn:hover{color:var(--ink);}
+  .tabbtn[aria-selected="true"]{color:var(--accent-ink);border-bottom-color:var(--accent);}
+  .tabpanel{display:none;}
+  .tabpanel.active{display:block;}
+
+  table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--rule);border-radius:10px;overflow:hidden;font-size:.9rem;}
+  .table-wrap{overflow-x:auto;border-radius:10px;margin:0 0 1rem;}
+  th,td{text-align:left;padding:.65rem .85rem;border-bottom:1px solid var(--rule);vertical-align:top;}
+  thead th{background:var(--surface-2);font-family:var(--sans);font-weight:700;font-size:.76rem;text-transform:uppercase;letter-spacing:.03em;color:var(--ink-dim);}
+  tbody tr:last-child td{border-bottom:none;}
+  td.num{font-family:var(--mono);color:var(--ink-faint);font-size:.85rem;}
+  td strong{color:var(--ink);}
+
+  .cat-card{background:var(--surface);border:1px solid var(--rule);border-left-width:4px;border-left-color:var(--accent);border-radius:8px;padding:1.1rem 1.3rem;margin:0 0 .9rem;}
+  .cat-card h3{margin:0 0 .3rem;font-size:1rem;font-family:var(--sans);font-weight:700;color:var(--ink);display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap;}
+  .cat-card .count{font-family:var(--mono);font-size:.72rem;color:var(--ink-faint);font-weight:600;}
+  .cat-card .desc{color:var(--ink-dim);font-size:.9rem;margin:0 0 .7rem;}
+  .nums{font-family:var(--mono);font-size:.86rem;color:var(--ink-dim);line-height:1.7;word-break:break-word;}
+
+  .callout{background:var(--surface);border:1px solid var(--rule);border-left:3px solid var(--warn);border-radius:6px;padding:1rem 1.2rem;margin:0 0 .8rem;}
+  .callout p{margin:0;font-size:.9rem;}
+  .list-plain{margin:0;padding-left:1.15rem;}
+  .list-plain li{margin:0 0 .55rem;color:var(--ink-dim);font-size:.92rem;max-width:68ch;}
+  .list-plain li strong{color:var(--ink);}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <p class="eyebrow">Ideas / Requests</p>
+  <h1>Request Category and Schema</h1>
+  <p class="lede">Source: the 156 requests catalogued in <a href="Previous%20Requests%20Revision.md">Previous Requests Revision</a>. Two related but distinct pieces of work, kept as two tabs in one document: a clinician-facing <strong>Category</strong> scheme for the intake form, and a request-level <strong>Schema</strong> for the <a href="../Classifier/Classifier%20and%20Rationale%20V2.html">Classifier</a>'s Stage&nbsp;0 benchmark.</p>
+
+  <div class="tabbar" role="tablist" aria-label="Document sections">
+    <button class="tabbtn" role="tab" id="tabbtn-category" aria-selected="true" aria-controls="tab-category" data-target="tab-category">Category</button>
+    <button class="tabbtn" role="tab" id="tabbtn-schema" aria-selected="false" aria-controls="tab-schema" data-target="tab-schema">Schema</button>
+  </div>
+
+  <div class="tabpanel active" id="tab-category" role="tabpanel" aria-labelledby="tabbtn-category">
+
+  <p>A clinician-facing category scheme sorting all 156 requests by <strong>what clinical question is being asked</strong>, in language clinicians already use to describe their own audits and studies. Earlier drafts tried framing categories around <em>which extraction method</em> (SQL/MedCAT/regex/LLM) a request would need — technically the more direct fit for the Classifier's router, but not something a clinician or analyst filling in a form could reliably self-classify against.</p>
+
+  <h2>Categories</h2>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>#</th><th>Category</th><th>The question being asked</th><th>Count</th></tr></thead>
+    <tbody>
+      <tr><td class="num">1</td><td><strong>Prevalence, Rate &amp; Recurrence</strong></td><td>"How many / what % of patients…", plus recurrence/relapse questions</td><td class="num">26</td></tr>
+      <tr><td class="num">2</td><td><strong>Staging &amp; Disease Extent</strong></td><td>Stage/extent of disease at diagnosis or a given timepoint</td><td class="num">8</td></tr>
+      <tr><td class="num">3</td><td><strong>Outcome, Response &amp; Survival</strong></td><td>Treatment response, survival, mortality, disease trajectory</td><td class="num">30</td></tr>
+      <tr><td class="num">4</td><td><strong>Treatment Pattern &amp; Safety</strong></td><td>How a drug/regimen/procedure is used, plus toxicity/complications/guideline-compliance audits</td><td class="num">58</td></tr>
+      <tr><td class="num">5</td><td><strong>Service, Workflow, Documentation &amp; Administrative Requests</strong></td><td>Workload/capacity/resource/business-case questions, data-recording quality checks, and plain patient-list requests</td><td class="num">32</td></tr>
+      <tr><td class="num">6</td><td><strong>Others</strong></td><td>Doesn't cleanly fit a clinical category (AI/imaging support, non-oncology research)</td><td class="num">2</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p style="font-family:var(--mono);font-size:.82rem;color:var(--ink-faint);">Total: 156</p>
+
+  <h2>Request numbers by category</h2>
+
+  <div class="cat-card">
+    <h3>1. Prevalence, Rate &amp; Recurrence <span class="count">26 requests</span></h3>
+    <p class="nums">1, 8, 12, 17, 21, 27, 28, 39, 59, 63, 66, 67, 72, 74, 83, 95, 104, 111, 124, 128, 130, 132, 139, 143, 151, 154</p>
+  </div>
+  <div class="cat-card">
+    <h3>2. Staging &amp; Disease Extent <span class="count">8 requests</span></h3>
+    <p class="nums">25, 26, 62, 88, 94, 100, 108, 109</p>
+  </div>
+  <div class="cat-card">
+    <h3>3. Outcome, Response &amp; Survival <span class="count">30 requests</span></h3>
+    <p class="nums">4, 14, 24, 40, 42, 43, 44, 51, 58, 60, 64, 68, 69, 71, 78, 80, 91, 92, 93, 97, 107, 110, 113, 116, 117, 125, 126, 127, 147, 152</p>
+  </div>
+  <div class="cat-card">
+    <h3>4. Treatment Pattern &amp; Safety <span class="count">58 requests</span></h3>
+    <p class="nums">3, 6, 7, 9, 11, 13, 16, 18, 22, 29, 30, 31, 33, 34, 36, 37, 38, 45, 47, 48, 49, 53, 54, 55, 56, 57, 65, 70, 76, 79, 85, 87, 89, 96, 98, 99, 102, 103, 112, 115, 119, 123, 133, 134, 135, 136, 137, 138, 141, 142, 144, 145, 146, 148, 149, 153, 155, 156</p>
+  </div>
+  <div class="cat-card">
+    <h3>5. Service, Workflow, Documentation &amp; Administrative Requests <span class="count">32 requests</span></h3>
+    <p class="nums">2, 5, 10, 15, 19, 20, 23, 32, 35, 41, 46, 50, 52, 61, 73, 75, 77, 81, 82, 84, 86, 101, 105, 106, 114, 118, 120, 121, 129, 131, 140, 150</p>
+  </div>
+  <div class="cat-card">
+    <h3>6. Others <span class="count">2 requests</span></h3>
+    <p class="nums">90, 122</p>
+  </div>
+
+  <h2>Notes</h2>
+  <div class="callout">
+    <p><strong>Category 4 is the outlier by size</strong> (58/156, ~37%) — it absorbed both "how is this drug used" and "what complications occurred" in the merge. If the form or the Classifier benchmark needs finer resolution here, the natural split is back into <em>Treatment Pattern</em> vs. <em>Safety/Toxicity</em>.</p>
+  </div>
+  <ul class="list-plain">
+    <li>A handful of requests genuinely straddle two categories (e.g. <strong>#35</strong> spans treatment-pattern practice and diagnostic-delay timing; <strong>#68</strong> and <strong>#94</strong> carry both staging and outcome data). Each was placed by its stated primary aim; a secondary tag could be added later if the Classifier benchmark needs it.</li>
+    <li><strong>#90</strong> and <strong>#122</strong> (Others) aren't data-clinic clinical requests in the usual sense — one supports an AI tumour-delineation project, the other is epilepsy PET research unrelated to cancer.</li>
+    <li>This taxonomy converged through iterative discussion, starting from a 9-category draft (Prevalence &amp; Rate / Recurrence &amp; Relapse / Staging &amp; Disease Extent / Outcome, Response &amp; Survival / Treatment Pattern &amp; Prescribing / Safety, Toxicity &amp; Complications / Service, Workflow &amp; Resource Use / Documentation &amp; Data-Quality Check / Patient List for Further Review) before merging down to the 6 above.</li>
+  </ul>
+
+  </div><!-- /tab-category -->
+
+  <div class="tabpanel" id="tab-schema" role="tabpanel" aria-labelledby="tabbtn-schema" hidden>
+
+  <p>A request-level labeling instrument for Stage&nbsp;0 of the Classifier benchmark, combining three sources of evidence:</p>
+  <ol class="list-plain" style="padding-left:1.3rem;">
+    <li><a href="https://www.medrxiv.org/content/10.1101/19012294v1" target="_blank" rel="noopener">Chamberlin et al. (2019), <em>A Query Taxonomy Describes Performance of Patient-Level Retrieval from Electronic Health Record Data</em></a> — tested a 59-characteristic clinical-content taxonomy against real retrieval performance on 56 EHR cohort queries and found <strong>no association</strong>. They then collapsed those 59 characteristics into <strong>6 binary structural features</strong> (Temporal, Text, Medication, Procedure, Additional, Condition) and found those <em>did</em> correlate strongly with performance.</li>
+    <li>The <a href="https://ceur-ws.org/Vol-1180/CLEF2014wn-eHealth-MoweryEt2014.pdf" target="_blank" rel="noopener">ShARe/CLEF eHealth 2014 Task 2</a> disorder-attribute schema — 10 attributes (Negation, Subject, Uncertainty, Course, Severity, Conditional, Generic, Body Location, DocTime Class, Temporal Expression) originally designed to annotate mentions <em>within clinical documents</em>.</li>
+    <li>The <a href="#" onclick="document.querySelector('[data-target=tab-category]').click();return false;">Category</a> scheme in the other tab, which is structurally the same kind of taxonomy as Chamberlin et al.'s 59 fine-grained characteristics — useful for the intake form and human communication, but (per their finding) not the layer that predicts extraction-method performance.</li>
+  </ol>
+
+  <div class="callout">
+    <p><strong>Scoping correction:</strong> this project labels <em>requests</em>, not patient documents (per the <a href="../Classifier/Classifier%20and%20Rationale%20V2.html">Classifier rationale</a>). CLEF's attributes were designed for document/mention-level annotation, so they're adapted here into <strong>request-level yes/no judgments</strong> — "does correctly answering this request depend on X" — rather than annotating actual clinical notes. Generic Class was dropped from CLEF's 10 attributes; it's mainly a discharge-summary boilerplate problem, not a pattern seen in clinician-authored data-clinic requests.</p>
+  </div>
+
+  <h2>The schema</h2>
+  <p>One row per request, 15 fields: 1 clinical category + 6 structural flags (always assessed) + 7 linguistic flags (assessed only when Text&nbsp;=&nbsp;Yes) + 1 outcome field.</p>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Layer</th><th>Field</th><th>Question</th><th>Values</th><th>Evidence / notes</th></tr></thead>
+    <tbody>
+      <tr><td>Clinical</td><td><strong>Category</strong></td><td>What is the clinician asking?</td><td>The 6 categories (see Category tab)</td><td>The intake-form field</td></tr>
+      <tr><td>Structural</td><td><strong>Temporal</strong></td><td>Does answering require sequencing/dating multiple events?</td><td>Y/N</td><td>Chamberlin et al. — predicted <em>worse</em> performance</td></tr>
+      <tr><td>Structural</td><td><strong>Text</strong></td><td>Is the answer not fully available in structured fields?</td><td>Y/N</td><td>Chamberlin et al. — predicted <em>better</em> performance; gates the Linguistic rows below</td></tr>
+      <tr><td>Structural</td><td><strong>Medication</strong></td><td>Does it include/exclude by drug?</td><td>Y/N</td><td>Chamberlin et al. — predicted <em>worse</em></td></tr>
+      <tr><td>Structural</td><td><strong>Procedure</strong></td><td>Does it include/exclude by surgical/non-surgical procedure?</td><td>Y/N</td><td>Chamberlin et al. — predicted <em>worse</em></td></tr>
+      <tr><td>Structural</td><td><strong>Additional</strong></td><td>Does it need extra lab/imaging/exam values beyond one field?</td><td>Y/N</td><td>Chamberlin et al. — predicted <em>worse</em></td></tr>
+      <tr><td>Structural</td><td><strong>Condition</strong></td><td>Does it require an explicit named diagnosis as inclusion criterion?</td><td>Y/N</td><td>Chamberlin et al. — predicted <em>worse</em></td></tr>
+      <tr><td>Linguistic <em>(if Text=Y)</em></td><td><strong>Negation</strong></td><td>"Has X" vs "does not have X" distinguished?</td><td>Y/N</td><td>CLEF Task 2 — easiest linguistic attribute (F1 0.91)</td></tr>
+      <tr><td>Linguistic <em>(if Text=Y)</em></td><td><strong>Uncertainty</strong></td><td>Confirmed vs. suspected/hedged distinguished?</td><td>Y/N</td><td>CLEF Task 2 — moderate (F1 0.56)</td></tr>
+      <tr><td>Linguistic <em>(if Text=Y)</em></td><td><strong>Body Location</strong></td><td>Anatomical site correctly identified?</td><td>Y/N</td><td>CLEF Task 2 — moderate</td></tr>
+      <tr><td>Linguistic <em>(if Text=Y)</em></td><td><strong>Course</strong></td><td>"Improved/worsened/resolved/changed" language detected?</td><td>Y/N</td><td>CLEF Task 2 — moderate (F1 0.65); best fit for staging/outcome trajectory</td></tr>
+      <tr><td>Linguistic <em>(if Text=Y)</em></td><td><strong>Conditional</strong></td><td>False-positive risk from hypothetical/protocol language ("if X occurs")?</td><td>Y/N</td><td>CLEF Task 2 — moderate (F1 0.64)</td></tr>
+      <tr><td>Linguistic <em>(if Text=Y)</em></td><td><strong>Subject</strong></td><td>Patient-vs-donor/family-member attribution needed?</td><td>Y/N</td><td>CLEF Task 2 — high normalization accuracy, poor cue detection (a trap)</td></tr>
+      <tr><td>Linguistic <em>(if Text=Y)</em></td><td><strong>DocTime Class</strong></td><td>Before/during/after-note timing of a mention resolved?</td><td>Y/N</td><td>CLEF Task 2 — <strong>hardest attribute</strong>, near-zero F1 even for the best system; treat Y as an auto-escalation signal</td></tr>
+      <tr><td>Outcome</td><td><strong>Extraction method used</strong></td><td>What actually answered this request?</td><td>SQL only · SQL+MedCAT · Regex · LLM-assisted · Manual review</td><td>The Stage 0 dependent variable per the Classifier rationale</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Worked examples</h2>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Request</th><th>Category</th><th>Structural</th><th>Linguistic (if Text=Y)</th><th>Predicted difficulty</th></tr></thead>
+    <tbody>
+      <tr><td><strong>#8</strong> — solid malignancy count post-transplant</td><td>1. Prevalence/Rate</td><td>Condition=Y; all else N</td><td>N/A (Text=N)</td><td>Easy — SQL only</td></tr>
+      <tr><td><strong>#35</strong> — biopsy mode &amp; diagnostic delay in lymphoma</td><td>5. Service/Workflow</td><td>Temporal=Y, Text=Y, Procedure=Y, Condition=Y</td><td>Course=Y, DocTime=Y, Uncertainty=low</td><td>Hard — DocTime flagged, likely needs LLM-assisted</td></tr>
+      <tr><td><strong>#62</strong> — PDAC staging pathway</td><td>2. Staging &amp; Disease Extent</td><td>Temporal=Y, Text=Y, Procedure=Y, Additional=Y, Condition=Y</td><td>Course=Y, DocTime=Y</td><td>Hard — DocTime flagged, likely needs LLM-assisted</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Category-to-structural-flag hypothesis</h2>
+  <p>A first-pass hypothesis for how the Category tab's groups are likely to score on the structural/linguistic flags, to sanity-check by labeling a larger sample before treating it as settled.</p>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Category</th><th>Likely flags</th><th>Predicted difficulty</th></tr></thead>
+    <tbody>
+      <tr><td><strong>1. Prevalence, Rate &amp; Recurrence</strong></td><td>Temporal=often (recurrence sub-cases), Condition=Y</td><td>Mixed — recurrence harder, plain rate/count easier</td></tr>
+      <tr><td><strong>2. Staging &amp; Disease Extent</strong></td><td>Temporal=often, Condition=Y, Text=often</td><td>Mixed — Text pulls toward <em>better</em>, Temporal/Condition/DocTime toward <em>worse</em></td></tr>
+      <tr><td><strong>3. Outcome, Response &amp; Survival</strong></td><td>Temporal=Y, Condition=Y, Additional=often</td><td>Harder</td></tr>
+      <tr><td><strong>4. Treatment Pattern &amp; Safety</strong></td><td>Medication=Y, Procedure=often, Additional=often</td><td>Harder — largest, most heterogeneous category</td></tr>
+      <tr><td><strong>5. Service, Workflow, Documentation &amp; Administrative</strong></td><td>Mostly none of the six structural flags</td><td>Easiest — likely plain SQL</td></tr>
+      <tr><td><strong>6. Others</strong></td><td>Not applicable</td><td>N/A</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Next steps</h2>
+  <ol class="list-plain" style="padding-left:1.3rem;">
+    <li>Spot-label the schema on a sample of requests across all 6 categories to test the hypothesis table above.</li>
+    <li>Once the pattern holds (or is corrected), label all 156 requests against the full schema.</li>
+    <li>Feed the labeled set into Stage 1 (Benchmark) of the Classifier plan.</li>
+  </ol>
+
+  </div><!-- /tab-schema -->
+
+</div>
+<script>
+  (function(){
+    var buttons = document.querySelectorAll('.tabbtn');
+    buttons.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        buttons.forEach(function(b){ b.setAttribute('aria-selected','false'); });
+        document.querySelectorAll('.tabpanel').forEach(function(p){ p.classList.remove('active'); p.hidden = true; });
+        btn.setAttribute('aria-selected','true');
+        var panel = document.getElementById(btn.dataset.target);
+        panel.classList.add('active');
+        panel.hidden = false;
+      });
+    });
+  })();
+</script>
+</body>
+</html>
