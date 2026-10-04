@@ -1,0 +1,27 @@
+{
+  "mock": {
+    "file_path": "data/mock_dataset.csv",
+    "id_column": "patient_id",
+    "structured_columns": [
+      "patient_id",
+      "date_of_encounter",
+      "hemoglobin",
+      "wbc_count",
+      "glucose",
+      "creatinine"
+    ],
+    "text_columns": [
+      "problem_list",
+      "notes",
+      "subjective_history",
+      "physical_examination",
+      "letters"
+    ]
+  },
+  "real": {
+    "file_path": "REPLACE_WITH_PATH_TO_DEIDENTIFIED_FILE.csv",
+    "id_column": "REPLACE_WITH_ID_COLUMN_NAME",
+    "structured_columns": [],
+    "text_columns": []
+  }
+}

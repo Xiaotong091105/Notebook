@@ -1,0 +1,4 @@
+{
+  "_comment": "Empty on purpose. Fill from (a) data/generated/zipf_gold_queries.json (copy its 'queries'), (b) ClinicalNoteForge annotations on Synthea notes, or (c) clinician-labelled cases on real data. Format documented in evaluation/effectiveness.py.",
+  "queries": []
+}

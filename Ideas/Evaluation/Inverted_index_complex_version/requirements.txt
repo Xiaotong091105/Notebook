@@ -1,0 +1,8 @@
+# Complex version: external tools. NOT installed or run as part of scaffolding.
+# See docs/setup.md for install order and the Java requirement.
+numpy>=1.26
+nltk>=3.8          # Porter stemmer for the tokenizer ablation
+medspacy>=1.0      # NegEx/ConText negation, temporal and family-history context
+ir-measures>=0.3   # ranked metrics for later phases (set metrics are computed in-house)
+ir_datasets>=0.5   # optional: public IR benchmarks and relevance judgments
+pyserini>=0.22     # optional: Lucene reference index. Requires Java (JDK 11+)
