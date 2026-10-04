@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keyword Search Demo</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#1d2330;--mute:#667085;--line:#e3e6ec;--acc:#2457d6;--accbg:#e8efff;--ok:#18794e;--okbg:#e5f6ed;--warn:#a15c00;--warnbg:#fff2dc;--bad:#b42318;--badbg:#fde8e6;--mark:#fff1a8}
+@media (prefers-color-scheme:dark){:root{--bg:#12151c;--card:#1b2029;--ink:#e6e9ef;--mute:#98a2b3;--line:#2c3340;--acc:#7da2ff;--accbg:#22304f;--ok:#5fd29b;--okbg:#17332a;--warn:#f2b34c;--warnbg:#3a2d12;--bad:#ff8f86;--badbg:#3d1f1c;--mark:#6b5a10}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1080px;margin:0 auto;padding:24px 16px 60px}
+h1{font-size:22px;margin:0 0 4px}h2{font-size:16px;margin:0 0 12px}
+.sub{color:var(--mute);margin:0 0 20px}
+section{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;margin-bottom:16px}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+label{font-size:13px;color:var(--mute)}
+input[type=text],input[type=number],select{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:7px 10px}
+input[type=text]{flex:1;min-width:200px}
+input[type=number]{width:100px}
+button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:7px 14px}
+button.p{background:var(--acc);border-color:var(--acc);color:#fff}
+button:hover{filter:brightness(.96)}
+.tabs{display:flex;gap:6px;margin-bottom:14px}
+.tabs button.on{background:var(--accbg);border-color:var(--acc);color:var(--acc)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-top:14px}
+.stat{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 12px}
+.stat b{display:block;font-size:20px}.stat span{font-size:12px;color:var(--mute)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;align-items:center}
+.chip{background:var(--accbg);color:var(--acc);border-radius:999px;padding:2px 10px;font-size:12.5px;cursor:pointer;border:0}
+.chip.ex{background:var(--bg);color:var(--ink);border:1px solid var(--line)}
+.hint{font-size:13px;color:var(--mute);margin-top:8px}
+.badge{display:inline-block;border-radius:6px;padding:1px 8px;font-size:12px;margin-left:6px}
+.ok{background:var(--okbg);color:var(--ok)}.warn{background:var(--warnbg);color:var(--warn)}.bad{background:var(--badbg);color:var(--bad)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:6px 10px;border-bottom:1px solid var(--line)}
+th{font-size:12px;color:var(--mute);font-weight:600}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.res{border-top:1px solid var(--line);padding:10px 0}
+.res .id{font-weight:600;font-family:ui-monospace,Consolas,monospace;font-size:13.5px}
+.res .s{margin:4px 0 0;font-size:14px}
+.res .s.neg{color:var(--mute);text-decoration:line-through;text-decoration-color:var(--warn)}
+mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
+.cols{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px}
+.cols label{color:var(--ink);display:flex;gap:5px;align-items:center}
+.hide{display:none}
+.timing{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:12px 0}
+code{background:var(--bg);border:1px solid var(--line);border-radius:5px;padding:0 5px;font-size:13px}
+</style>
+</head>
+<body>
+<main>
+<h1>Keyword Search Demo</h1>
+<p class="sub">An ids-only inverted index (<code>term → set of patient ids</code>) with plain keyword querying: term, AND, OR. Results are an <b>unranked set</b> of patients. Everything runs in your browser; uploaded files never leave this page.</p>
+
+<section>
+  <h2>1 · Data</h2>
+  <div class="tabs"><button id="tabSyn" class="on">Synthetic data</button><button id="tabReal">Your own file (CSV / TSV)</button></div>
+  <div id="paneSyn" class="row">
+    <label>Patients <input type="number" id="nPat" value="2000" min="50" max="20000"></label>
+    <label>Seed <input type="number" id="seed" value="42"></label>
+    <button class="p" id="btnGen">Generate &amp; index</button>
+    <button id="btnDl">Download as CSV</button>
+  </div>
+  <div id="paneReal" class="hide">
+    <div class="row"><input type="file" id="file" accept=".csv,.tsv,.txt"></div>
+    <div id="mapper" class="hide">
+      <div class="row" style="margin-top:12px"><label>Patient id column <select id="idCol"></select></label>
+      <span class="hint">Rows sharing an id are pooled into one patient.</span></div>
+      <div style="margin-top:8px"><label>Free-text columns to index</label><div class="cols" id="txtCols"></div></div>
+      <div class="row" style="margin-top:12px"><button class="p" id="btnIdx">Build index</button></div>
+    </div>
+  </div>
+  <div class="stats hide" id="stats"></div>
+  <div class="chips" id="topTerms"></div>
+</section>
+
+<section id="secSearch">
+  <h2>2 · Search</h2>
+  <div class="row">
+    <input type="text" id="q" placeholder="e.g.  chest pain      hypertension OR htn      cough fever" autocomplete="off">
+    <select id="mode"><option value="and">Space = AND</option><option value="or">Space = OR</option></select>
+    <button class="p" id="btnQ">Search</button>
+  </div>
+  <div class="hint">Type <code>OR</code> (capitals) between groups: <code>hypertension OR htn</code>. Terms are lowercased and stopwords dropped, as in the index; <code>no / not / without / denies</code> are kept as ordinary terms. Quotes do not make a phrase (an ids-only index has no positions).</div>
+  <div class="chips" id="examples"></div>
+  <div id="out" style="margin-top:16px"></div>
+</section>
+
+<section id="secEval" class="hide">
+  <h2>3 · Score against known answers <span class="badge ok">synthetic data only</span></h2>
+  <p class="hint" style="margin-top:0">The generator records which patients truly have each condition or symptom (affirmed, not negated). Gold = those patients. Score is set-based per patient.</p>
+  <div class="row">
+    <label>Gold concept <select id="gold"></select></label>
+    <button id="btnScore">Score current query</button>
+    <button class="p" id="btnAll">Run all preset queries</button>
+  </div>
+  <div id="evalOut" style="margin-top:14px"></div>
+</section>
+</main>
+
+<script>
+"use strict";
+/* ---------- tokenizer + index (port of indexing/inverted_index.py) ---------- */
+const NEG = new Set(["no","not","without","denies","denied"]);
+const STOP = new Set("a an the is are was were be been being of in on at for to and or with as by this that it has have had".split(" "));
+NEG.forEach(w => STOP.delete(w));
+const tokenize = t => (t.toLowerCase().match(/[a-z0-9]+/g) || []).filter(w => !STOP.has(w));
+
+class InvertedIndex {
+  constructor(){ this.postings = new Map(); this.docTerms = new Map(); }
+  add(id, text){
+    const terms = new Set(tokenize(text));
+    this.docTerms.set(id, terms);
+    for (const t of terms){ let s = this.postings.get(t); if(!s){ s = new Set(); this.postings.set(t,s);} s.add(id); }
+  }
+  lookup(t){ return this.postings.get(t.toLowerCase()) || new Set(); }
+}
+
+/* ---------- keyword query: groups split on OR; terms within a group ANDed ---------- */
+function parseQuery(q, mode){
+  const dropped = [];
+  const hasOr = /\bOR\b/.test(q);
+  const groups = q.split(/\bOR\b/).map(g => {
+    (g.toLowerCase().match(/[a-z0-9]+/g) || []).forEach(w => { if (STOP.has(w)) dropped.push(w); });
+    return tokenize(g);
+  }).filter(g => g.length);
+  if (mode === "or" && !hasOr) return {groups: groups.flat().map(t => [t]), dropped};
+  return {groups, dropped};
+}
+const inter = (a,b) => { const [s,l] = a.size<b.size?[a,b]:[b,a]; const r = new Set(); for(const x of s) if(l.has(x)) r.add(x); return r; };
+function runIndex(idx, groups){
+  const out = new Set();
+  for (const g of groups){
+    const sets = g.map(t => idx.lookup(t)).sort((a,b) => a.size-b.size);
+    let acc = sets[0];
+    for (let i=1;i<sets.length && acc.size;i++) acc = inter(acc, sets[i]);
+    for (const x of acc) out.add(x);
+  }
+  return out;
+}
+/* independent oracle: regex over raw text, never calls tokenize() */
+function runScan(docs, groups){
+  const res = groups.map(g => g.map(t => new RegExp("(?<![a-z0-9])"+t.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+"(?![a-z0-9])","i")));
+  const out = new Set();
+  for (const [id,text] of docs) if (res.some(g => g.every(r => r.test(text)))) out.add(id);
+  return out;
+}
+
+/* ---------- state ---------- */
+let docs = new Map();      // patient id -> pooled raw text
+let index = null;
+let truth = null;          // synthetic only: concept -> {rel, negOnly, varOnly}
+let lastRows = null;       // for download
+let shown = 0, lastRes = null, parsed = null;
+const $ = id => document.getElementById(id);
+const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt = n => n.toLocaleString();
+
+/* ---------- synthetic generator ---------- */
+function rng(a){ return () => { a|=0; a=a+0x6D2B79F5|0; let t=Math.imul(a^a>>>15,1|a); t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296; }; }
+const CONCEPTS = {
+  "type 2 diabetes mellitus":["t2dm"],"hypertension":["htn"],"chronic kidney disease":["ckd"],"atrial fibrillation":["af"],
+  "heart failure":[],"copd":[],"asthma":["asthmaa"],"community acquired pneumonia":["cap"],"urinary tract infection":["uti"],
+  "anaemia":["anemia"],"hypothyroidism":[],"depression":[],"osteoarthritis":["oa"],"gout":[],"ischaemic heart disease":["ihd"],
+  "stroke":["cva"],"epilepsy":[],"migraine":["migrane"],
+  "chest pain":["chest paine"],"shortness of breath":["sob"],"fatigue":["fatigu"],"dizziness":["dizzyness"],"nausea":[],"fever":[],
+  "cough":[],"headache":["headach"],"abdominal pain":[],"palpitations":["palpitation"],"joint pain":[],"weight loss":[]
+};
+const CNAMES = Object.keys(CONCEPTS);
+const TREAT = ["metformin","lisinopril","atorvastatin","furosemide","amlodipine","salbutamol inhaler","levothyroxine","sertraline","warfarin","insulin","paracetamol","ibuprofen","amoxicillin"];
+const POS = ["reports {c}","presents with {c}","known history of {c}","diagnosed with {c}","complains of {c}","{c} noted on review"];
+const NEGT = ["denies {c}","no evidence of {c}","no {c}","family history of {c} not relevant","without {c}","{c} not present"];
+const NOTE_TYPES = ["clinic note","discharge letter","history","examination"];
+
+function generate(n, seed){
+  const R = rng(seed), pick = a => a[Math.floor(R()*a.length)];
+  const d = new Map(), rows = [], tr = {};
+  CNAMES.forEach(c => tr[c] = {aff:new Set(), neg:new Set(), varOnly:new Set(), canon:new Set()});
+  for (let p=0;p<n;p++){
+    const id = "SYN" + String(p).padStart(5,"0");
+    const nNotes = 1 + Math.floor(R()*3), texts = [];
+    for (let k=0;k<nNotes;k++){
+      const sents = [], ns = 2 + Math.floor(R()*5);
+      for (let s=0;s<ns;s++){
+        const c = pick(CNAMES), negated = R() < 0.33;
+        const variants = CONCEPTS[c], useVar = variants.length && R() < 0.18;
+        const surface = useVar ? pick(variants) : c;
+        let sent = pick(negated ? NEGT : POS).replace("{c}", surface);
+        if (!negated && R() < 0.2 && CNAMES.indexOf(c) < 18) sent = "currently on " + pick(TREAT) + " for " + surface;
+        sents.push(sent.charAt(0).toUpperCase() + sent.slice(1) + ".");
+        const t = tr[c];
+        if (negated) t.neg.add(id); else { t.aff.add(id); (useVar ? t.varOnly : t.canon).add(id); }
+      }
+      const text = sents.join(" ");
+      texts.push(text);
+      rows.push([id, "2023-" + String(1+Math.floor(R()*12)).padStart(2,"0") + "-" + String(1+Math.floor(R()*28)).padStart(2,"0"), pick(NOTE_TYPES), text]);
+    }
+    d.set(id, texts.join("\n"));
+  }
+  const T = {};
+  for (const c of CNAMES){
+    const t = tr[c];
+    T[c] = {rel: t.aff,
+            negOnly: new Set([...t.neg].filter(x => !t.aff.has(x))),
+            varOnly: new Set([...t.varOnly].filter(x => !t.canon.has(x)))};
+  }
+  return {docs:d, rows, truth:T};
+}
+
+/* ---------- CSV parsing ---------- */
+function parseCSV(text){
+  const nl = text.indexOf("\n"), first = text.slice(0, nl >= 0 ? nl : text.length);
+  const delim = (first.match(/\t/g)||[]).length > (first.match(/,/g)||[]).length ? "\t" : ",";
+  const rows = []; let row = [], f = "", q = false;
+  for (let i=0;i<text.length;i++){
+    const c = text[i];
+    if (q){ if (c === '"'){ if (text[i+1] === '"'){ f += '"'; i++; } else q = false; } else f += c; }
+    else if (c === '"') q = true;
+    else if (c === delim){ row.push(f); f = ""; }
+    else if (c === "\n"){ row.push(f.replace(/\r$/,"")); rows.push(row); row = []; f = ""; }
+    else f += c;
+  }
+  if (f.length || row.length){ row.push(f.replace(/\r$/,"")); rows.push(row); }
+  return rows.filter(r => r.length > 1 || (r[0] && r[0].length));
+}
+
+/* ---------- build + stats ---------- */
+function buildIndex(){
+  const t0 = performance.now();
+  index = new InvertedIndex();
+  for (const [id,text] of docs) index.add(id, text);
+  const ms = performance.now() - t0;
+  let postings = 0; index.postings.forEach(s => postings += s.size);
+  const top = [...index.postings.entries()].sort((a,b) => b[1].size - a[1].size).slice(0,14);
+  $("stats").classList.remove("hide");
+  $("stats").innerHTML = [["Patients",fmt(docs.size)],["Vocabulary",fmt(index.postings.size)],["Postings",fmt(postings)],["Build time",ms.toFixed(0)+" ms"]]
+    .map(([k,v]) => `<div class="stat"><b>${v}</b><span>${k}</span></div>`).join("");
+  $("topTerms").innerHTML = `<span class="hint" style="margin:0 6px 0 0">Most common terms (click to search):</span>` +
+    top.map(([t,s]) => `<button class="chip" data-q="${esc(t)}">${esc(t)} · ${fmt(s.size)}</button>`).join("");
+  $("secEval").classList.toggle("hide", !truth);
+  if (truth){
+    $("gold").innerHTML = CNAMES.map(c => `<option>${c}</option>`).join("");
+    $("evalOut").innerHTML = "";
+  }
+  $("out").innerHTML = "";
+}
+
+/* ---------- search ---------- */
+function analyse(text, terms){
+  const sents = text.split(/(?<=[.!?])\s+|\n/).filter(Boolean), tset = new Set(terms), hits = [];
+  for (const s of sents){
+    const toks = s.toLowerCase().match(/[a-z0-9]+/g) || [];
+    const at = toks.findIndex(t => tset.has(t));
+    if (at < 0) continue;
+    const negated = toks.slice(0, at).some(t => NEG.has(t)) || /\bnot (relevant|present)\b/i.test(s);
+    hits.push({s, negated});
+  }
+  return hits;
+}
+function highlight(s, terms){
+  const re = new RegExp("(?<![A-Za-z0-9])(" + terms.map(t => t.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")).join("|") + ")(?![A-Za-z0-9])", "gi");
+  return esc(s).replace(re, "<mark>$1</mark>");
+}
+function doSearch(){
+  if (!index){ $("out").innerHTML = '<p class="hint">Generate or load data first.</p>'; return; }
+  const q = $("q").value.trim();
+  const {groups, dropped} = parseQuery(q, $("mode").value);
+  if (!groups.length){ $("out").innerHTML = '<p class="hint">Enter at least one search term.</p>'; return; }
+  const t0 = performance.now(); const res = runIndex(index, groups); const tIdx = performance.now() - t0;
+  const t1 = performance.now(); const oracle = runScan(docs, groups); const tScan = performance.now() - t1;
+  const agree = res.size === oracle.size && [...res].every(x => oracle.has(x));
+  const allTerms = [...new Set(groups.flat())];
+  const interp = groups.map(g => "(" + g.join(" AND ") + ")").join(" OR ");
+  const breakdown = allTerms.map(t => `<tr><td><code>${esc(t)}</code></td><td class="n">${fmt(index.lookup(t).size)}</td></tr>`).join("");
+  lastRes = [...res].sort(); shown = 0; window.__terms = allTerms;
+  $("out").innerHTML = `
+    <div class="row"><b style="font-size:18px">${fmt(res.size)} patients</b><span class="hint" style="margin:0">of ${fmt(docs.size)} (${(100*res.size/docs.size).toFixed(1)}%) · unranked, sorted by id</span>
+    <span class="badge ${agree?"ok":"bad"}">${agree?"matches independent regex scan":"MISMATCH vs regex scan"}</span></div>
+    <div class="hint">Interpreted as: <code>${esc(interp)}</code>${dropped.length?` · stopwords dropped: ${esc([...new Set(dropped)].join(", "))}`:""}</div>
+    <div class="timing">
+      <div class="stat"><b>${(tIdx*1000).toFixed(0)} µs</b><span>inverted index lookup</span></div>
+      <div class="stat"><b>${tScan.toFixed(1)} ms</b><span>linear regex scan${tIdx>0?` (${Math.round(tScan/tIdx).toLocaleString()}× slower)`:""}</span></div>
+    </div>
+    <details><summary class="hint" style="cursor:pointer">Posting-list size per term</summary><table style="max-width:320px"><tr><th>term</th><th class="n">patients</th></tr>${breakdown}</table></details>
+    <div id="list" style="margin-top:8px"></div><div id="more"></div>`;
+  more();
+}
+function more(){
+  const terms = window.__terms, slice = lastRes.slice(shown, shown+25); shown += slice.length;
+  $("list").insertAdjacentHTML("beforeend", slice.map(id => {
+    const hits = analyse(docs.get(id), terms), neg = hits.filter(h => h.negated).length;
+    const flag = !hits.length ? "" : neg === hits.length ? `<span class="badge bad">all ${neg} mention${neg>1?"s":""} look negated</span>` : neg ? `<span class="badge warn">${neg} of ${hits.length} mentions look negated</span>` : "";
+    const lines = hits.slice(0,3).map(h => `<div class="s ${h.negated?"neg":""}">${highlight(h.s, terms)}</div>`).join("");
+    return `<div class="res"><span class="id">${esc(id)}</span>${flag}${lines}${hits.length>3?`<div class="hint">+${hits.length-3} more matching sentences</div>`:""}</div>`;
+  }).join(""));
+  $("more").innerHTML = shown < lastRes.length ? `<button id="btnMore">Show more (${fmt(lastRes.length-shown)} left)</button>` : "";
+  if ($("btnMore")) $("btnMore").onclick = more;
+}
+
+/* ---------- evaluation (synthetic) ---------- */
+function prf(ret, gold){
+  let tp = 0; for (const x of ret) if (gold.has(x)) tp++;
+  const p = ret.size ? tp/ret.size : 0, r = gold.size ? tp/gold.size : 0;
+  return {tp, p, r, f: p+r ? 2*p*r/(p+r) : 0};
+}
+const pct = x => (100*x).toFixed(1) + "%";
+function causes(ret, c){
+  const T = truth[c], fp = [...ret].filter(x => !T.rel.has(x)), fn = [...T.rel].filter(x => !ret.has(x));
+  return {fp: fp.length, fpNeg: fp.filter(x => T.negOnly.has(x)).length, fn: fn.length, fnVar: fn.filter(x => T.varOnly.has(x)).length};
+}
+function scoreCurrent(){
+  if (!index || !truth) return;
+  const {groups} = parseQuery($("q").value, $("mode").value);
+  if (!groups.length){ $("evalOut").innerHTML = '<p class="hint">Type a query in the search box first.</p>'; return; }
+  const c = $("gold").value, ret = runIndex(index, groups), m = prf(ret, truth[c].rel), e = causes(ret, c);
+  $("evalOut").innerHTML = `<div class="hint">Query <code>${esc($("q").value)}</code> vs gold “${esc(c)}” (${fmt(truth[c].rel.size)} patients)</div>
+  <div class="stats"><div class="stat"><b>${pct(m.p)}</b><span>precision</span></div><div class="stat"><b>${pct(m.r)}</b><span>recall</span></div><div class="stat"><b>${pct(m.f)}</b><span>F1</span></div><div class="stat"><b>${fmt(ret.size)}</b><span>returned</span></div></div>
+  <p class="hint">False positives: ${fmt(e.fp)} (${fmt(e.fpNeg)} have only negated mentions: “denies…”, “no…”). False negatives: ${fmt(e.fn)} (${fmt(e.fnVar)} written only as an abbreviation or misspelling the query did not include).</p>`;
+}
+function runAll(){
+  if (!index || !truth) return;
+  let sp=0,sr=0,sf=0;
+  const rows = CNAMES.map(c => {
+    const {groups} = parseQuery(c, "and"), ret = runIndex(index, groups), m = prf(ret, truth[c].rel), e = causes(ret, c);
+    sp+=m.p; sr+=m.r; sf+=m.f;
+    return `<tr><td>${esc(c)}</td><td class="n">${fmt(truth[c].rel.size)}</td><td class="n">${fmt(ret.size)}</td><td class="n">${pct(m.p)}</td><td class="n">${pct(m.r)}</td><td class="n">${pct(m.f)}</td><td class="n">${e.fpNeg}</td><td class="n">${e.fnVar}</td></tr>`;
+  });
+  const n = CNAMES.length;
+  $("evalOut").innerHTML = `<table><tr><th>Query (typed as written)</th><th class="n">Gold</th><th class="n">Returned</th><th class="n">Precision</th><th class="n">Recall</th><th class="n">F1</th><th class="n">FP: negation</th><th class="n">FN: abbrev/typo</th></tr>${rows.join("")}
+  <tr><td><b>Macro average</b></td><td></td><td></td><td class="n"><b>${pct(sp/n)}</b></td><td class="n"><b>${pct(sr/n)}</b></td><td class="n"><b>${pct(sf/n)}</b></td><td></td><td></td></tr></table>
+  <p class="hint">Synthetic labels are true by construction, so these are optimistic upper bounds. Low precision comes from negated mentions being matched; low recall from abbreviations and misspellings. Try <code>hypertension OR htn</code> against the “hypertension” gold concept to see recall recover.</p>`;
+}
+
+/* ---------- wiring ---------- */
+function useSynthetic(){
+  const n = Math.max(50, Math.min(20000, +$("nPat").value || 2000));
+  const g = generate(n, +$("seed").value || 0);
+  docs = g.docs; truth = g.truth; lastRows = g.rows; buildIndex();
+  $("btnDl").disabled = false;
+  $("examples").innerHTML = `<span class="hint" style="margin:0 6px 0 0">Try:</span>` +
+    ["chest pain","hypertension OR htn","cough fever","no chest pain","diabetes mellitus","shortness of breath OR sob"].map(x => `<button class="chip ex" data-q="${esc(x)}">${esc(x)}</button>`).join("");
+}
+$("btnGen").onclick = useSynthetic;
+$("btnDl").onclick = () => {
+  if (!lastRows) return;
+  const csv = "patient_id,date,note_type,text\n" + lastRows.map(r => r.map(v => '"'+String(v).replace(/"/g,'""')+'"').join(",")).join("\n");
+  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([csv],{type:"text/csv"})); a.download = "synthetic_notes.csv"; a.click();
+};
+function tab(real){
+  $("tabSyn").classList.toggle("on", !real); $("tabReal").classList.toggle("on", real);
+  $("paneSyn").classList.toggle("hide", real); $("paneReal").classList.toggle("hide", !real);
+}
+$("tabSyn").onclick = () => tab(false); $("tabReal").onclick = () => tab(true);
+$("file").onchange = async e => {
+  const f = e.target.files[0]; if (!f) return;
+  parsed = parseCSV(await f.text());
+  const head = parsed[0], body = parsed.slice(1, 200);
+  $("idCol").innerHTML = head.map((h,i) => `<option value="${i}">${esc(h)}</option>`).join("");
+  const guess = head.findIndex(h => /(^|_)(id|patient|mrn|pid)/i.test(h)); if (guess >= 0) $("idCol").value = guess;
+  $("txtCols").innerHTML = head.map((h,i) => {
+    const avg = body.reduce((s,r) => s + (r[i]||"").length, 0) / Math.max(1, body.length);
+    return `<label><input type="checkbox" value="${i}" ${avg > 40 ? "checked":""}> ${esc(h)}</label>`;
+  }).join("");
+  $("mapper").classList.remove("hide");
+};
+$("btnIdx").onclick = () => {
+  const id = +$("idCol").value, cols = [...$("txtCols").querySelectorAll("input:checked")].map(c => +c.value);
+  if (!cols.length){ alert("Pick at least one text column."); return; }
+  const d = new Map();
+  for (const r of parsed.slice(1)){
+    const pid = (r[id]||"").trim(); if (!pid) continue;
+    const txt = cols.map(c => r[c]||"").join("\n");
+    d.set(pid, d.has(pid) ? d.get(pid) + "\n" + txt : txt);
+  }
+  docs = d; truth = null; lastRows = null; buildIndex();
+  $("examples").innerHTML = "";
+};
+$("btnQ").onclick = doSearch;
+$("q").onkeydown = e => { if (e.key === "Enter") doSearch(); };
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-q]"); if (!b) return;
+  $("q").value = b.dataset.q; doSearch(); $("secSearch").scrollIntoView({behavior:"smooth"});
+});
+$("btnScore").onclick = scoreCurrent; $("btnAll").onclick = runAll;
+useSynthetic();
+</script>
+</body>
+</html>
