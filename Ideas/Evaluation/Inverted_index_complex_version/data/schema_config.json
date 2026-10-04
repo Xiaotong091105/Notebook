@@ -1,0 +1,23 @@
+{
+  "zipf": {
+    "_comment": "Offline fallback: python data/zipf_generator.py writes this file. Realistic vocabulary growth, abbreviations, misspellings and negation, but still synthetic.",
+    "format": "csv",
+    "file_path": "data/generated/zipf_notes.csv",
+    "id_column": "doc_id",
+    "text_columns": ["text"]
+  },
+  "synthea_notes": {
+    "_comment": "Notes rendered from Synthea records (e.g. with ClinicalNoteForge). Check that tool's actual output layout and set the columns/paths below before use.",
+    "format": "csv",
+    "file_path": "data/raw/synthea_notes.csv",
+    "id_column": "REPLACE_WITH_NOTE_ID_COLUMN",
+    "text_columns": ["REPLACE_WITH_NOTE_TEXT_COLUMN"]
+  },
+  "mimic_note": {
+    "_comment": "MIMIC-IV-Note (PhysioNet credentialed access, CITI training, signed DUA). Keep inside the approved environment; never commit. Column names below are the expected discharge.csv columns; verify against the downloaded files.",
+    "format": "csv",
+    "file_path": "data/raw/mimic_iv_note/discharge.csv",
+    "id_column": "note_id",
+    "text_columns": ["text"]
+  }
+}

@@ -1,0 +1,12 @@
+# Real / credentialed data must never be committed
+data/real*
+data/*deidentified*
+data/mimic*
+data/raw/
+
+# Generated outputs
+evaluation/results/
+data/generated/
+indexes/
+__pycache__/
+*.pyc

@@ -1,0 +1,10 @@
+# Real patient data must never be committed.
+data/real_dataset.csv
+data/real_dataset.xlsx
+data/*real*
+data/*deidentified*
+
+# Generated outputs
+evaluation/results/
+__pycache__/
+*.pyc
