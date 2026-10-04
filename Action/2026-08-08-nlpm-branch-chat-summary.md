@@ -1,0 +1,25 @@
+# 2026-08-08 — Chat summary: NLPM config explained; branch/file-visibility confusion resolved
+
+## Context
+
+A PR comment on Action Log #3 introduced `.claude/nlpm.local.md`, a config file for [NLPM](https://github.com/xiaolai/nlpm) (Natural-Language Programming Manager), a linter for the markdown files that drive AI behavior (`CLAUDE.md`, skills, agents, rules). The user asked what it meant, where to see it, whether it was working, and whether to install it. Later in the same conversation, the user got confused about why a file committed to the `Action` branch wasn't visible in the `Action` folder while working on the `add-previous-requests-revision` branch, and asked for a physical copy to be saved locally and indexed.
+
+## What was done
+
+1. **Explained what NLPM is and what the PR comment meant.** NLPM treats markdown files that steer AI behavior (`CLAUDE.md`, skills, agents, rules) as "programs" that can be linted, similar to ESLint for JS or ruff for Python. It scores artifacts 0–100 using deterministic, fixed-penalty rules (same file in, same score out), checks cross-file consistency, and can auto-fix common issues. The new config (`.claude/nlpm.local.md`) sets `strictness: standard` and `score_threshold: 70` — artifacts scoring below 70 get flagged.
+
+2. **Investigated where the change actually lives.** Found `.claude/nlpm.local.md` was added in commit `7610b5d` ("Add nlpm local config for NL artifact scoring") by Flash Hu, but only exists on the `Action` branch — not on `add-previous-requests-revision`, the branch the user was working on. Showed the full 10-line file content and the `git show` command to view it directly.
+
+3. **Checked whether NLPM was actually working.** Searched the whole repo (`grep -ril nlpm`) and `.claude/` directory for any NLPM command definitions, skill registrations, or packages — found none. Confirmed NLPM is not installed in this session or repo; the config file is inert until NLPM itself (from the `xiaolai/nlpm` GitHub repo) is installed. When asked to run it, confirmed directly that this wasn't possible rather than faking output.
+
+4. **Gave a recommendation on whether to install NLPM.** Advised holding off for now: `CLAUDE.md` is still short and easy to eyeball manually, and NLPM is unverified third-party software — the value would grow once more skills/agents/rules accumulate and cross-file consistency becomes harder to track by hand. This was framed as a recommendation with a tradeoff, not a decision made unilaterally.
+
+5. **Summarized the chat and pushed it to Action Log #3 (PR #3).** Investigated the repo to find that PR #3 ("Action Log") tracks the `Action` branch. Created a temporary git worktree at a sibling path (`../Notebook-action-wt`) checked out to `Action`, to avoid disturbing the user's uncommitted staged changes on `add-previous-requests-revision` (an in-progress Learning-maps move). Wrote `Action/2026-08-08-nlpm-chat-summary.md` there, added an `_index.md` entry, committed (`c95b7a0`), and pushed to `origin/Action` — updating PR #3. Cleaned up the worktree afterward and confirmed the original branch's staged changes were untouched.
+
+6. **Resolved confusion about file visibility across branches.** The user couldn't find the new file in their local `Action` folder. Explained that git only materializes one branch's contents into the working directory at a time — the same folder path shows different files depending on which branch is checked out. The file existed on `Action` (pushed to GitHub/PR #3) but not on the currently checked-out `add-previous-requests-revision` branch, so it wasn't present on disk locally. Offered `git show Action:Action/2026-08-08-nlpm-chat-summary.md` and the GitHub PR files view as ways to see it without switching branches, and offered (but did not perform, per the user's choice) a branch switch with a safe stash of in-progress work.
+
+7. **Saved a physical copy locally, per explicit request.** Since the user wanted the file visible in `C:\Users\timgu\desktop\Projects\Notebook\Action\` without switching branches, wrote `Action/2026-08-08-nlpm-branch-chat-summary.md` (this file) directly onto the currently checked-out `add-previous-requests-revision` branch, and added a matching `_index.md` entry — layered on top of the branch's existing staged edits without disturbing them. Left both the new file and the `_index.md` change uncommitted, since the user hadn't asked for a commit.
+
+## Outcome
+
+The NLPM discussion is now documented in two places: committed and pushed on the `Action` branch (`Action/2026-08-08-nlpm-chat-summary.md`, part of PR #3), and as this file, saved directly on `add-previous-requests-revision` (uncommitted) so it's visible in the local `Action` folder immediately. `_index.md` was updated on both branches to reference the respective file. NLPM itself was not installed — it remains an inert config-only file. No other repo state was changed; the user's separate in-progress Learning-maps-move edits on `add-previous-requests-revision` remain staged and untouched.

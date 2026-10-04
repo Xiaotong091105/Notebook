@@ -1,0 +1,503 @@
+<title>From Benchmark to Router — V2</title>
+<style>
+  :root{
+    --bg:#eef0f2; --surface:#ffffff; --surface-2:#e2e6ea;
+    --ink:#1a1f27; --ink-dim:#57616c; --ink-faint:#8b95a0;
+    --rule:#d9dee3;
+    --accent:#2f7a4f; --accent-tint:#dcefe2; --accent-ink:#1c4a30;
+    --future:#6b7280; --future-tint:#e7e9ec;
+    --cost:#a3491c; --cost-tint:#f6e6dc;
+    --serif: Charter, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    --sans: system-ui, "Segoe UI", Roboto, sans-serif;
+    --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#12161b; --surface:#191f26; --surface-2:#212933;
+      --ink:#e8ecef; --ink-dim:#a7b1ba; --ink-faint:#78828c;
+      --rule:#2a323b;
+      --accent:#66c28a; --accent-tint:#173325; --accent-ink:#bdeecb;
+      --future:#8b96a1; --future-tint:#222831;
+      --cost:#e08a56; --cost-tint:#3a2618;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#12161b; --surface:#191f26; --surface-2:#212933;
+    --ink:#e8ecef; --ink-dim:#a7b1ba; --ink-faint:#78828c;
+    --rule:#2a323b;
+    --accent:#66c28a; --accent-tint:#173325; --accent-ink:#bdeecb;
+    --future:#8b96a1; --future-tint:#222831;
+    --cost:#e08a56; --cost-tint:#3a2618;
+  }
+  :root[data-theme="light"]{
+    --bg:#eef0f2; --surface:#ffffff; --surface-2:#e2e6ea;
+    --ink:#1a1f27; --ink-dim:#57616c; --ink-faint:#8b95a0;
+    --rule:#d9dee3;
+    --accent:#2f7a4f; --accent-tint:#dcefe2; --accent-ink:#1c4a30;
+    --future:#6b7280; --future-tint:#e7e9ec;
+    --cost:#a3491c; --cost-tint:#f6e6dc;
+  }
+
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.6; -webkit-font-smoothing:antialiased;}
+  .page{max-width:920px;margin:0 auto;padding:4rem 1.5rem 6rem;}
+
+  h1{font-family:var(--serif); font-weight:600; text-wrap:balance; color:var(--ink);
+     font-size:1.9rem; line-height:1.22; margin:0 0 .6rem;}
+  h2{font-family:var(--serif); font-weight:600; text-wrap:balance; font-size:1.1rem; margin:2.4rem 0 .4rem;}
+  h2:first-of-type{margin-top:0;}
+  p{margin:0 0 .9rem; max-width:66ch;}
+  .lede{color:var(--ink-dim); font-size:1.04rem; max-width:64ch; margin:0 0 .8rem;}
+  .eyebrow{font-family:var(--mono); font-size:.72rem; letter-spacing:.09em; text-transform:uppercase;
+    color:var(--accent); font-weight:700; margin:0 0 .5rem;}
+
+  .chart-wrap{
+    background:var(--surface); border:1px solid var(--rule); border-radius:10px;
+    padding:1.6rem 1.4rem; margin:2.2rem 0 .8rem; overflow-x:auto;
+  }
+  .chart-wrap svg{display:block; margin:0 auto; max-width:100%; height:auto; min-width:900px;}
+  .fig-caption{font-size:.86rem; color:var(--ink-faint); margin:0 0 2.4rem; max-width:66ch;}
+
+  .legend{display:flex; flex-wrap:wrap; gap:.5rem 1.3rem; margin:0 0 1.6rem; font-size:.82rem; color:var(--ink-dim);}
+  .legend span.sw{display:inline-block; width:.8rem; height:.8rem; border-radius:2px; margin-right:.4rem; vertical-align:-1px;}
+  .sw.now{background:var(--accent-tint); border:1.5px solid var(--accent);}
+  .sw.later{background:var(--future-tint); border:1.5px dashed var(--future);}
+  .sw.cost{background:var(--cost-tint); border:1.5px solid var(--cost);}
+
+  .stages{list-style:none; margin:0 0 2.6rem; padding:0; counter-reset:step -1;}
+  .stages li{
+    display:grid; grid-template-columns:2.1rem 1fr; gap:.2rem 1rem;
+    padding:.85rem 0; border-bottom:1px solid var(--rule);
+  }
+  .stages li:last-child{border-bottom:none;}
+  .stages .n{
+    counter-increment:step; font-family:var(--mono); font-size:.78rem; color:var(--ink-faint);
+    padding-top:.15rem;
+  }
+  .stages .n::before{content:counter(step);}
+  .stages .body h3{margin:0 0 .15rem; font-size:.97rem; font-weight:700; color:var(--ink);}
+  .stages .body p{margin:0; color:var(--ink-dim); font-size:.92rem; max-width:60ch;}
+  .tag{
+    font-family:var(--mono); font-size:.65rem; letter-spacing:.03em; text-transform:uppercase;
+    font-weight:700; border-radius:3px; padding:.1rem .4rem; margin-left:.5rem; white-space:nowrap;
+  }
+  .tag.now{background:var(--accent-tint); color:var(--accent-ink);}
+  .tag.later{background:var(--future-tint); color:var(--future);}
+
+  .callout{
+    background:var(--surface); border:1px solid var(--rule); border-radius:6px;
+    padding:1rem 1.2rem; margin:0 0 1rem;
+  }
+  .callout.now{border-left:3px solid var(--accent);}
+  .callout.cost{border-left:3px solid var(--cost);}
+  .callout h3{margin:0 0 .3rem; font-size:.95rem; color:var(--ink); font-family:var(--sans); font-weight:700;}
+  .callout p:last-child, .callout ul:last-child{margin-bottom:0;}
+  .callout-grid{display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:0 0 2.6rem;}
+  @media (max-width:640px){.callout-grid{grid-template-columns:1fr;}}
+
+  .list-plain{margin:0; padding-left:1.15rem;}
+  .list-plain li{margin:0 0 .55rem; color:var(--ink-dim); font-size:.92rem; max-width:60ch;}
+  .list-plain li:last-child{margin-bottom:0;}
+  .list-plain li strong{color:var(--ink);}
+  a{color:var(--accent-ink);}
+
+  .phase{margin:0 0 1.8rem;}
+  .phase:last-of-type{margin-bottom:2.6rem;}
+  .phase-label{font-family:var(--mono); font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); font-weight:700; margin:0 0 .7rem;}
+  .stage-card{background:var(--surface); border:1px solid var(--rule); border-left-width:3px; border-radius:8px; padding:1rem 1.2rem; margin:0 0 .7rem;}
+  .stage-card:last-child{margin-bottom:0;}
+  .stage-card.now{border-left-color:var(--accent);}
+  .stage-card.later{border-left-color:var(--future);}
+  .stage-card-head{display:flex; align-items:center; gap:.6rem; margin-bottom:.4rem; flex-wrap:wrap;}
+  .stage-card-head .num{
+    font-family:var(--mono); font-size:.76rem; font-weight:700; color:var(--ink-dim); background:var(--surface-2);
+    border-radius:50%; width:1.5rem; height:1.5rem; display:inline-flex; align-items:center; justify-content:center; flex:none;
+  }
+  .stage-card-head h3{margin:0; font-size:.97rem; font-weight:700; color:var(--ink);}
+  .stage-summary{margin:0 0 .55rem; color:var(--ink-dim); font-size:.93rem; max-width:62ch;}
+  .stage-details{margin:0; padding-left:1.15rem;}
+  .stage-details li{margin:0 0 .35rem; color:var(--ink-dim); font-size:.88rem; max-width:60ch;}
+  .stage-details li:last-child{margin-bottom:0;}
+  .stage-details li strong{color:var(--ink);}
+
+  .tabbar{display:flex; gap:.3rem; margin:0 0 2.4rem; border-bottom:1px solid var(--rule);}
+  .tabbtn{
+    appearance:none; background:none; border:none; cursor:pointer;
+    font-family:var(--sans); font-size:.92rem; font-weight:600; color:var(--ink-faint);
+    padding:.75rem 1.1rem; border-bottom:2px solid transparent; margin-bottom:-1px;
+  }
+  .tabbtn:hover{color:var(--ink);}
+  .tabbtn[aria-selected="true"]{color:var(--accent-ink); border-bottom-color:var(--accent);}
+  .tabpanel{display:none;}
+  .tabpanel.active{display:block;}
+
+  .ref-card{
+    background:var(--surface); border:1px solid var(--rule); border-radius:8px;
+    padding:1.1rem 1.3rem; margin:0 0 1rem;
+  }
+  .ref-card .ref-head{display:flex; justify-content:space-between; align-items:flex-start; gap:1rem; margin-bottom:.3rem;}
+  .ref-card h3{margin:0; font-size:.98rem; font-family:var(--sans); font-weight:700; color:var(--ink); max-width:52ch;}
+  .ref-card .meta{font-size:.78rem; color:var(--ink-faint); font-family:var(--mono); margin:0 0 .6rem;}
+  .ref-card p{margin:0; font-size:.92rem; color:var(--ink-dim); max-width:64ch;}
+  .ref-card .rec-use{margin:.6rem 0 0; padding-top:.6rem; border-top:1px dashed var(--rule); font-size:.88rem; color:var(--ink-dim); max-width:64ch;}
+  .ref-card .rec-use strong{color:var(--ink); font-family:var(--sans);}
+  .score{display:flex; flex-direction:column; align-items:flex-end; gap:.2rem; flex:none; white-space:nowrap;}
+  .score .label{font-size:.68rem; font-family:var(--mono); color:var(--ink-faint); text-transform:uppercase; letter-spacing:.04em;}
+  .dots{display:inline-flex; gap:3px;}
+  .dot{width:8px; height:8px; border-radius:50%; background:var(--rule); display:inline-block;}
+  .dot.filled{background:var(--accent);}
+
+  .accordion{margin:0 0 2.6rem; display:flex; flex-direction:column; gap:.7rem;}
+  .accordion details.callout{padding:0; overflow:hidden;}
+  .accordion summary{
+    list-style:none; cursor:pointer; padding:1rem 1.2rem; font-family:var(--sans);
+    font-size:.95rem; font-weight:700; color:var(--ink); display:flex; align-items:center;
+    justify-content:space-between; gap:1rem;
+  }
+  .accordion summary::-webkit-details-marker{display:none;}
+  .accordion summary .chev{
+    font-family:var(--mono); font-size:.85rem; color:var(--ink-faint); flex:none;
+    transition:transform .15s ease;
+  }
+  .accordion details[open] summary .chev{transform:rotate(90deg);}
+  .accordion summary:hover{color:var(--accent-ink);}
+  .accordion .acc-body{padding:0 1.2rem 1.1rem;}
+  .accordion .acc-body p{margin:0; color:var(--ink-dim); font-size:.92rem; max-width:64ch;}
+</style>
+
+<div class="page">
+
+  <div class="tabbar" role="tablist" aria-label="Document sections">
+    <button class="tabbtn" role="tab" id="tabbtn-plan" aria-selected="true" aria-controls="tab-plan" data-target="tab-plan">Plan &amp; Rationale</button>
+    <button class="tabbtn" role="tab" id="tabbtn-references" aria-selected="false" aria-controls="tab-references" data-target="tab-references">Reference for Request Schema</button>
+  </div>
+
+  <div class="tabpanel active" id="tab-plan" role="tabpanel" aria-labelledby="tabbtn-plan">
+
+  <p class="eyebrow">Plan rationale — request-routing · V2</p>
+  <h1>From benchmark to router: how we pick the best method per request</h1>
+  <p class="lede">We don't yet know whether CogStack's methods beat plain SQL, or by how much, for the kinds of requests this team actually gets — and before we can even ask that question, we need to understand each historical request well enough to know what a correct answer looks like. This is the plan for both: understanding and labeling requests first, then finding out which method wins, and turning that answer into something that guides every future request, without assuming a trained model is required to do it.</p>
+  <p class="lede">This project labels <strong>requests only</strong>, not patient documents. CLEF eHealth-style schemas annotate clinical documents; ours annotates the requests clinicians make, extended with one new idea: which extraction method actually answered each request.</p>
+
+  <div class="chart-wrap">
+    <svg viewBox="0 0 1560 500" role="img" aria-label="Roadmap: first label historical requests by hand using a CLEF-extended schema with a new extraction-method entity, then benchmark all four methods against those labels, analyze which request traits predict the winning method, codify that as an auditable rule-based router with no per-request cost, deploy it and log every decision, and train a statistical model that keeps being refined as more requests get labeled. A callout shows the router choosing among SQL, MedCAT concept search, and regex at no cost, versus Azure LLM which carries a real cost and is used rarely. A feedback loop shows deployment outcomes flowing back into the request-labeling stage.">
+      <defs>
+        <marker id="pr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="var(--ink-dim)"/>
+        </marker>
+      </defs>
+
+      <!-- main spine arrows -->
+      <g fill="none" stroke="var(--ink-dim)" stroke-width="1.5">
+        <line x1="230" y1="130" x2="290" y2="130" marker-end="url(#pr)"/>
+        <line x1="490" y1="130" x2="540" y2="130" marker-end="url(#pr)"/>
+        <line x1="740" y1="130" x2="790" y2="130" marker-end="url(#pr)"/>
+        <line x1="1010" y1="130" x2="1050" y2="130" marker-end="url(#pr)"/>
+      </g>
+      <line x1="1250" y1="130" x2="1300" y2="130" fill="none" stroke="var(--future)" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#pr)"/>
+      <text x="1275" y="115" text-anchor="middle" font-size="10.5" font-family="var(--mono)" fill="var(--future)">once labeled + logged</text>
+
+      <!-- bracket down to methods row -->
+      <g fill="none" stroke="var(--ink-faint)" stroke-width="1.3">
+        <polyline points="900,188 900,222 720,222 720,248" marker-end="url(#pr)"/>
+        <polyline points="900,188 900,222 840,222 840,248" marker-end="url(#pr)"/>
+        <polyline points="900,188 900,222 960,222 960,248" marker-end="url(#pr)"/>
+        <polyline points="900,188 900,222 1080,222 1080,248" marker-end="url(#pr)"/>
+      </g>
+
+      <!-- feedback loop: deploy+log back into Stage 0 -->
+      <polyline points="1150,180 1150,430 130,430 130,180" fill="none" stroke="var(--ink-faint)"
+                stroke-width="1.4" stroke-dasharray="5,4" marker-end="url(#pr)"/>
+      <rect x="475" y="440" width="330" height="16" fill="var(--surface)"/>
+      <text x="640" y="452" text-anchor="middle" font-size="11" font-family="var(--mono)" fill="var(--ink-faint)">every decision + outcome feeds back into Stage 0</text>
+
+      <!-- stage boxes -->
+      <rect x="30" y="80" width="200" height="100" rx="9" stroke="var(--accent)" stroke-width="1.5" fill="var(--accent-tint)"/>
+      <rect x="290" y="80" width="200" height="100" rx="9" stroke="var(--accent)" stroke-width="1.5" fill="var(--accent-tint)"/>
+      <rect x="540" y="80" width="200" height="100" rx="9" stroke="var(--accent)" stroke-width="1.5" fill="var(--accent-tint)"/>
+      <rect x="790" y="72" width="220" height="116" rx="10" stroke="var(--accent)" stroke-width="2.5" fill="var(--accent-tint)"/>
+      <rect x="1050" y="80" width="200" height="100" rx="9" stroke="var(--accent)" stroke-width="1.5" fill="var(--accent-tint)"/>
+      <rect x="1300" y="80" width="200" height="100" rx="9" stroke="var(--future)" stroke-width="1.5" stroke-dasharray="6,4" fill="var(--future-tint)"/>
+
+      <g font-family="var(--sans)" text-anchor="middle">
+        <text x="130" y="118" font-size="13" font-weight="700" fill="var(--accent-ink)">0. Label requests</text>
+        <text x="130" y="138" font-size="11" fill="var(--accent-ink)" opacity="0.85">CLEF-extended schema +</text>
+        <text x="130" y="153" font-size="11" fill="var(--accent-ink)" opacity="0.85">extraction-method label</text>
+
+        <text x="390" y="118" font-size="13" font-weight="700" fill="var(--accent-ink)">1. Benchmark</text>
+        <text x="390" y="138" font-size="11" fill="var(--accent-ink)" opacity="0.85">run all 4 methods vs.</text>
+        <text x="390" y="153" font-size="11" fill="var(--accent-ink)" opacity="0.85">Stage 0 labels</text>
+
+        <text x="640" y="118" font-size="13" font-weight="700" fill="var(--accent-ink)">2. Analyze</text>
+        <text x="640" y="138" font-size="11" fill="var(--accent-ink)" opacity="0.85">which request traits</text>
+        <text x="640" y="153" font-size="11" fill="var(--accent-ink)" opacity="0.85">predict the winner</text>
+
+        <text x="900" y="112" font-size="14" font-weight="700" fill="var(--accent-ink)">3. Codify as rules</text>
+        <text x="900" y="132" font-size="11" fill="var(--accent-ink)">evidence-based router —</text>
+        <text x="900" y="147" font-size="11" fill="var(--accent-ink)">auditable, no training data,</text>
+        <text x="900" y="162" font-size="11" fill="var(--accent-ink)">no per-request cost</text>
+
+        <text x="1150" y="118" font-size="13" font-weight="700" fill="var(--accent-ink)">4. Deploy + log</text>
+        <text x="1150" y="138" font-size="11" fill="var(--accent-ink)" opacity="0.85">router picks the method;</text>
+        <text x="1150" y="153" font-size="11" fill="var(--accent-ink)" opacity="0.85">decision + outcome logged</text>
+
+        <text x="1400" y="118" font-size="13" font-weight="700" fill="var(--future)">5. Train + refine</text>
+        <text x="1400" y="138" font-size="11" fill="var(--future)" opacity="0.9">start once labels/log</text>
+        <text x="1400" y="153" font-size="11" fill="var(--future)" opacity="0.9">justify it; keep updating</text>
+      </g>
+
+      <!-- methods row (what the router chooses among) -->
+      <g stroke="var(--accent)" stroke-width="1.3" fill="var(--surface)">
+        <rect x="665" y="248" width="110" height="54" rx="7"/>
+        <rect x="785" y="248" width="110" height="54" rx="7"/>
+        <rect x="905" y="248" width="110" height="54" rx="7"/>
+      </g>
+      <rect x="1025" y="248" width="110" height="54" rx="7" stroke="var(--cost)" stroke-width="1.5" fill="var(--cost-tint)"/>
+
+      <g font-family="var(--sans)" text-anchor="middle">
+        <text x="720" y="271" font-size="12" font-weight="700" fill="var(--accent-ink)">SQL</text>
+        <text x="720" y="288" font-size="9.5" font-family="var(--mono)" fill="var(--accent-ink)" opacity="0.8">no cost</text>
+        <text x="840" y="271" font-size="12" font-weight="700" fill="var(--accent-ink)">MedCAT</text>
+        <text x="840" y="288" font-size="9.5" font-family="var(--mono)" fill="var(--accent-ink)" opacity="0.8">no cost</text>
+        <text x="960" y="271" font-size="12" font-weight="700" fill="var(--accent-ink)">Regex</text>
+        <text x="960" y="288" font-size="9.5" font-family="var(--mono)" fill="var(--accent-ink)" opacity="0.8">no cost</text>
+        <text x="1080" y="271" font-size="12" font-weight="700" fill="var(--cost)">Azure LLM</text>
+        <text x="1080" y="288" font-size="9.5" font-family="var(--mono)" fill="var(--cost)" opacity="0.9">£ — rare use</text>
+      </g>
+    </svg>
+  </div>
+  <p class="fig-caption">Stage 0 is new in V2: before anything can be benchmarked, requests have to be understood and labeled by hand, since no published schema for classifying requests (as opposed to documents) exists. Stage 3 is still the actual deliverable: a router built from evidence, not guesswork, that costs nothing to run because choosing among methods is free — only running Azure carries a real cost. Stage 5 stays dashed: it starts once there's evidence to justify it, and is then kept up to date rather than treated as a one-off.</p>
+
+  <div class="legend">
+    <span><span class="sw now"></span>What we'd build now</span>
+    <span><span class="sw later"></span>Deferred — start once labels/log justify it, then refine continuously</span>
+    <span><span class="sw cost"></span>Carries a real, metered cost</span>
+  </div>
+
+  <h2>The six stages</h2>
+  <p class="lede" style="margin-bottom:1.6rem;">Grouped into three phases: understand each request, build the router from evidence, then keep improving it.</p>
+
+  <div class="phase">
+    <p class="phase-label">Phase 1 — Understand</p>
+    <div class="stage-card now">
+      <div class="stage-card-head"><span class="num">0</span><h3>Label requests</h3><span class="tag now">now</span></div>
+      <p class="stage-summary">Work through historical requests one at a time, starting with Request 22 (ICI toxicity audit), and label each by hand.</p>
+      <ul class="stage-details">
+        <li>Label with an extended CLEF schema — entity, relation, timeline — plus a new <strong>extraction method</strong> entity: which of SQL / MedCAT / regex / LLM actually answered the request.</li>
+        <li>The clinician judges the best method per search term — a practical, clinician-adjudicated proxy, <strong>not</strong> a gold standard in the CLEF sense.</li>
+        <li>Write a short learning map per request as part of the same pass.</li>
+        <li>No published schema classifies requests directly; the closest prior art is a <a href="https://www.medrxiv.org/content/10.1101/19012294v1" target="_blank" rel="noopener">cohort-retrieval query taxonomy</a> linking query structure to retrieval-method performance.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="phase">
+    <p class="phase-label">Phase 2 — Build the router</p>
+    <div class="stage-card now">
+      <div class="stage-card-head"><span class="num">1</span><h3>Benchmark</h3><span class="tag now">now</span></div>
+      <p class="stage-summary">Run SQL, MedCAT concept search, and regex against every request labeled in Stage 0.</p>
+      <ul class="stage-details">
+        <li>Run Azure LLM on a sampled subset only, since it's the one method with a real per-call cost.</li>
+        <li>Score each method against the Stage 0 label, not against each other.</li>
+      </ul>
+    </div>
+    <div class="stage-card now">
+      <div class="stage-card-head"><span class="num">2</span><h3>Analyze</h3><span class="tag now">now</span></div>
+      <p class="stage-summary">Find what distinguishes the requests where CogStack's methods won from the ones where SQL was already good enough.</p>
+      <ul class="stage-details">
+        <li>E.g. does it name a specific concept, need negation handling, or need reasoning about timing across documents.</li>
+        <li>This is where "is it worth switching off SQL" actually gets answered, request-type by request-type.</li>
+      </ul>
+    </div>
+    <div class="stage-card now">
+      <div class="stage-card-head"><span class="num">3</span><h3>Codify as rules</h3><span class="tag now">now</span></div>
+      <p class="stage-summary">Turn those patterns into an explicit, written decision table — this is "the classifier" in practice.</p>
+      <ul class="stage-details">
+        <li>Which method to use for which kind of request, backed by the benchmark numbers, not guesswork.</li>
+        <li>Doesn't need to be a trained statistical model to do the job — a rule table is something anyone on the team can read, question, and correct.</li>
+      </ul>
+    </div>
+    <div class="stage-card now">
+      <div class="stage-card-head"><span class="num">4</span><h3>Deploy + log</h3><span class="tag now">now</span></div>
+      <p class="stage-summary">Wire the rule table into how requests actually get handled, and log every decision.</p>
+      <ul class="stage-details">
+        <li>Log whether each decision plus outcome turned out right.</li>
+        <li>Logged outcomes feed back into Stage 0, refining the request labels over time.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="phase">
+    <p class="phase-label">Phase 3 — Improve</p>
+    <div class="stage-card later">
+      <div class="stage-card-head"><span class="num">5</span><h3>Train a model, then keep refining it</h3><span class="tag later">later, revisited continuously</span></div>
+      <p class="stage-summary">Start training once Stage 0's labels and the deployment log give enough evidence, then keep it up to date as more requests get labeled — not a one-off event.</p>
+      <ul class="stage-details">
+        <li>At today's scale (~150–160 labeled requests), published evidence puts reliable minimum sample sizes nearer 500–1,000 — early versions should stay a supplement to the rule table, not a replacement.</li>
+        <li>Use a <strong>70/30 train/test split</strong>, not 80/20, while N stays under roughly 1,000.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <details class="callout now">
+      <summary>Why Stage 0 comes before the benchmark <span class="chev">▶</span></summary>
+      <div class="acc-body"><p>A benchmark can only score methods against something known to be correct. With no existing request-classification schema to lean on, that "known to be correct" has to be built by hand first — one request at a time — before Stage 1 has anything solid to score against.</p></div>
+    </details>
+    <details class="callout now">
+      <summary>Why this isn't a gold standard <span class="chev">▶</span></summary>
+      <div class="acc-body"><p>CLEF/i2b2-style gold standards come from multiple independent annotators with measured agreement. Here, one clinician judges the best extraction method per request — useful for routing, but a single-rater proxy, not verified ground truth, until inter-rater reliability is measured.</p></div>
+    </details>
+    <details class="callout now">
+      <summary>Why rules before a trained model <span class="chev">▶</span></summary>
+      <div class="acc-body"><p>With roughly 150 historical requests spread across a handful of categories, there isn't enough data for a trained text classifier to reliably beat a well-evidenced rule table — and the rule table is auditable in a way a model isn't, which matters when the downstream decision affects a cancer data request.</p></div>
+    </details>
+    <details class="callout cost">
+      <summary>Why the Azure cost doesn't block this <span class="chev">▶</span></summary>
+      <div class="acc-body"><p>The router's own decision — which method to use — costs nothing to compute, whether it's rules or eventually a small local model. The Azure cost only applies to the rare request the router actually sends to the LLM, which is precisely what a good router is supposed to minimize, not avoid engaging with.</p></div>
+    </details>
+  </div>
+
+  <h2>Strengths and limitations</h2>
+  <div class="callout-grid">
+    <div class="callout">
+      <h3>Strengths</h3>
+      <ul class="list-plain">
+        <li><strong>Fills a confirmed gap.</strong> No published schema classifies data-extraction requests; extending CLEF's structure with an extraction-method entity is a defensible response.</li>
+        <li><strong>Grounded in real operational data.</strong> ~150 real historical requests, with real SQL, real outcomes, real clinician feedback.</li>
+        <li><strong>Directly actionable.</strong> The request-trait → extraction-method mapping is exactly what the router needs, not a side artifact.</li>
+        <li><strong>Cost- and audit-aware design.</strong> Rules before ML, LLM calls minimized, every decision auditable.</li>
+        <li><strong>Reusable beyond this project.</strong> A generalized schema could serve other data-clinic teams facing the same routing problem.</li>
+      </ul>
+    </div>
+    <div class="callout">
+      <h3>Limitations</h3>
+      <ul class="list-plain">
+        <li><strong>Underpowered for a trained model.</strong> ~150–160 requests sits below the ~500–1,000 floor the literature treats as reliable.</li>
+        <li><strong>Single adjudicator, no inter-rater reliability</strong> on the extraction-method labels yet.</li>
+        <li><strong>Single-site provenance</strong> — generalizability beyond this hospital is untested.</li>
+        <li><strong>Severe class imbalance</strong> across the Yellow(4)/Blue(17)/Other(135) request tiers.</li>
+        <li><strong>Hindsight bias risk</strong> — labels are assigned with the outcome already known, with no prospective test.</li>
+        <li><strong>Not a real gold standard</strong> — a practical routing proxy, not independently verified ground truth.</li>
+      </ul>
+    </div>
+  </div>
+
+  </div><!-- /tab-plan -->
+
+  <div class="tabpanel" id="tab-references" role="tabpanel" aria-labelledby="tabbtn-references" hidden>
+
+    <p class="eyebrow">Reference for Request Schema</p>
+    <h1 style="font-size:1.5rem;">Papers informing the request-labeling schema and router</h1>
+    <p class="lede">Every paper found relevant during literature search for the Classifier project, each with a brief summary and a 1–5 relevance/importance score for this specific project.</p>
+
+    <div class="ref-card">
+      <div class="ref-head">
+        <h3>Overview of the ShARe/CLEF eHealth Evaluation Lab 2014 Task 2: Disorder Attributes in Clinical Reports</h3>
+        <div class="score"><span class="label">Relevance</span><span class="dots"><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span></span></div>
+      </div>
+      <p class="meta">Mowery, D. et al. · CLEF 2014, CEUR-WS Vol-1180 · <a href="https://ceur-ws.org/Vol-1180/CLEF2014wn-eHealth-MoweryEt2014.pdf" target="_blank" rel="noopener">ceur-ws.org/Vol-1180/CLEF2014wn-eHealth-MoweryEt2014.pdf</a></p>
+      <p>Defines the canonical CLEF entity/attribute schema (negation, uncertainty, severity, body location, doc-time class, temporal expression), annotated and adjudicated by two coders. This is the actual source of "CLEF's structure" that Stage 0's schema extends — the most load-bearing citation in the whole reference list.</p>
+      <p class="rec-use"><strong>Recommended use:</strong> cite as the primary schema source when writing up Stage 0's methodology; borrow its attribute checklist (negation, uncertainty, severity, body location, doc-time, temporal expression) directly when defining the request-level entity types.</p>
+    </div>
+
+    <div class="ref-card">
+      <div class="ref-head">
+        <h3>A Query Taxonomy Describes Performance of Patient-Level Retrieval from Electronic Health Record Data</h3>
+        <div class="score"><span class="label">Relevance</span><span class="dots"><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span></span></div>
+      </div>
+      <p class="meta">medRxiv · <a href="https://www.medrxiv.org/content/10.1101/19012294v1" target="_blank" rel="noopener">medrxiv.org/content/10.1101/19012294v1</a></p>
+      <p>A 59-characteristic taxonomy of EHR cohort-retrieval queries, explicitly linked to which retrieval method performs best for each query type. This is the closest existing analogue to Stage 0–2's extraction-method mapping — same idea, applied to cohort queries rather than ad-hoc data-clinic requests.</p>
+      <p class="rec-use"><strong>Recommended use:</strong> use its 59 characteristics as a starter checklist when defining request traits in Stage 2's analysis — several of its query-structure features (temporal relations, structured vs. unstructured mix) likely transfer directly to request labeling.</p>
+    </div>
+
+    <div class="ref-card">
+      <div class="ref-head">
+        <h3>Evaluating temporal relations in clinical text: 2012 i2b2 Challenge</h3>
+        <div class="score"><span class="label">Relevance</span><span class="dots"><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot"></span></span></div>
+      </div>
+      <p class="meta">Sun, W., Rumshisky, A., Uzuner, O. · <em>J Am Med Inform Assoc</em>, 2013 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3756270/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC3756270</a></p>
+      <p>Defines the EVENT / TIMEX / TLINK temporal-relation schema (adapted from TimeML) that CLEF/i2b2-style "timeline" annotation descends from. Source of the timeline entity in our extended schema, though it's one layer removed from request-level labeling itself.</p>
+      <p class="rec-use"><strong>Recommended use:</strong> keep in reserve — reference it only if the flat "timeline" entity needs to become more granular (e.g. splitting into EVENT/TIMEX/TLINK sub-fields); not needed for the current schema's level of detail.</p>
+    </div>
+
+    <div class="ref-card">
+      <div class="ref-head">
+        <h3>A taxonomy of generic clinical questions: classification study</h3>
+        <div class="score"><span class="label">Relevance</span><span class="dots"><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot"></span></span></div>
+      </div>
+      <p class="meta">Ely, J. W. et al. · <em>BMJ</em>, 2000;321:429–32 · <a href="https://pubmed.ncbi.nlm.nih.gov/10938054/" target="_blank" rel="noopener">pubmed.ncbi.nlm.nih.gov/10938054</a></p>
+      <p>Classifies clinicians' information <em>needs</em> — not documents — into 64 generic question types, with measured inter-rater reliability. A direct precedent for labeling requests rather than records, and a template for how to close this project's biggest gap: reporting agreement between raters on the extraction-method labels.</p>
+      <p class="rec-use"><strong>Recommended use:</strong> follow its inter-rater-reliability reporting method (e.g. Cohen's kappa) once a second labeler is added to Stage 0; also useful as the citation for framing requests as "information needs" in any write-up.</p>
+    </div>
+
+    <div class="ref-card">
+      <div class="ref-head">
+        <h3>Lightweight Query Routing for Adaptive RAG: A Baseline Study on RAGRouter-Bench</h3>
+        <div class="score"><span class="label">Relevance</span><span class="dots"><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot"></span></span></div>
+      </div>
+      <p class="meta">arXiv:2604.03455, 2026 · <a href="https://arxiv.org/abs/2604.03455" target="_blank" rel="noopener">arxiv.org/abs/2604.03455</a></p>
+      <p>Evaluates classical classifiers (best: TF-IDF+SVM) routing queries to retrieval pathways from structural/lexical features, and finds medical queries the hardest domain to route. The closest existing prior art to the router itself (Stage 3–5), and its finding — simple features can beat fancier embeddings — is directly actionable when building the eventual trained model.</p>
+      <p class="rec-use"><strong>Recommended use:</strong> use as the starting architecture for Stage 5 — try a lightweight classical classifier (TF-IDF+SVM) before anything more complex, since it already outperformed embeddings on a similar routing task.</p>
+    </div>
+
+    <div class="ref-card">
+      <div class="ref-head">
+        <h3>Determinants of Training Corpus Size for Clinical Text Classification</h3>
+        <div class="score"><span class="label">Relevance</span><span class="dots"><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot"></span></span></div>
+      </div>
+      <p class="meta">arXiv:2601.15846, 2026 · <a href="https://arxiv.org/abs/2601.15846" target="_blank" rel="noopener">arxiv.org/abs/2601.15846</a></p>
+      <p>MIMIC-III-based study finding ~600 labeled documents sufficient for 95% of max achievable classifier performance, with substantial task-to-task variation. Clinical-domain-specific and directly comparable to our ~150–160 labeled requests — the strongest sample-size citation available.</p>
+      <p class="rec-use"><strong>Recommended use:</strong> track Stage 5 performance against N as labeling grows, using ~600 as a rough target size for when the trained model can be trusted; cite when justifying why the rule table stays primary until then.</p>
+    </div>
+
+    <div class="ref-card">
+      <div class="ref-head">
+        <h3>A method for determining the number of documents needed for a gold standard corpus</h3>
+        <div class="score"><span class="label">Relevance</span><span class="dots"><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot"></span><span class="dot"></span></span></div>
+      </div>
+      <p class="meta"><em>J Biomed Inform</em>, 2012 · <a href="https://www.sciencedirect.com/science/article/pii/S1532046411002243" target="_blank" rel="noopener">sciencedirect.com/science/article/pii/S1532046411002243</a></p>
+      <p>A Poisson-based, word-capture-probability method for estimating corpus size, converging on ~500 documents for 0.95 capture probability in a clinical dictation corpus. A second, independently derived method that lands near the same ~500 floor as the corpus-size paper above — useful corroboration, though less directly about request labeling.</p>
+      <p class="rec-use"><strong>Recommended use:</strong> optional — apply its formula if a more rigorous, defensible target sample size is needed (e.g. for a governance conversation), rather than relying on rule-of-thumb figures alone.</p>
+    </div>
+
+    <div class="ref-card">
+      <div class="ref-head">
+        <h3>On the diminishing return of labeling clinical reports</h3>
+        <div class="score"><span class="label">Relevance</span><span class="dots"><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot"></span><span class="dot"></span></span></div>
+      </div>
+      <p class="meta">arXiv:2010.14587 · <a href="https://arxiv.org/pdf/2010.14587" target="_blank" rel="noopener">arxiv.org/pdf/2010.14587</a></p>
+      <p>Shows label-count-vs-performance curves flattening early for clinical text classifiers. Secondary support for treating ~150 labeled requests as an early checkpoint rather than a finished dataset, complementing the corpus-size papers above.</p>
+      <p class="rec-use"><strong>Recommended use:</strong> cite alongside the corpus-size papers when justifying, in any write-up or governance conversation, why ~150–160 requests is an early checkpoint and not a stopping point.</p>
+    </div>
+
+    <div class="ref-card">
+      <div class="ref-head">
+        <h3>TREC Medical Records Track &amp; Clinical Decision Support Track overviews</h3>
+        <div class="score"><span class="label">Relevance</span><span class="dots"><span class="dot filled"></span><span class="dot filled"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></span></div>
+      </div>
+      <p class="meta">Roberts, K. et al. and others · TREC 2011–2016 · <a href="https://trec.nist.gov/pubs/trec23/papers/overview-clinical.pdf" target="_blank" rel="noopener">trec.nist.gov/pubs/trec23/papers/overview-clinical.pdf</a></p>
+      <p>Background lineage for cohort/query retrieval evaluation in clinical IR — topic statements use paired long/short query fields, which is a useful request-representation idea, but these are evaluation-campaign overviews, not classification schemas. Background context only, not a schema to build on directly.</p>
+      <p class="rec-use"><strong>Recommended use:</strong> background reading only — cite in a related-work section for context on clinical query evaluation lineage; do not build the schema or router directly on this.</p>
+    </div>
+
+  </div><!-- /tab-references -->
+
+  <script>
+    (function(){
+      var buttons = document.querySelectorAll('.tabbtn');
+      buttons.forEach(function(btn){
+        btn.addEventListener('click', function(){
+          buttons.forEach(function(b){ b.setAttribute('aria-selected','false'); });
+          document.querySelectorAll('.tabpanel').forEach(function(p){ p.classList.remove('active'); p.hidden = true; });
+          btn.setAttribute('aria-selected','true');
+          var panel = document.getElementById(btn.dataset.target);
+          panel.classList.add('active');
+          panel.hidden = false;
+        });
+      });
+    })();
+  </script>
+
+</div>

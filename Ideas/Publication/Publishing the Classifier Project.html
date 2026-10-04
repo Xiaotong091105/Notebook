@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Publishing the Classifier Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --bg:#ffffff; --fg:#1b1b1b; --muted:#5a5a5a; --border:#dcdcdc;
+    --ess-bg:#d4edda; --ess-border:#2e7d32;
+    --norm-bg:#e9ecef; --norm-border:#616161;
+    --card-bg:#f7f7f8; --link:#1a5fb4; --code-bg:#f0f0f2;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#1b1b1e; --fg:#e8e8ea; --muted:#a0a0a6; --border:#3a3a3f;
+      --ess-bg:#1f3d24; --ess-border:#5cb85c;
+      --norm-bg:#3a3a3d; --norm-border:#9a9a9e;
+      --card-bg:#242428; --link:#7cb0f0; --code-bg:#2a2a2e;
+    }
+  }
+  body{background:var(--bg); color:var(--fg); font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif; line-height:1.55; max-width:900px; margin:0 auto; padding:2.5rem 1.5rem 4rem;}
+  h1{font-size:1.6rem; margin-bottom:.25rem;}
+  h2{font-size:1.2rem; border-bottom:1px solid var(--border); padding-bottom:.3rem; margin-top:2.2rem;}
+  h3{font-size:1.02rem; margin-top:1.5rem; margin-bottom:.4rem;}
+  .subtitle{color:var(--muted); font-size:.92rem; margin-top:0; margin-bottom:1.5rem;}
+  a{color:var(--link);}
+  code{background:var(--code-bg); padding:.1em .35em; border-radius:4px; font-size:.9em;}
+  .callout{background:var(--card-bg); border:1px solid var(--border); border-left:4px solid var(--ess-border); border-radius:6px; padding:.9rem 1.1rem; margin:1rem 0;}
+  ul,ol{padding-left:1.3rem;}
+  li{margin-bottom:.4rem;}
+
+  .flow{display:flex; flex-direction:column; align-items:center; gap:0; margin:1.5rem 0;}
+  .step{border-radius:8px; padding:.65rem 1.1rem; text-align:center; font-size:.92rem; border:1.5px solid var(--border); background:var(--norm-bg); border-color:var(--norm-border); max-width:460px; width:100%; box-sizing:border-box;}
+  .step.essential{background:var(--ess-bg); border-color:var(--ess-border); font-weight:600;}
+  .arrow{color:var(--muted); font-size:1.3rem; line-height:1; margin:.1rem 0;}
+  .parallel-note{font-size:.78rem; color:var(--muted); font-style:italic; margin:.15rem 0;}
+
+  .card{border:1px solid var(--border); border-radius:8px; padding:1rem 1.2rem; margin-bottom:1rem; background:var(--card-bg);}
+  .card h3{margin-top:0;}
+  .tag{display:inline-block; font-size:.72rem; text-transform:uppercase; letter-spacing:.03em; padding:.15em .5em; border-radius:4px; margin-left:.4em; vertical-align:middle;}
+  .tag.barrier{background:#f8d7da; color:#58151c;}
+  .tag.solution{background:#d1e7dd; color:#0a3622;}
+  @media (prefers-color-scheme: dark){
+    .tag.barrier{background:#4a1f24; color:#f5b7bd;}
+    .tag.solution{background:#173b2c; color:#a8d5bc;}
+  }
+</style>
+</head>
+<body>
+
+<h1>Publishing the Classifier Project</h1>
+<p class="subtitle">Detailed discussion of whether and how the Classifier project (see <code>Ideas/Classifier/Classifier and Rationale V2.html</code>) could be published, with a step-by-step flow, barriers, and solutions for each step.</p>
+
+<h2>Verdict</h2>
+<p>Publishable — but as a <strong>methods/informatics practice paper</strong>, not a large-scale ML validation paper. The genuine novelty claim (no published schema classifies data-extraction requests) is real and defensible, but several methodological gaps need closing first, and one governance decision needs making before anything else.</p>
+
+<h2>Essential things to do first</h2>
+<div class="callout">
+  <p style="margin-top:0">These three are the load-bearing items — everything else in the flow below is easier or optional by comparison, but skipping these will sink a submission at review:</p>
+  <ol style="margin-bottom:0">
+    <li><strong>Get a governance decision</strong> (service evaluation vs. research) before drafting anything for external audiences.</li>
+    <li><strong>Add a second labeler and measure inter-rater reliability</strong> on a subset of requests (even 20–30).</li>
+    <li><strong>Freeze the schema and hold out a test subset</strong> before evaluating the rule table, so the evaluation isn't circular.</li>
+  </ol>
+</div>
+
+<h2>Step-by-step flow</h2>
+<div class="flow">
+  <div class="step essential">1. Governance triage:<br>service evaluation vs. research</div>
+  <div class="arrow">↓</div>
+  <div class="step">2. Freeze schema + write related-work positioning</div>
+  <div class="arrow">↓</div>
+  <div class="step essential">3. Add second labeler, measure inter-rater reliability</div>
+  <div class="arrow">↓</div>
+  <div class="step essential">4. Formal evaluation: rule table vs. baseline, held-out test subset</div>
+  <div class="parallel-note">(step 5 runs in parallel with steps 2–4)</div>
+  <div class="step">5. Governance / ethics approval</div>
+  <div class="arrow">↓</div>
+  <div class="step">6. De-identify examples for any write-up</div>
+  <div class="arrow">↓</div>
+  <div class="step">7. Draft manuscript, select venue</div>
+  <div class="arrow">↓</div>
+  <div class="step">8. Submit, respond to review, iterate</div>
+</div>
+
+<div class="card">
+  <h3>1. Governance triage — service evaluation vs. research</h3>
+  <p><strong>What:</strong> Decide with your institution's R&amp;D office / information governance whether this counts as a service evaluation (no ethics review needed) or research (needs REC review).</p>
+  <p><span class="tag barrier">Barrier</span> Categorization criteria are often unclear from the outside, and getting it wrong wastes months.</p>
+  <p><span class="tag solution">Solution</span> Raise this early and in parallel with everything else, not after a draft exists. Use your institution's standard research-vs-audit-vs-service-evaluation decision tool if one exists; ask the R&amp;D office directly rather than guessing.</p>
+</div>
+
+<div class="card">
+  <h3>2. Freeze the schema and write related-work positioning</h3>
+  <p><strong>What:</strong> Lock the CLEF-extended schema (entity/relation/timeline + extraction method) as a versioned artifact (V2 is that version), and write the related-work section now — citing the CLEF eHealth schema and the <a href="https://www.medrxiv.org/content/10.1101/19012294v1" target="_blank" rel="noopener">cohort-retrieval query taxonomy</a> — so the novelty claim is stated precisely before more work is built on top of it.</p>
+  <p><span class="tag barrier">Barrier</span> The schema is still evolving informally through conversation; nothing has been version-locked or compared systematically against prior art yet.</p>
+  <p><span class="tag solution">Solution</span> Treat <code>Classifier and Rationale V2.md</code> as the frozen reference point for the schema going forward; any further schema changes should produce a V3, not silent edits to V2.</p>
+</div>
+
+<div class="card">
+  <h3>3. Add a second labeler, measure inter-rater reliability</h3>
+  <p><strong>What:</strong> Recruit a second clinician (or informatics colleague) to independently judge "best extraction method" on a defined subset of requests (20–30 is enough to compute agreement).</p>
+  <p><span class="tag barrier">Barrier</span> Needs a second person's time and a defined disagreement-resolution process, neither of which exist yet.</p>
+  <p><span class="tag solution">Solution</span> Ask early — cheap in absolute terms but has long lead time if scheduled late. Report agreement with Cohen's kappa. Decide up front how disagreements get adjudicated (e.g. a third opinion, or discussion to consensus).</p>
+</div>
+
+<div class="card">
+  <h3>4. Formal evaluation of the rule table</h3>
+  <p><strong>What:</strong> Hold out a subset of requests not used to derive the rules, evaluate the rule table's routing decisions against actual clinician-chosen methods, and compare to a naive baseline (e.g. "always use SQL"). Report precision/recall or accuracy per extraction method.</p>
+  <p><span class="tag barrier">Barrier</span> No baseline or held-out set currently exists; evaluating on the same requests used to build the rules would be circular and reviewers will catch it.</p>
+  <p><span class="tag solution">Solution</span> Split before analysis begins, not after — decide the held-out subset at the same time the schema is frozen (step 2), so it's never touched during rule derivation.</p>
+</div>
+
+<div class="card">
+  <h3>5. Governance / ethics approval</h3>
+  <p><strong>What:</strong> Formal sign-off to use and potentially publish request data, once step 1 has determined which pathway applies.</p>
+  <p><span class="tag barrier">Barrier</span> Even aggregate, request-level data derived from cancer patients may need sign-off; approval timelines can be long and are often the critical path.</p>
+  <p><span class="tag solution">Solution</span> Start this conversation in parallel with steps 2–4, not after a manuscript is drafted — treat it as the schedule-driving step, not an afterthought.</p>
+</div>
+
+<div class="card">
+  <h3>6. De-identify examples for any write-up</h3>
+  <p><strong>What:</strong> Redact or generalize any example requests used as illustrations (e.g. Request 22-style case studies) before they appear in anything shared externally.</p>
+  <p><span class="tag barrier">Barrier</span> Request write-ups may contain identifiable project or patient-adjacent details not obvious at a glance.</p>
+  <p><span class="tag solution">Solution</span> Build a simple redaction checklist (project names, dates, drug/dose specifics if identifying, any free text pulled from real notes) and have information governance review examples before submission, not after acceptance.</p>
+</div>
+
+<div class="card">
+  <h3>7. Draft manuscript and select venue</h3>
+  <p><strong>What:</strong> Write up the schema, the labeling process, the rule-table evaluation, and the strengths/limitations (see V2 doc) as a manuscript targeting one of:</p>
+  <ul>
+    <li><strong>JAMIA Open</strong>, <strong>BMJ Health &amp; Care Informatics</strong>, or <strong>International Journal of Medical Informatics</strong> — full paper, methods/practice framing.</li>
+    <li><strong>AMIA Informatics Summit</strong> or <strong>MedInfo</strong> — shorter conference paper.</li>
+    <li><strong>CLEF eHealth workshop</strong> — a natural fit, since the contribution is explicitly an extension of their schema into a new problem domain.</li>
+  </ul>
+  <p><span class="tag barrier">Barrier</span> Uncertain which venue fits without informal feedback first; drafting fully before getting any signal risks wasted effort.</p>
+  <p><span class="tag solution">Solution</span> Draft the abstract first, get informal feedback from your boss/mentor, and if possible make informal contact with a target venue (e.g. a CLEF eHealth organizer) before committing to a full draft.</p>
+</div>
+
+<div class="card">
+  <h3>8. Submit, respond to review, iterate</h3>
+  <p><strong>What:</strong> Submit, and expect reviewer pushback specifically on small N, single-site provenance, and single-rater labels.</p>
+  <p><span class="tag barrier">Barrier</span> These are real, known limitations (see V2 doc's Limitations section) — reviewers will find them regardless.</p>
+  <p><span class="tag solution">Solution</span> Preempt this in the manuscript itself with an explicit, honest Limitations section, framed as a methods/pilot contribution rather than a large-scale validation. Be ready to add more labeled data or a second rater if a reviewer asks for it — steps 3 and 4 above make that easier if the infrastructure already exists.</p>
+</div>
+
+<h2>What happens if you skip this</h2>
+<p>If the essential items above (governance decision, inter-rater reliability, held-out evaluation) aren't pursued, the project remains a strong <strong>internal QI/process-improvement effort</strong> — genuinely useful for routing real requests — but not publication-ready. That's a legitimate choice, not a failure; publication should be additive to the operational goal, not a prerequisite for it.</p>
+
+</body>
+</html>
